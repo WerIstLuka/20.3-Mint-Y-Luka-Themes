@@ -140,6 +140,8 @@ for color in y_hex_colors1.keys():
             if (variant == "-Dark"):
                 os.system("cp sass/gtk-dark.scss sass/gtk.scss")
                 os.system("sassc ./sass/gtk.scss gtk.css")
+                # Add a gtk-dark.css (this is needed by libhandy/libadwaita apps when prefer-dark is on)
+                os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
             else:
                 os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
                 os.system("sassc ./sass/gtk.scss gtk.css")
@@ -156,6 +158,8 @@ for color in y_hex_colors1.keys():
             if (variant == "-Dark"):
                 os.system("cp sass/gtk-dark.scss sass/gtk.scss")
                 os.system("sassc ./sass/gtk.scss gtk.css")
+                # Add a gtk-dark.css (this is needed by libhandy/libadwaita apps when prefer-dark is on)
+                os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
             else:
                 os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
                 os.system("sassc ./sass/gtk.scss gtk.css")
@@ -180,6 +184,10 @@ for color in y_hex_colors1.keys():
             files.append(os.path.join(theme, "gtk-2.0", "panel.rc"))
             files.append(os.path.join(theme, "gtk-2.0", "apps.rc"))
             files.append(os.path.join(theme, "gtk-2.0", "menubar-toolbar.rc"))
+            files.append(os.path.join(theme, "libadwaita-1.5", "defaults-light.css"))
+            files.append(os.path.join(theme, "libadwaita-1.5", "defaults-dark.css"))
+            files.append(os.path.join(theme, "libadwaita-1.7", "defaults-light.css"))
+            files.append(os.path.join(theme, "libadwaita-1.7", "defaults-dark.css"))
             for file in files:
                 if os.path.exists(file):
                     for accent in Y_HEX_ACCENT1:
