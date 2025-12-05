@@ -11,8 +11,8 @@ curdir = os.getcwd()
 
 print("Updating Gtk4 assets")
 os.chdir("gtk-4.0/")
-os.system("sassc ./sass/gtk.scss gtk.css")
-os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
+os.system("pysassc ./sass/gtk.scss gtk.css")
+os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
 os.system("./render-assets.sh")
 print("Gtk4 assets updated")
 
@@ -20,8 +20,8 @@ os.chdir(curdir)
 
 print("Updating Gtk3 assets")
 os.chdir("gtk-3.0/")
-os.system("sassc ./sass/gtk.scss gtk.css")
-os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
+os.system("pysassc ./sass/gtk.scss gtk.css")
+os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
 os.system("./render-assets.sh")
 print("Gtk3 assets updated")
 
@@ -37,8 +37,8 @@ os.chdir(curdir)
 
 print("Updating Cinnamon assets")
 os.chdir("cinnamon/")
-os.system("sassc ./sass/cinnamon.scss cinnamon.css")
-os.system("sassc ./sass/cinnamon-dark.scss cinnamon-dark.css")
+os.system("pysassc ./sass/cinnamon.scss cinnamon.css")
+os.system("pysassc ./sass/cinnamon-dark.scss cinnamon-dark.css")
 print("Cinnamon assets updated")
 
 os.chdir(curdir)
@@ -96,7 +96,12 @@ if __name__ == '__main__':
             os.system("mkdir -p %s" % version_folder)
             os.system("cp -R xfwm4/*.png %s" % version_folder)
             os.system("cp -R xfwm4/themerc %s" % version_folder)
-
+            # Openbox
+            version_folder = os.path.join(dest_folder, "openbox-3")
+            os.system ("mkdir -p %s" % version_folder)
+            os.system("cp openbox-3/themerc %s/themerc" % (version_folder))
+            # LibAdwaita
+            os.system("cp -R libadwaita-* %s/" % dest_folder)
         elif variation == "Mint-Y-Dark":
             print("    Building Mint-Y-Dark")
             os.system("cp index.theme-dark %s" % os.path.join(dest_folder, "index.theme"))
@@ -114,12 +119,14 @@ if __name__ == '__main__':
             os.system("mkdir -p %s" % version_folder)
             os.system("cp -R gtk-3.0/assets %s" % version_folder)
             os.system("cp gtk-3.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk.css"))
+            os.system("cp gtk-3.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk-dark.css"))
             os.system("cp gtk-3.0/thumbnail-dark.png %s" % os.path.join(version_folder, "thumbnail.png"))
             # Gtk4
             version_folder = os.path.join(dest_folder, "gtk-4.0")
             os.system("mkdir -p %s" % version_folder)
             os.system("cp -R gtk-4.0/assets %s" % version_folder)
             os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk.css"))
+            os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk-dark.css"))
             # Cinnamon
             version_folder = os.path.join(dest_folder, "cinnamon")
             os.system("mkdir -p %s" % version_folder)
@@ -132,3 +139,9 @@ if __name__ == '__main__':
             os.system("mkdir -p %s" % version_folder)
             os.system("cp -R xfwm4-dark/*.png %s" % version_folder)
             os.system("cp -R xfwm4-dark/themerc %s" % version_folder)
+            # Openbox
+            version_folder = os.path.join(dest_folder, "openbox-3")
+            os.system ("mkdir -p %s" % version_folder)
+            os.system("cp openbox-3/themerc-dark %s/themerc" % (version_folder))
+            # LibAdwaita
+            os.system("cp -R libadwaita-* %s/" % dest_folder)
