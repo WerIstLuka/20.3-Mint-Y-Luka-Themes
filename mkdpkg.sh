@@ -5,7 +5,7 @@ mkdir package
 cp -r usr/ package
 cp -r DEBIAN package
 dpkg-deb --root-owner-group --build "package" > /dev/null
-mv package.deb 20.3-Mint-Y-Themes.deb
+mv package.deb 20.3-Mint-Y-Luka-Themes.deb
 rm -rf package
 
-tar -czvf 20.3-Mint-Y-Themes.tar.gz usr
+tar -czvf 20.3-Mint-Y-Luka-Themes.tar.gz usr

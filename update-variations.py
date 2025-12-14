@@ -18,7 +18,7 @@ def usage ():
     sys.exit(1)
 
 def update_color (color):
-    variation = "src/20.3-Mint-Y/variations/%s" % color
+    variation = "src/20.3-Mint-Y-Luka/variations/%s" % color
     print("updating %s" % variation)
     os.system("rm -rf %s" % variation)
     os.system("mkdir -p %s/gtk-2.0" % variation)
@@ -54,9 +54,9 @@ def update_color (color):
     files.append("xfwm4-dark/assets.txt")
 
     for file in files:
-        os.system("cp -R src/20.3-Mint-Y/%s %s/%s" % (file, variation, file))
+        os.system("cp -R src/20.3-Mint-Y-Luka/%s %s/%s" % (file, variation, file))
     for asset in assets:
-        os.system("cp -R src/20.3-Mint-Y/%s %s/%s" % (asset, variation, asset))
+        os.system("cp -R src/20.3-Mint-Y-Luka/%s %s/%s" % (asset, variation, asset))
 
     # Update assets svg
     for asset in assets:
@@ -98,7 +98,7 @@ else:
     if not color_variation in ["Aqua", "Blue", "Brown", "Grey", "Orange", "Pink", "Purple", "Red", "Sand", "Teal", "All"]:
         usage()
 
-# 20.3-Mint-Y variations
+# 20.3-Mint-Y-Luka variations
 curdir = os.getcwd()
 
 if color_variation == "All":

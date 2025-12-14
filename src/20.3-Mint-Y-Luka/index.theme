@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=20.3-Mint-Y-Luka
+Comment=A flat theme with transparent elements
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=20.3-Mint-Y-Luka
+MetacityTheme=20.3-Mint-Y-Luka
+IconTheme=20.3-Mint-Y-Luka
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close
