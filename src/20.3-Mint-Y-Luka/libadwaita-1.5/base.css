@@ -2460,9 +2460,9 @@ indicatorbin.badge.needs-attention > indicator { background: @accent_bg_color; }
 
 indicatorbin.badge.needs-attention > indicator > label { color: @accent_fg_color; }
 
-window.csd { box-shadow: 0 1px 3px 3px transparent, 0 2px 8px 2px rgba(0, 0, 0, 0.13), 0 3px 20px 10px rgba(0, 0, 0, 0.09), 0 6px 32px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05); margin: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; outline: 1px solid rgba(255, 255, 255, 0.07); outline-offset: -1px; }
+window.csd { box-shadow: 0 1px 3px 3px transparent, 0 2px 8px 2px rgba(0, 0, 0, 0.13), 0 3px 20px 10px rgba(0, 0, 0, 0.09), 0 6px 32px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05); margin: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; outline: 4px solid @accent_color; outline-offset: 0px; }
 
-window.csd:backdrop { box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.09), 0 2px 14px 5px rgba(0, 0, 0, 0.05), 0 4px 28px 12px rgba(0, 0, 0, 0.03), 0 6px 32px 16px transparent, 0 0 0 1px rgba(0, 0, 0, 0.02); transition: box-shadow 200ms ease-out; }
+window.csd:backdrop { box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.09), 0 2px 14px 5px rgba(0, 0, 0, 0.05), 0 4px 28px 12px rgba(0, 0, 0, 0.03), 0 6px 32px 16px transparent, 0 0 0 1px rgba(0, 0, 0, 0.02); transition: box-shadow 200ms ease-out; outline: 4px solid #aaaaaa; outline-offset: 0px; }
 
 window.csd.dialog.message, window.csd.messagedialog { box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.05); }
 
