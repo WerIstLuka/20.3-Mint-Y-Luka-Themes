@@ -369,7 +369,7 @@
   $_gradient_repeat: repeat-x;
   $_bg_pos: center $p;
 
-  background-color: transparent; // shouldn't be needed, but better to be sure;
+  background-color: transparent; // shouldnt be needed, but better to be sure;
 
   @if ($p == left) or ($p == right) {
     $_gradient_dir: top;
@@ -378,9 +378,7 @@
     $_bg_pos: $p center;
   }
 
-  background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
-                                    $_undershoot_color_light 50%,
-                                    $_undershoot_color_dark 50%);
+  background-image: transparent;
 
   padding-#{$p}: 1px;
   background-size: $_dash_bg_size;
