@@ -56,8 +56,8 @@ $dark_sidebar_border: $borders_color;
 
 $filechooser_bg: $header_bg;
 
-$tooltip_bg_color: #fbeaa0;
-$tooltip_fg_color: #4a4a4a;
+$tooltip_bg_color: $base_color;
+$tooltip_fg_color: $text_color;
 $tooltip_border_color: #d0d0d0;
 
 $osd_fg_color: #dbdbdb;

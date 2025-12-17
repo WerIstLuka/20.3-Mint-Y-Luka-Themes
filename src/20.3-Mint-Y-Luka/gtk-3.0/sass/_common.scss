@@ -2896,8 +2896,6 @@ tooltip,
   }
 
   color: $tooltip_fg_color;
-  border-radius: 2px;
-  border: 1px solid $tooltip_border_color;
 
   decoration { background-color: transparent; }
 
@@ -3119,8 +3117,8 @@ decoration {
     box-shadow: 0 0 0 2px $_wm_border;
   }
   tooltip.csd & {
-    border-radius: 2px;
-    box-shadow: 0 1px 3px 1px $_wm_border;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px 2px $_wm_border;
   }
 
   messagedialog.csd & { border-radius: 8px; }
