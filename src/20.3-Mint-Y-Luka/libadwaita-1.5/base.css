@@ -1786,7 +1786,7 @@ toolbarview.undershoot-top popover scrolledwindow undershoot.top, toolbarview.un
 
 popover.background { background-color: transparent; font: initial; }
 
-popover > arrow, popover > contents { background-color: @popover_bg_color; color: @popover_fg_color; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.14); box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.09), 0 2px 14px 3px rgba(0, 0, 0, 0.05); }
+popover > arrow, popover > contents { background-color: @popover_bg_color; color: @popover_fg_color; background-clip: padding-box; border: 2px solid @mint_accent; box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.09), 0 2px 14px 3px rgba(0, 0, 0, 0.05); }
 
 popover > contents { padding: 8px; border-radius: 12px; }
 
@@ -2454,7 +2454,7 @@ window.devel dialog toolbarview > .top-bar { background-image: unset; background
 
 tooltip { padding: 6px 10px; border-radius: 2px; box-shadow: none; }
 
-tooltip.background { background-color: #fbeaa0; background-clip: padding-box; border: 1px solid #d0d0d0; color: #4a4a4a; }
+tooltip.background { background-color: #404040; background-clip: padding-box; border: 2px solid @mint_accent; color: #dadada; }
 
 tooltip > box { border-spacing: 6px; }
 
