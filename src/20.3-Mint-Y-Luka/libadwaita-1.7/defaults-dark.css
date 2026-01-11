@@ -59,3 +59,6 @@
   ); --error-color: oklab(
     from var(--error-bg-color) var(--standalone-color-oklab)
   ); --active-toggle-bg-color: rgb(255 255 255 / 20%); --active-toggle-fg-color: #ffffff; --overview-bg-color: #28282c; --overview-fg-color: #ffffff; }
+
+/*20.3-Mint-Y-Luka colors*/
+@define-color luka_titlebar #2b2b2b;
