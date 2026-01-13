@@ -1788,7 +1788,7 @@ popover.background { background-color: transparent; font: initial; }
 
 popover > arrow, popover > contents { background-color: @popover_bg_color; color: @popover_fg_color; background-clip: padding-box; border: 2px solid @mint_accent; box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.09), 0 2px 14px 3px rgba(0, 0, 0, 0.05); }
 
-popover > contents { padding: 8px; border-radius: 12px; }
+popover > contents { padding: 8px; border-radius: 2px; }
 
 popover > contents > list, popover > contents > .view, window.print popover > contents > .dialog-action-box, popover > contents > toolbar { border-style: none; background-color: transparent; }
 
