@@ -470,7 +470,7 @@ check:disabled, radio:disabled { filter: opacity(0.5); }
 
 .osd check:checked, .osd check:indeterminate, .osd radio:checked, .osd radio:indeterminate { background-color: rgba(255, 255, 255, 0.75); color: rgba(0, 0, 0, 0.75); }
 
-check { border-radius: 6px; }
+check { border-radius: 2px; }
 
 check:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/check-symbolic.symbolic.png")), -gtk-recolor(url("assets/check@2-symbolic.symbolic.png"))); }
 
@@ -2462,7 +2462,9 @@ tooltip > box { border-spacing: 6px; }
 
 .view:disabled, window.print .dialog-action-box:disabled, textview > text:disabled, dialog-host > dialog.view sheet:disabled, window.print dialog-host > dialog.dialog-action-box sheet:disabled, iconview:disabled { color: alpha(currentColor,0.5); background-color: mix(@window_bg_color,@view_bg_color,0.4); }
 
-.view:selected:focus, .view:selected, window.print .dialog-action-box:selected, textview > text:selected, dialog-host > dialog.view sheet:selected, window.print dialog-host > dialog.dialog-action-box sheet:selected, iconview:selected { background-color: alpha(@accent_bg_color,0.25); border-radius: 6px; }
+.view:selected:focus, .view:selected, window.print .dialog-action-box:selected, textview > text:selected, dialog-host > dialog.view sheet:selected, window.print dialog-host > dialog.dialog-action-box sheet:selected, iconview:selected { background-color: @accent_bg_color; border-radius: 6px; }
+
+check:selected:focus:not(:indeterminate), check:selected:not(:focus):not(:indeterminate), check:selected:hover:not(:indeterminate) { background: white; color: @mint_accent; }
 
 textview { caret-color: currentColor; }
 
