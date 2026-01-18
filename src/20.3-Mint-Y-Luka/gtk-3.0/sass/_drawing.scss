@@ -378,7 +378,7 @@
     $_bg_pos: $p center;
   }
 
-  background-image: transparent;
+  background-image: none;
 
   padding-#{$p}: 1px;
   background-size: $_dash_bg_size;

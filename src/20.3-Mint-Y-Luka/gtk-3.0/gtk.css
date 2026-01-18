@@ -2330,7 +2330,7 @@ scrolledwindow overshoot.right {
 
 scrolledwindow undershoot.top {
   background-color: transparent;
-  background-image: transparent;
+  background-image: none;
   padding-top: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
@@ -2339,7 +2339,7 @@ scrolledwindow undershoot.top {
 
 scrolledwindow undershoot.bottom {
   background-color: transparent;
-  background-image: transparent;
+  background-image: none;
   padding-bottom: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
@@ -2348,7 +2348,7 @@ scrolledwindow undershoot.bottom {
 
 scrolledwindow undershoot.left {
   background-color: transparent;
-  background-image: transparent;
+  background-image: none;
   padding-left: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;
@@ -2357,7 +2357,7 @@ scrolledwindow undershoot.left {
 
 scrolledwindow undershoot.right {
   background-color: transparent;
-  background-image: transparent;
+  background-image: none;
   padding-right: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;
