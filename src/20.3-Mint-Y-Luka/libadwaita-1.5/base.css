@@ -290,7 +290,7 @@ button.card { outline: 0 solid transparent; outline-offset: 5px; transition: out
 
 button.card:focus:focus-visible { outline-color: alpha(@accent_color,0.5); outline-width: 2px; outline-offset: -1px; }
 
-button.card:hover { background-image: image(alpha(currentColor,0.04)); }
+button.card:hover { background-image: image(@luka_card); }
 
 button.card.keyboard-activating, button.card:active { background-image: image(alpha(currentColor,0.08)); }
 
@@ -1318,9 +1318,9 @@ row.spin:disabled spinbutton > button.image-button.up:not(.flat):not(.raised):no
 
 row.entry, row.spin { outline: 0 solid transparent; outline-offset: 5px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-row.entry.focused, row.spin.focused { outline-color: alpha(@accent_color,0.5); outline-width: 2px; outline-offset: -1px; }
+row.entry.focused, row.spin.focused { outline: none }
 
-row.entry:not(:selected).activatable.focused:hover, row.entry:not(:selected).activatable.focused:active, row.spin:not(:selected).activatable.focused:hover, row.spin:not(:selected).activatable.focused:active { background-color: #4a4a4a; }
+row.entry:not(:selected).activatable.focused:hover, row.entry:not(:selected).activatable.focused:active, row.spin:not(:selected).activatable.focused:hover, row.spin:not(:selected).activatable.focused:active { background-color: @luka_card; }
 
 row.entry.error, row.spin.error { outline: 0 solid transparent; outline-offset: 5px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
@@ -1380,9 +1380,9 @@ list.boxed-list > row:focus:focus-visible, list.content > row:focus:focus-visibl
 
 .osd list.boxed-list > row:focus:focus-visible, .osd list.content > row:focus:focus-visible, .osd list.boxed-list > row.expander row.header:focus:focus-visible, list.boxed-list > row.expander .osd row.header:focus:focus-visible, .osd list.content > row.expander row.header:focus:focus-visible, list.content > row.expander .osd row.header:focus:focus-visible, .osd row.expander list.nested > row:focus:focus-visible, row.expander .osd list.nested > row:focus:focus-visible { outline-color: rgba(255, 255, 255, 0.5); }
 
-list.boxed-list > row:not(:selected).activatable:hover, list.content > row:not(:selected).activatable:hover, list.boxed-list > row.expander row.header:not(:selected).activatable:hover, list.content > row.expander row.header:not(:selected).activatable:hover, row.expander list.nested > row:not(:selected).activatable:hover { background-color: @luka_button; }
+list.boxed-list > row:not(:selected).activatable:hover, list.content > row:not(:selected).activatable:hover, list.boxed-list > row.expander row.header:not(:selected).activatable:hover, list.content > row.expander row.header:not(:selected).activatable:hover, row.expander list.nested > row:not(:selected).activatable:hover { background-color: @luka_card; }
 
-list.boxed-list > row:not(:selected).activatable:active, list.content > row:not(:selected).activatable:active, list.boxed-list > row.expander row.header:not(:selected).activatable:active, list.content > row.expander row.header:not(:selected).activatable:active, row.expander list.nested > row:not(:selected).activatable:active { background-color: @luka_button; }
+list.boxed-list > row:not(:selected).activatable:active, list.content > row:not(:selected).activatable:active, list.boxed-list > row.expander row.header:not(:selected).activatable:active, list.content > row.expander row.header:not(:selected).activatable:active, row.expander list.nested > row:not(:selected).activatable:active { background-color: @luka_card; }
 
 list.boxed-list > row:not(:selected).activatable.has-open-popup, list.content > row:not(:selected).activatable.has-open-popup, list.boxed-list > row.expander row.header:not(:selected).activatable.has-open-popup, list.content > row.expander row.header:not(:selected).activatable.has-open-popup, row.expander list.nested > row:not(:selected).activatable.has-open-popup { background-color: alpha(currentColor,0.03); }
 
@@ -1413,7 +1413,7 @@ row.expander:checked image.expander-row-arrow:not(:disabled) { color: @accent_co
 /***************** Boxed Lists * */
 list.boxed-list > row.expander, list.content > row.expander { border: none; }
 
-list.boxed-list > row:first-child, list.content > row:first-child, list.boxed-list > row:first-child.expander row.header, list.content > row:first-child.expander row.header { border-top-left-radius: 12px; border-top-right-radius: 12px; }
+list.boxed-list > row:first-child, list.content > row:first-child, list.boxed-list > row:first-child.expander row.header, list.content > row:first-child.expander row.header { border-top-left-radius: 0px; border-top-right-radius: 0px; }
 
 list.boxed-list > row:last-child, list.content > row:last-child, list.boxed-list > row:last-child.expander:not(:checked), list.boxed-list > row:last-child.expander:not(:checked) row.header, list.content > row:last-child.expander:not(:checked) row.header, list.boxed-list > row:last-child.expander:checked list.nested, list.content > row:last-child.expander:checked list.nested, list.boxed-list > row:last-child.expander:checked list.nested > row:last-child, list.content > row:last-child.expander:checked list.nested > row:last-child { border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; border-bottom-width: 0; }
 
@@ -1631,7 +1631,7 @@ statuspage.compact > scrolledwindow > viewport > box > clamp > box > .icon:not(:
 statuspage.compact > scrolledwindow > viewport > box > clamp > box > .title { font-size: 18pt; }
 
 /* Cards */
-shortcut > .keycap, list.boxed-list, list.content, .card { background-color: @card_bg_color; color: @card_fg_color; border-radius: 12px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 3px 1px rgba(0, 0, 0, 0.07), 0 2px 6px 2px rgba(0, 0, 0, 0.03); }
+shortcut > .keycap, list.boxed-list, list.content, .card { background-color: @luka_card; color: @card_fg_color; border-radius: 0px; border: 1px solid @luka_card_border; }
 
 .osd shortcut > .keycap, .osd list.boxed-list, .osd list.content, shortcut > .osd.keycap, list.osd.boxed-list, list.osd.content, .osd .card, .card.osd { background-color: alpha(currentColor,0.1); color: inherit; box-shadow: none; }
 
