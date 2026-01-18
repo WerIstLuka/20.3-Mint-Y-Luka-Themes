@@ -534,7 +534,7 @@ colorchooser .popover.osd { border-radius: 12px; }
 
 columnview, treeview.view, window.print treeview.dialog-action-box { outline: 0 solid transparent; outline-offset: 4px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-columnview:focus:focus-visible, treeview.view:focus:focus-visible, window.print treeview.dialog-action-box:focus:focus-visible { outline-color: alpha(@accent_color,0.5); outline-width: 2px; outline-offset: -2px; }
+columnview:focus:focus-visible, treeview.view:focus:focus-visible, window.print treeview.dialog-action-box:focus:focus-visible { outline: none; outline-width: 2px; outline-offset: -2px; }
 
 columnview:drop(active), treeview.view:drop(active), window.print treeview.dialog-action-box:drop(active) { box-shadow: none; }
 
@@ -1318,7 +1318,7 @@ row.spin:disabled spinbutton > button.image-button.up:not(.flat):not(.raised):no
 
 row.entry, row.spin { outline: 0 solid transparent; outline-offset: 5px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-row.entry.focused, row.spin.focused { outline: none }
+row.entry.focused, row.spin.focused { outline: none; }
 
 row.entry:not(:selected).activatable.focused:hover, row.entry:not(:selected).activatable.focused:active, row.spin:not(:selected).activatable.focused:hover, row.spin:not(:selected).activatable.focused:active { background-color: @luka_card; }
 
