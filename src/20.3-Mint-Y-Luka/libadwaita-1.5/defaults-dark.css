@@ -19,7 +19,7 @@
 @define-color error_bg_color @red_4;
 @define-color error_fg_color white;
 @define-color error_color #ff7b63;
-@define-color window_bg_color @mint_header;
+@define-color window_bg_color #383838;
 @define-color window_fg_color white;
 @define-color view_bg_color #404040;
 @define-color view_fg_color white;
