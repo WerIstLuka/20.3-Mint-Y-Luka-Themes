@@ -7,7 +7,7 @@
 @define-color accent_bg_color @mint_accent;
 @define-color accent_fg_color white;
 @define-color accent_color @mint_accent;
-@define-color destructive_bg_color @luka_destructive;
+@define-color destructive_bg_color @red_4;
 @define-color destructive_fg_color white;
 @define-color destructive_color #ff7b63;
 @define-color success_bg_color @green_5;
@@ -59,9 +59,3 @@
 @define-color luka_button_active #252525;
 @define-color luka_card #404040;
 @define-color luka_card_border #292929;
-@define-color luka_suggested #6db442;
-@define-color luka_suggested_hover #88c663;
-@define-color luka_suggested_active #568f34;
-@define-color luka_destructive #F04A50;
-@define-color luka_destructive_hover #f4797e;
-@define-color luka_destructive_active #ec1b22;
