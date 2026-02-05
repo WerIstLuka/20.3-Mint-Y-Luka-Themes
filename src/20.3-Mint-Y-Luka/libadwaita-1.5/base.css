@@ -2629,6 +2629,12 @@ windowhandle box menubutton.flat.popup button { background: inherit; }
 windowhandle box menubutton.flat.popup button:hover { background: @luka_button_hover; }
 windowhandle box menubutton.flat.popup button:checked, windowhandle box menubutton.flat.popup button:active { background: @luka_button_active; }
 
+popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill), monthviewrow popover button:not(.suggested-action):not(.destructive-action):not(.pill) {background-color: @luka_button; border: 1px solid #292929; }
+
+popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill):hover { background-color: @luka_button_hover; }
+
+popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill):active { background-color: @luka_button_active; }
+
 toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize), window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize), stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize), widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize), revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize) { background: inherit; border: 1px solid transparent; transition: 200ms; }
 
 toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover { background: @luka_button_hover; border: 1px solid #1f1f1f; }
