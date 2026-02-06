@@ -125,7 +125,7 @@ bottom-sheet > sheet > outline.flush-left.flush-right { box-shadow: inset 0 1px 
 
 notebook > header > tabs > arrow, row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child, row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child:dir(ltr):last-child, row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child:dir(rtl):first-child, row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(ltr):last-child, row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, colorswatch#add-color-button > overlay, button { min-height: 24px; min-width: 16px; padding: 5px 10px; border-radius: 2px; font-weight: bold; }
 
-actionbar button { border: 1px solid #292929; }
+actionbar button { border: 1px solid @luka_border_1; }
 
 box button:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) {
 	border-radius: 2px;
@@ -134,7 +134,7 @@ box button:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin
 headerbar button.flat, headerbar stackswitcher button {
 	border-radius: 0px;
 	outline-offset: 0px;
-	border: 1px solid #232323;
+	border: 1px solid @luka_border_4;
 }
 
 headerbar button:dir(ltr):first-child.flat, headerbar button:dir(rtl):last-child.flat, headerbar stackswitcher button:dir(ltr):first-child, headerbar stackswitcher button:dir(rtl):last-child {
@@ -308,7 +308,7 @@ button.card:checked.has-open-popup { background-image: image(alpha(@accent_bg_co
 
 button.card:drop(active) { color: @accent_bg_color; box-shadow: inset 0 0 0 1px @accent_bg_color; }
 
-popover.menu modelbutton, button.link, button.link:hover, button.link:active, button.link:checked, columnview > header > button, treeview.view > header > button, window.print treeview.dialog-action-box > header > button { background-color: #353535; border: 1px solid #232323; }
+popover.menu modelbutton, button.link, button.link:hover, button.link:active, button.link:checked, columnview > header > button, treeview.view > header > button, window.print treeview.dialog-action-box > header > button { background-color: @luka_header_button; border: 1px solid @luka_border_4; }
 
 popover.menu modelbutton { background-color: transparent; border: none; }
 
@@ -458,7 +458,7 @@ checkbutton.text-button { padding: 4px; }
 
 check { min-height: 9px; min-width: 9px; -gtk-icon-size: 9px; padding: 2px; }
 
-check:checked, check:indeterminate { background-color: @mint_accent; color: #2b303b; box-shadow: none; }
+check:checked, check:indeterminate { background-color: @mint_accent; color: @luka_check_radio; box-shadow: none; }
 
 check:checked:hover, check:indeterminate:hover { background-image: image(@mint_accent); }
 
@@ -544,11 +544,11 @@ columnview > header > button {
 
 columnview > header > button:first-child, treeview.view > header > button:first-child, window.print treeview.dialog-action-box > header > button:first-child { border-left-width: 0; }
 
-columnview > header > button > box, treeview.view > header > button > box, window.print treeview.dialog-action-box > header > button > box { color: #c1c1c1; font-weight: bold; font-size: 16pt; border-spacing: 6px; }
+columnview > header > button > box, treeview.view > header > button > box, window.print treeview.dialog-action-box > header > button > box { color: @luka_clumnview_button_fg; font-weight: bold; font-size: 16pt; border-spacing: 6px; }
 
-columnview > header > button:hover > box, treeview.view > header > button:hover > box, treeview.view > header > button:hover, window.print treeview.dialog-action-box > header > button:hover > box { color: #c1c1c1; box-shadow: none; background-color: #3d3d3d; }
+columnview > header > button:hover > box, treeview.view > header > button:hover > box, treeview.view > header > button:hover, window.print treeview.dialog-action-box > header > button:hover > box { color: @luka_clumnview_button_fg; box-shadow: none; background-color: @luka_header_button_hover; }
 
-columnview > header > button:active > box, treeview.view > header > button:active > box, window.print treeview.dialog-action-box > header > button:active > box { color: #dadada; }
+columnview > header > button:active > box, treeview.view > header > button:active > box, window.print treeview.dialog-action-box > header > button:active > box { color: @luka_text; }
 
 columnview > header > button sort-indicator, treeview.view > header > button sort-indicator, window.print treeview.dialog-action-box > header > button sort-indicator { min-height: 16px; min-width: 16px; }
 
@@ -595,9 +595,9 @@ window.aboutdialog image.large-icons { -gtk-icon-size: 128px; }
 /************* AdwDialog * */
 floating-sheet > dimming { background-color: alpha(@shade_color,2); }
 
-floating-sheet > sheet { border-radius: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; border: 2px solid @mint_accent; box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.05); outline: 1px solid rgba(255, 255, 255, 0.07); outline-offset: -1px; }
+floating-sheet > sheet { border-radius: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; border: 2px solid @luka_window_border; box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.05); outline: 1px solid rgba(255, 255, 255, 0.07); outline-offset: -1px; }
 
-floating-sheet > sheet:backdrop { border-color: #aaaaaa; }
+floating-sheet > sheet:backdrop { border-color: @luka_window_border_backdrop; }
 
 dialog.bottom-sheet.landscape sheet { margin-left: 30px; margin-right: 30px; }
 
@@ -692,7 +692,7 @@ treeview.view > dndtarget:drop(active).after, window.print treeview.dialog-actio
 
 treeview.view > dndtarget:drop(active).before, window.print treeview.dialog-action-box > dndtarget:drop(active).before { border-bottom-style: none; }
 
-treeview.view > header > button, window.print treeview.dialog-action-box > header > button { padding-left: 4px; padding-right: 4px; border-bottom: 1px solid #232323; }
+treeview.view > header > button, window.print treeview.dialog-action-box > header > button { padding-left: 4px; padding-right: 4px; border-bottom: 1px solid @luka_border_4; }
 
 treeview.view.progressbar, window.print treeview.progressbar.dialog-action-box { box-shadow: none; }
 
@@ -1475,9 +1475,9 @@ popover.menu check.right, popover.menu arrow.right { margin-left: 0px; margin-ri
 
 popover.menu modelbutton { min-height: 32px; min-width: 40px; padding: 0 12px; border-radius: 2px; }
 
-popover.menu modelbutton:hover, popover.menu modelbutton:selected { background-color: #4c4c4c; }
+popover.menu modelbutton:hover, popover.menu modelbutton:selected { background-color: @luka_modelbutton_hover; }
 
-popover.menu modelbutton:active { background-color: #4c4c4c; }
+popover.menu modelbutton:active { background-color: @luka_modelbutton_hover; }
 
 popover.menu modelbutton arrow { background: none; min-width: 16px; min-height: 16px; opacity: 0.3; }
 
@@ -1576,7 +1576,7 @@ window.messagedialog .response-area:not(.compact) > button:last-child:dir(ltr), 
 window.messagedialog .response-area.compact > button:first-child, dialog.alert.floating .response-area.compact > button:first-child { border-bottom-left-radius: 13px; border-bottom-right-radius: 13px; }
 
 /********** Frames * */
-frame, .frame { border: 1px solid #292929; }
+frame, .frame { border: 1px solid @luka_border_1; }
 
 frame { border-radius: 2px; }
 
@@ -1597,7 +1597,7 @@ separator.spacer.vertical { min-height: 12px; }
 .app-notification border { border: none; }
 
 /********** Toasts * */
-toast { margin: 0px; border: 1px solid #1c1c1c; border-radius: 2px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 10px; background-color: #353535; border-spacing: 12px; }
+toast { margin: 0px; border: 1px solid @luka_border_5; border-radius: 2px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 10px; background-color: @luka_toast_bg; border-spacing: 12px; color: @luka_text; }
 
 toast > widget > label.heading { font-weight: normal;  font-size: 100%; }
 
@@ -1607,13 +1607,13 @@ toast:dir(rtl) { padding-right: 12px; }
 
 toast > widget { margin: 0 6px; }
 
-toast > button, button.circular { border: 1px solid #292929; border-radius: 2px; transition: none; }
+toast > button, button.circular { border: 1px solid @luka_border_1; border-radius: 2px; transition: none; }
 
 toast > button.flat.image-button { border-color: transparent; background-color: inherit; }
 
-toast > button.flat.image-button:hover { border-color: #292929; background-color: @luka_button_hover; }
+toast > button.flat.image-button:hover { border-color: @luka_border_1; background-color: @luka_button_hover; }
 
-toast > button.flat.image-button:active, toast > button.flat.image-button:checked { border-color: #292929; background-color: @luka_button_active; }
+toast > button.flat.image-button:active, toast > button.flat.image-button:checked { border-color: @luka_border_1; background-color: @luka_button_active; }
 
 /************** GtkVideo * */
 video { background: black; }
@@ -1888,7 +1888,7 @@ progressbar > trough.empty > progress { all: unset; }
 
 .osd progressbar > trough > progress { background-color: rgba(255, 255, 255, 0.75); }
 
-scale > trough > fill, scale > trough, progressbar > trough { border-radius: 99px; background-color: #2b2b2b; }
+scale > trough > fill, scale > trough, progressbar > trough { border-radius: 99px; background-color: @luka_slider_bg; }
 
 scale > trough > highlight, progressbar > trough > progress { border-radius: 99px; background-color: @accent_bg_color; color: @accent_fg_color; }
 
@@ -1898,7 +1898,7 @@ scale > trough > slider { outline: 0 solid transparent; outline-offset: 6px; tra
 
 scale:focus:focus-visible > trough > slider { outline-color: transparent; outline-width: 2px; outline-offset: 0; }
 
-scale > trough > slider { background-color: #464646; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2); border-radius: 100%; min-width: 20px; min-height: 20px; margin: -8px; border: 1px solid #252525; }
+scale > trough > slider { background-color: @luka_slider_fg; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2); border-radius: 100%; min-width: 20px; min-height: 20px; margin: -8px; border: 1px solid @luka_border_6; }
 
 scale:focus:focus-visible > trough { outline: 1px dashed rgba(255, 255, 255, 0.17); outline-offset: 2px; }
 
@@ -1994,9 +1994,9 @@ scale.color.fine-tune > trough > slider { margin: -2px; }
 
 scrollbar > range > trough { margin: 0px; border-radius: 10px; }
 
-scrollbar > range > trough > slider { min-width: 8px; min-height: 8px; margin: -6px; border: 6px solid transparent; border-radius: 10px; background-clip: padding-box; transition: all 200ms linear; background-color: rgba(123, 123, 123, 0.948); }
+scrollbar > range > trough > slider { min-width: 8px; min-height: 8px; margin: -6px; border: 6px solid transparent; border-radius: 10px; background-clip: padding-box; transition: all 200ms linear; background-color: @luka_scrollbar; }
 
-scrollbar > range > trough > slider:hover { background-color: rgba(105, 105, 105, 0.961); }
+scrollbar > range > trough > slider:hover { background-color: @luka_scrollbar_hover; }
 
 scrollbar > range > trough > slider:active { background-color: @mint_accent; }
 
@@ -2018,7 +2018,7 @@ scrollbar.overlay-indicator:not(.hovering) > range > trough > slider { min-width
 
 .osd scrollbar.overlay-indicator:not(.hovering) > range > trough > slider { outline-color: alpha(rgba(0, 0, 0, 0.5),0.35); }
 
-scrollbar.overlay-indicator.hovering > range > trough { background-color: #3d3d3d; }
+scrollbar.overlay-indicator.hovering > range > trough { background-color: @luka_scrollbar_bg; }
 
 scrollbar.overlay-indicator.horizontal > range > trough > slider { min-width: 40px; }
 
@@ -2038,11 +2038,11 @@ scrollbar.vertical > range > trough > slider { min-height: 40px; }
 
 scrollbar > range.fine-tune > trough > slider, scrollbar > range.fine-tune > trough > slider:hover, scrollbar > range.fine-tune > trough > slider:active { background-color: alpha(@accent_color,0.6); }
 
-scrollbar.overlay-indicator.vertical:dir(ltr).hovering > range > trough { border-radius: 0; outline: 1px solid #2a2a2a; border: 3px solid transparent; transition: none; }
+scrollbar.overlay-indicator.vertical:dir(ltr).hovering > range > trough { border-radius: 0; outline: 1px solid @luka_scrollbar_border; border: 3px solid transparent; transition: none; }
 
-scrollbar.overlay-indicator.vertical:dir(rtl).hovering > range > trough { border-radius: 0; outline: 1px solid #2a2a2a; border: 3px solid transparent; transition: none; }
+scrollbar.overlay-indicator.vertical:dir(rtl).hovering > range > trough { border-radius: 0; outline: 1px solid @luka_scrollbar_border; border: 3px solid transparent; transition: none; }
 
-scrollbar.overlay-indicator.horizontal.hovering > range > trough { border-radius: 0; outline: 1px solid #2a2a2a; border: 3px solid transparent; transition: none; }
+scrollbar.overlay-indicator.horizontal.hovering > range > trough { border-radius: 0; outline: 1px solid @luka_scrollbar_border; border: 3px solid transparent; transition: none; }
 
 scrolledwindow > overshoot.top {
   background-image: radial-gradient(farthest-side at top, alpha(@mint_accent, 0.2), alpha(@mint_accent, 0));
@@ -2258,11 +2258,11 @@ spinbutton.vertical > button.image-button.up:not(.flat):not(.raised):not(.sugges
 
 spinbutton.vertical > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):first-child, spinbutton.vertical > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):first-child { border-bottom-width: 1px; border-radius: 3px 3px 0 0; border-bottom: none; }
 
-switch { border-radius: 14px; padding: 3px; background-color: #5b5b5b; }
+switch { border-radius: 14px; padding: 3px; background-color: @luka_switch_bg; }
 
-switch:hover { background-color: #5b5b5b; }
+switch:hover { background-color: @luka_switch_bg; }
 
-switch:active { background-color: #5b5b5b; }
+switch:active { background-color: @luka_switch_bg; }
 
 switch { outline: 0 solid transparent; outline-offset: 5px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
@@ -2270,11 +2270,11 @@ switch:focus:focus-visible { outline-color: transparent; outline-width: 1px; out
 
 switch:disabled { filter: opacity(0.5); }
 
-switch > slider { min-width: 20px; min-height: 20px; border-radius: 50%; background-color: #353535; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+switch > slider { min-width: 20px; min-height: 20px; border-radius: 50%; background-color: @luka_switch_fg; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
 
 switch > slider:disabled { box-shadow: 0 2px 4px transparent; }
 
-switch:hover > slider, switch:active > slider { background: #353535; }
+switch:hover > slider, switch:active > slider { background: @luka_switch_fg; }
 
 switch:checked { color: @accent_fg_color; background-color: @accent_bg_color; }
 
@@ -2282,7 +2282,7 @@ switch:checked:hover { background-image: image(alpha(currentColor,0.1)); }
 
 switch:checked:active { background-image: image(rgba(0, 0, 0, 0.2)); }
 
-switch:checked > slider { background-color: #353535; }
+switch:checked > slider { background-color: @luka_switch_fg; }
 
 .osd switch:focus:focus-visible { outline-color: transparent; }
 
@@ -2476,7 +2476,7 @@ window.devel dialog toolbarview > .top-bar { background-image: unset; background
 
 tooltip { padding: 6px 10px; border-radius: 2px; box-shadow: none; }
 
-tooltip.background { background-color: #404040; background-clip: padding-box; border: 2px solid @mint_accent; color: #dadada; }
+tooltip.background { background-color: @view_bg_color; background-clip: padding-box; border: 2px solid @luka_window_border; color: @luka_tooltip_text; }
 
 tooltip > box { border-spacing: 6px; }
 
@@ -2559,9 +2559,9 @@ indicatorbin.badge.needs-attention > indicator { background: @accent_bg_color; }
 
 indicatorbin.badge.needs-attention > indicator > label { color: @accent_fg_color; }
 
-window.csd { box-shadow: 0 1px 3px 3px transparent, 0 2px 8px 2px rgba(0, 0, 0, 0.13), 0 3px 20px 10px rgba(0, 0, 0, 0.09), 0 6px 32px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05); margin: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; outline: 4px solid @accent_color; outline-offset: 0px; }
+window.csd { box-shadow: 0 1px 3px 3px transparent, 0 2px 8px 2px rgba(0, 0, 0, 0.13), 0 3px 20px 10px rgba(0, 0, 0, 0.09), 0 6px 32px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05); margin: 0px; border-top-left-radius: 8px; border-top-right-radius: 8px; outline: 4px solid @luka_window_border; outline-offset: 0px; }
 
-window.csd:backdrop { box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.09), 0 2px 14px 5px rgba(0, 0, 0, 0.05), 0 4px 28px 12px rgba(0, 0, 0, 0.03), 0 6px 32px 16px transparent, 0 0 0 1px rgba(0, 0, 0, 0.02); transition: box-shadow 200ms ease-out; outline: 4px solid #aaaaaa; outline-offset: 0px; }
+window.csd:backdrop { box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.09), 0 2px 14px 5px rgba(0, 0, 0, 0.05), 0 4px 28px 12px rgba(0, 0, 0, 0.03), 0 6px 32px 16px transparent, 0 0 0 1px rgba(0, 0, 0, 0.02); transition: box-shadow 200ms ease-out; outline: 4px solid @luka_window_border_backdrop; outline-offset: 0px; }
 
 window.csd.dialog.message, window.csd.messagedialog { box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.05); }
 
@@ -2615,21 +2615,21 @@ windowcontrols button { min-width: 20px; min-height: 20px; padding: 5px 2px; }
 button.suggested-action, button.destructive-action { border: 1px solid transparent; }
 button.suggested-action:hover { background: @luka_suggested_hover; }
 button.suggested-action:active { background: @luka_suggested_active; }
-button.suggested-action:disabled { background: #3f3f3f; border-color: #323232; filter: none; }
+button.suggested-action:disabled { background: @luka_button_disabled; border-color: @luka_border_2; filter: none; color: @luka_button_disabled_text; }
 
 button.destructive-action:hover { background: @luka_destructive_hover; }
 button.destructive-action:active { background: @luka_destructive_active; }
-button.destructive-action:disabled { background: #3f3f3f; border-color: #323232; filter: none; }
+button.destructive-action:disabled { background: @luka_button_disabled; border-color: @luka_border_2; filter: none; }
 
 windowhandle box box button.text-button { border-radius: 2px; border: 1px solid transparent; }
 windowhandle box box button.text-button:not(:hover):not(.suggested-action) { background: inherit; transition: none; }
-windowhandle box box button.text-button:hover:not(.suggested-action) { border: 1px solid #292929; }
+windowhandle box box button.text-button:hover:not(.suggested-action) { border: 1px solid @luka_border_1; }
 
 windowhandle box menubutton.flat.popup button { background: inherit; }
 windowhandle box menubutton.flat.popup button:hover { background: @luka_button_hover; }
 windowhandle box menubutton.flat.popup button:checked, windowhandle box menubutton.flat.popup button:active { background: @luka_button_active; }
 
-popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill), monthviewrow popover button:not(.suggested-action):not(.destructive-action):not(.pill) {background-color: @luka_button; border: 1px solid #292929; }
+popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill), monthviewrow popover button:not(.suggested-action):not(.destructive-action):not(.pill) {background-color: @luka_button; border: 1px solid @luka_border_1; }
 
 popover contents > stack > grid > button.text-button:not(.suggested-action):not(.destructive-action):not(.pill):hover { background-color: @luka_button_hover; }
 
@@ -2637,17 +2637,17 @@ popover contents > stack > grid > button.text-button:not(.suggested-action):not(
 
 toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize), window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize), stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize), widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize), revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize) { background: inherit; border: 1px solid transparent; transition: 200ms; }
 
-toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover { background: @luka_button_hover; border: 1px solid #1f1f1f; }
+toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):hover, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):hover { background: @luka_button_hover; border: 1px solid @luka_border_7; }
 
-toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):active, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):active, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):active, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):active, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):active { background: @luka_button_active; border: 1px solid #1f1f1f; }
+toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):active, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):active, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):active, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):active, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):active { background: @luka_button_active; border: 1px solid @luka_border_7; }
 
-toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):checked, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):checked { background: @luka_button_active; border: 1px solid #1f1f1f; }
+toolbarview > revealer > windowhandle box > headerbar > windowhandle > box > widget button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):checked, window headerbar > windowhandle > box stack button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, stack > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, widget > box > box > button:not(.flat):not(.close):not(.maximize):not(.minimize):checked, revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize):checked { background: @luka_button_active; border: 1px solid @luka_border_7; }
 
-revealer > actionbar > revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize) { background: @luka_button; border-color: #292929; }
+revealer > actionbar > revealer > box > box > button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):not(.close):not(.maximize):not(.minimize) { background: @luka_button; border-color: @luka_border_1; }
 
 window.messagedialog separator { color: transparent; }
 
-widget.response-area > button.flat { border: 1px solid #292929; transition: none; }
+widget.response-area > button.flat { border: 1px solid @luka_border_1; transition: none; }
 
 widget.response-area > button.flat.destructive { background: @luka_destructive; color: white; border-color: @luka_destructive; }
 
@@ -2671,15 +2671,15 @@ window.csd > dialog-host > widget > widget > toastoverlay > navigation-split-vie
 revealer > windowhandle > box > box > datechooser > grid > grid > grid > button.circular.day.text-button:not(.today ):not(.flat):not(suggested-action):not(destructive-action):selected { background: #ff0000; font-weight: bold; color: @mint_accent; }
 
 popover button:not(.suggested-action):not(.destructive-action):not(.pill) { border: 1px solid transparent; background-color: inherit; transition: none; }
-popover button:not(.suggested-action):not(.destructive-action):not(.pill):hover { border: 1px solid #292929; background-color: @luka_button_hover; }
+popover button:not(.suggested-action):not(.destructive-action):not(.pill):hover { border: 1px solid @luka_border_1; background-color: @luka_button_hover; }
 
-popover button:not(.suggested-action):not(.destructive-action):not(.pill):active, popover button:not(.suggested-action):not(.destructive-action):not(.pill):checked { border: 1px solid #292929; background-color: @luka_button_active; }
+popover button:not(.suggested-action):not(.destructive-action):not(.pill):active, popover button:not(.suggested-action):not(.destructive-action):not(.pill):checked { border: 1px solid @luka_border_1; background-color: @luka_button_active; }
 
 popover button.pill { border: none; background: inherit; }
 
 navigator > button.flat, box > actionbar > revealer > box > box button { border: 1px solid transparent; border-radius: 2px; background-color: inherit; transition: none; }
 
-navigator > button.flat:hover, box > actionbar > revealer > box > box button:hover { border-radius: 2px; background-color: @luka_button_hover; border-color: #292929; }
+navigator > button.flat:hover, box > actionbar > revealer > box > box button:hover { border-radius: 2px; background-color: @luka_button_hover; border-color: @luka_border_1; }
 
 navigator > button.flat:active, navigator > button.flat:checked, box > actionbar > revealer > box > box button:active, box > actionbar > revealer > box > box button:checked { border-radius: 2px; background-color: @luka_button_active; }
 
@@ -2695,25 +2695,25 @@ datechooser > grid > grid > label.weeknum { background: transparent; border-radi
 
 list.navigation-sidebar > row.activatable { border-radius: 2px; border: 1px solid transparent; }
 
-list.navigation-sidebar > row.activatable:hover { background: @luka_button_hover; border-color: #292929; }
+list.navigation-sidebar > row.activatable:hover { background: @luka_button_hover; border-color: @luka_border_1; }
 
-list.navigation-sidebar > row.activatable:active, list.navigation-sidebar > row.activatable:selected, list.navigation-sidebar > row.activatable:selected:hover { background: @luka_button_active; border-color: #292929; }
+list.navigation-sidebar > row.activatable:active, list.navigation-sidebar > row.activatable:selected, list.navigation-sidebar > row.activatable:selected:hover { background: @luka_button_active; border-color: @luka_border_1; }
 
 stackswitcher button, header.activatable button { transition: none; }
 
-spinbutton button.up:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { background: @luka_button; border: 1px solid #292929; transition: 200ms; }
+spinbutton button.up:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { background: @luka_button; border: 1px solid @luka_border_1; transition: 200ms; }
 
 spinbutton button.up:hover:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:hover:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { background: @luka_button_hover; }
 
 spinbutton button.up:active:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:active:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { background: @luka_button_active; }
 
-spinbutton button.up:disabled:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:disabled:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { border-color: #333333; filter: none; color: #929292; }
+spinbutton button.up:disabled:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:disabled:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { border-color: @luka_border_3; filter: none; color: #929292; }
 
 spinbutton button.up:only-child, spinbutton button.down:only-child { border-radius: 3px; }
 
 spinbutton button.up:not(:only-child):not(:first-child):not(:last-child):not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:not(:only-child):not(:first-child):not(:last-child):not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { border-radius: 0px; }
 
-row > box > spinbutton > text { background: @view_bg_color; border: 1px solid #292929; }
+row > box > spinbutton > text { background: @view_bg_color; border: 1px solid @luka_border_1; }
 
 spinbutton button.up:dir(ltr):last-child:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:dir(ltr):last-child:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.up:dir(rtl):first-child:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque), spinbutton button.down:dir(rtl):first-child:not(.flat):not(.raised):not(.suggested-action).image-button:not(.spin):not(.destructive-action):not(.opaque) { border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-left: none; }
 
@@ -2725,43 +2725,49 @@ row > box > spinbutton > text:dir(ltr):last-child, row > box > spinbutton > text
 
 spinbutton:focus-within { outline-color: transparent; }
 
-dropdown > button.toggle {border: 1px solid #292929; }
+dropdown > button.toggle {border: 1px solid @luka_border_1; }
 
-row > box > entry { border: 1px solid #292929; background: @view_bg_color; }
+row > box > entry { border: 1px solid @luka_border_1; background: @view_bg_color; }
 
 row > box > entry:focus-within { outline-color: @mint_accent; outline-width: 1px; outline-offset: -2px; outline-style: solid; }
 
-scale > trough > slider {background: #464646; border: 1px solid #252525; }
+scale > trough > slider {background: @luka_slider_fg; border: 1px solid @luka_border_6; }
 
 viewswitcher > button:dir(ltr):first-child, viewswitcher > button:dir(rtl):last-child, viewswitcher > button:not(:first-child):not(:last-child) { border-right: none; }
 
 button.image-button.toggle { border: 1px solid transparent; transition: 200ms; }
-button.image-button.toggle:hover, button.image-button.toggle:active, button.image-button.toggle:checked { border-color: #292929; }
+button.image-button.toggle:hover, button.image-button.toggle:active, button.image-button.toggle:checked { border-color: @luka_border_1; }
 
 box > box > box > box > button {border: 1px solid transparent; transition: 200ms; }
 
-box > box > box > box > button:hover, box > box > box > box > button:active, box > box > box > box > button:checked {border-color: #292929; }
+box > box > box > box > button:hover, box > box > box > box > button:active, box > box > box > box > button:checked {border-color: @luka_border_1; }
 
-radio { color: #2b303b; border: 1px solid #2b303b; -gtk-icon-size: 7px; min-height: 7px; min-width: 7px; padding: 3px; background-color: #2d2d2d; }
+radio { color: @luka_check_radio; border: 1px solid @luka_check_radio_border; -gtk-icon-size: 7px; min-height: 7px; min-width: 7px; padding: 3px; background-color: @luka_check_radio_bg; }
 
 radio:checked { background-color: @mint_accent; border-color: transparent; -gtk-icon-size: 7px; min-height: 1px; min-width: 1px; padding: 3px; }
 
 radio, menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check { margin: 0px; margin-right: 10px; }
 
-menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check {border: 1px solid #2b303b; background: #2d2d2d; border-radius: 3px; -gtk-icon-size: 11px; min-width: 11px; min-height: 11px; padding: 1px; }
+menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check {border: 1px solid @luka_check_radio_border; background: @luka_check_radio_bg; border-radius: 3px; -gtk-icon-size: 11px; min-width: 11px; min-height: 11px; padding: 1px; }
 
-menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:selected:hover {background-color: #2d2d2d; }
+menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:selected:hover {background-color: @luka_check_radio_bg; }
 
-menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:checked:hover { background-color: @mint_accent; color: #2b303b; }
+menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:checked:hover { background-color: @mint_accent; color: @luka_check_radio; }
 
-menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:checked {background: @mint_accent; color: #2b303b; border-color: @mint_accent; }
+menubutton > popover > contents > scrolledwindow > viewport > stack > box > box > box > box > modelbutton.flat > box > check:checked {background: @mint_accent; color: @luka_check_radio; border-color: @mint_accent; }
 
-preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.up:not(.flat):not(.suggested-action):not(.destructive-action), preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.down:not(.flat):not(.suggested-action):not(.destructive-action) {border: 1px solid #292929; border-radius: 0px; margin-left: 0px; margin-right: 0px; border-spacing: 0px; }
+preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.up:not(.flat):not(.suggested-action):not(.destructive-action), preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.down:not(.flat):not(.suggested-action):not(.destructive-action) {border: 1px solid @luka_border_1; border-radius: 0px; margin-left: 0px; margin-right: 0px; border-spacing: 0px; }
 
 preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.up:not(.flat):not(.suggested-action):not(.destructive-action):dir(ltr):last-child.image-button.up, preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.up:not(.flat):not(.suggested-action):not(.destructive-action):dir(rtl):first-child.image-button.up, preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.down:not(.flat):not(.suggested-action):not(.destructive-action):dir(ltr):last-child.image-button.up, preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal > button.image-button.down:not(.flat):not(.suggested-action):not(.destructive-action):dir(rtl):first-child.image-button.up { border-left: none; }
 
 preferencesgroup > box > box > list > row.activatable.spin > box.header.horizontal > box.horizontal.suffixes > spinbutton.horizontal {margin-left: 0px; margin-right: 0px; border-spacing: 0px;}
 
-check:not(:selected):not(:checked) { background-color: #2d2d2d; border: 1px solid #2b303b; border-radius: 3px; -gtk-icon-size: 9px; min-width: 9px; min-height: 9px; padding: 2px; }
+check:not(:selected):not(:checked) { background-color: @luka_check_radio_bg; border: 1px solid @luka_check_radio_border; border-radius: 3px; -gtk-icon-size: 9px; min-width: 9px; min-height: 9px; padding: 2px; }
 
 check:selected:focus:not(:indeterminate), check:selected:not(:focus):not(:indeterminate), check:selected:hover:not(:indeterminate) { background: white; color: @mint_accent; border-radius: 3px; }
+
+
+
+columnview > header > button label {color: @luka_text; }
+columnview > header > button:active label {color: @luka_header_button_active_text; }
+
