@@ -12,6 +12,11 @@ $fg_color: if($variant =='light', transparentize(black, 0.13), transparentize(wh
 $dim_color: if($variant =='light', lighten($text_color, 20%), darken($text_color, 20%));
 
 
+$bg_color2: if($variant == 'light', darken($bg_color, 9%), lighten($bg_color, 6%));
+
+$trough_bg: if($variant == 'light', #c7c7c7, #181818);
+
+
 $selected_fg_color: #ffffff;
 
 $borders_color: if($variant =='light', darken($bg_color, 20%), darken($bg_color, 6%));
