@@ -1845,9 +1845,6 @@ StScrollBar {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0px; }
 
-/* luka backports */
-/* $dialog_radius: 18px; */
-/* $osd_radius: 20px; */
 .prompt-dialog-error-label, .prompt-dialog-info-label, .prompt-dialog-null-label, .run-dialog-description, .message-dialog-content .message-dialog-caption, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description {
   font-weight: 400;
   font-size: 0.818em; }
@@ -2150,7 +2147,6 @@ StScrollBar {
 /*
 On-Screen Keyboard (>= Cinnamon 6.6)
 */
-/* $default_key_bg_color: $bg_color2; */
 #virtual-keyboard {
   background-color: #353535;
   box-shadow: inset 0 1px 0 0 #212221; }

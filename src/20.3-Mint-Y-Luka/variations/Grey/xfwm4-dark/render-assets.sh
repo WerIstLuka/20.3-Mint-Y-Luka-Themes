@@ -18,11 +18,10 @@ mkdir -p $ASSETS_DIR
 for i in `cat $INDEX`
 do
 if ! [ -f $ASSETS_DIR/$i.png ]; then
-    echo Rendering $ASSETS_DIR/$i.png
 
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE &>/dev/null
     $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
