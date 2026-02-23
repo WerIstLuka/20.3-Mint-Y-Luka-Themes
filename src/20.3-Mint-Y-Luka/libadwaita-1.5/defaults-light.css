@@ -3195,6 +3195,31 @@ menubutton arrow {
   menubutton arrow.right {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
 
+clamp > box {
+  margin: 24px 0;
+  border-spacing: 24px; }
+
+list.boxed-list,
+textview {
+  border: 1px solid #c7c7c7;
+  border-radius: 0px;
+  background: #ffffff; }
+
+list.boxed-list > row.entry,
+list.boxed-list > row:not(.expander) {
+  padding: 5px 8px;
+  min-height: 30px; }
+
+list.boxed-list > row.expander > box row > box > box {
+  padding: 5px;
+  min-height: 30px; }
+
+list.boxed-list > row image {
+  padding-left: 10px; }
+
+preferencesgroup label.heading {
+  font-size: 100%; }
+
 @define-color theme_fg_color rgba(0, 0, 0, 0.87);
 @define-color theme_text_color #303030;
 @define-color theme_bg_color #f5f5f5;
