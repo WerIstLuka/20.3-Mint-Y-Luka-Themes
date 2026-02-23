@@ -56,6 +56,20 @@ for color in y_hex_colors1.keys():
             for key in ["IconTheme"]:
                 change_value(key, "%s-%s" % (original_name, color), theme_index)
 
+            # Regenerate libadwaita-1.5 sass
+            os.system("cp -R src/20.3-Mint-Y-Luka/libadwaita-1.5/sass %s/libadwaita-1.5/" % theme)
+            y_colorize_directory("%s/libadwaita-1.5/sass" % theme, color)
+            os.chdir("%s/libadwaita-1.5" % theme)
+
+            # os.system("touch defaults-light.css defaults-dark.css")
+            if (variant == "-Dark"):
+                os.system("sassc ./sass/gtk-dark.scss base.css")
+            else:
+                os.system("sassc ./sass/gtk.scss base.css")
+
+            os.system("rm -rf sass .sass-cache")
+            os.chdir(curdir)
+
             # Regenerate GTK4 sass
             os.system("cp -R src/20.3-Mint-Y-Luka/gtk-4.0/sass %s/gtk-4.0/" % theme)
             y_colorize_directory("%s/gtk-4.0/sass" % theme, color)
@@ -108,8 +122,6 @@ for color in y_hex_colors1.keys():
             files.append(os.path.join(theme, "gtk-2.0", "panel.rc"))
             files.append(os.path.join(theme, "gtk-2.0", "apps.rc"))
             files.append(os.path.join(theme, "gtk-2.0", "menubar-toolbar.rc"))
-            files.append(os.path.join(theme, "libadwaita-1.5", "defaults-light.css"))
-            files.append(os.path.join(theme, "libadwaita-1.5", "defaults-dark.css"))
             files.append(os.path.join(theme, "libadwaita-1.7", "defaults-light.css"))
             files.append(os.path.join(theme, "libadwaita-1.7", "defaults-dark.css"))
             for file in files:
@@ -135,6 +147,7 @@ for color in y_hex_colors1.keys():
                     y_colorize_directory(directory, color)
 
             # Assets
+            os.system("rm -rf %s/libadwaita-1.5/assets" % theme)
             os.system("rm -rf %s/gtk-4.0/assets" % theme)
             os.system("rm -rf %s/gtk-3.0/assets" % theme)
             os.system("rm -rf %s/gtk-2.0/assets" % theme)
@@ -146,6 +159,7 @@ for color in y_hex_colors1.keys():
                 os.system("cp -R %s/xfwm4/*.png %s/xfwm4/" % (path, theme))
             os.system("cp -R %s/gtk-3.0/assets %s/gtk-3.0/assets" % (path, theme))
             os.system("cp -R %s/gtk-4.0/assets %s/gtk-4.0/assets" % (path, theme))
+            os.system("cp -R %s/libadwaita-1.5/assets %s/libadwaita-1.5/assets" % (path, theme))
 
 
 # Files

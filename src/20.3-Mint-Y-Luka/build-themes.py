@@ -9,6 +9,15 @@ DEST = '../../usr/share/themes'
 
 curdir = os.getcwd()
 
+print("Updating LibAdwaita-1.5 assets")
+os.chdir("libadwaita-1.5/")
+os.system("pysassc ./sass/gtk.scss defaults-light.css")
+os.system("pysassc ./sass/gtk-dark.scss defaults-dark.css")
+os.system("./render-assets.sh")
+print("LibAdwaita-1.5 assets updated")
+
+os.chdir(curdir)
+
 print("Updating Gtk4 assets")
 os.chdir("gtk-4.0/")
 os.system("pysassc ./sass/gtk.scss gtk.css")
@@ -82,6 +91,14 @@ if __name__ == '__main__':
             os.system("cp -R gtk-4.0/assets %s" % version_folder)
             os.system("cp gtk-4.0/gtk.css %s" % version_folder)
             os.system("cp gtk-4.0/gtk-dark.css %s" % version_folder)
+            # LibAdwaita-1.5
+            version_folder = os.path.join(dest_folder, "libadwaita-1.5")
+            os.system("mkdir -p %s" % version_folder)
+            os.system("cp -R libadwaita-1.5/assets %s" % version_folder)
+            os.system("cp libadwaita-1.5/defaults-light.css %s/base.css" % version_folder)
+            os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
+            # LibAdwaita-1.7
+            os.system("cp -R libadwaita-1.7 %s/" % dest_folder)
             # Metacity
             os.system("cp -R metacity-1 %s" % dest_folder)
             # Cinnamon
@@ -100,8 +117,6 @@ if __name__ == '__main__':
             version_folder = os.path.join(dest_folder, "openbox-3")
             os.system ("mkdir -p %s" % version_folder)
             os.system("cp openbox-3/themerc %s/themerc" % (version_folder))
-            # LibAdwaita
-            os.system("cp -R libadwaita-* %s/" % dest_folder)
         elif variation == "20.3-Mint-Y-Luka-Dark":
             print("    Building 20.3-Mint-Y-Luka-Dark")
             os.system("cp index.theme-dark %s" % os.path.join(dest_folder, "index.theme"))
@@ -127,6 +142,14 @@ if __name__ == '__main__':
             os.system("cp -R gtk-4.0/assets %s" % version_folder)
             os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk.css"))
             os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk-dark.css"))
+            # LibAdwaita-1.5
+            version_folder = os.path.join(dest_folder, "libadwaita-1.5")
+            os.system("mkdir -p %s" % version_folder)
+            os.system("cp -R libadwaita-1.5/assets %s" % version_folder)
+            os.system("cp libadwaita-1.5/defaults-dark.css %s" % os.path.join(version_folder, "base.css"))
+            os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
+            # LibAdwaita-1.7
+            os.system("cp -R libadwaita-1.7 %s/" % dest_folder)
             # Cinnamon
             version_folder = os.path.join(dest_folder, "cinnamon")
             os.system("mkdir -p %s" % version_folder)
@@ -143,5 +166,3 @@ if __name__ == '__main__':
             version_folder = os.path.join(dest_folder, "openbox-3")
             os.system ("mkdir -p %s" % version_folder)
             os.system("cp openbox-3/themerc-dark %s/themerc" % (version_folder))
-            # LibAdwaita
-            os.system("cp -R libadwaita-* %s/" % dest_folder)
