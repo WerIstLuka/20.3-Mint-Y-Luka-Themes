@@ -3197,7 +3197,7 @@ clamp > box {
   border-spacing: 24px; }
 
 list.boxed-list,
-textview {
+widget.notes-section {
   border: 1px solid #292929;
   border-radius: 0px;
   background: #404040; }
@@ -3216,6 +3216,36 @@ list.boxed-list > row > box box > image {
 
 preferencesgroup label.heading {
   font-size: 100%; }
+
+toast {
+  padding: 10px;
+  background: #353535;
+  border-radius: 2px 2px 0 0;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  border-color: #1c1c1c;
+  border-spacing: 10px; }
+  toast label.heading {
+    font-size: 100%;
+    font-weight: normal; }
+
+monthpopover {
+  background: #383838;
+  border: 1px solid #292929;
+  margin: 4px; }
+
+viewport > box list {
+  border-style: solid;
+  border-width: 1px; }
+
+toast button.circular, monthpopover button.circular, datechooser navigator button.circular.image-button image, datechooser navigator windowcontrols button.circular image, windowcontrols datechooser navigator button.circular image, datechooser navigator button.circular:not(.image-button) {
+  border-radius: 3px;
+  padding: 5px 8px;
+  min-height: 22px;
+  min-width: 20px; }
+
+datechooser grid > button.circular, datechooser navigator button.circular {
+  border-radius: 3px; }
 
 @define-color theme_fg_color rgba(255, 255, 255, 0.87);
 @define-color theme_text_color #DADADA;

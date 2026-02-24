@@ -8,7 +8,7 @@ clamp > box {
 }
 
 list.boxed-list,
-textview {
+widget.notes-section {
   border: 1px solid $borders_color;
   border-radius: 0px;
   background: $base_color;
@@ -31,3 +31,46 @@ list.boxed-list {
 
 preferencesgroup label.heading {font-size: 100%;}
 
+toast {
+  padding: 10px;
+  background: $osd_bg_color;
+  border-radius: 2px 2px 0 0;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  border-color: darken($osd_bg_color, 10%);
+  border-spacing: 10px;
+  label.heading {
+    font-size: 100%;
+    font-weight: normal;
+  }
+}
+
+monthpopover {
+  background: $bg_color;
+  border: 1px solid $borders_color;
+  margin: 4px;
+}
+
+viewport > box list {
+  border-style: solid; border-width: 1px;
+}
+
+//
+// uncircularize some circular buttons
+//
+
+button.circular {
+  toast &,
+  monthpopover &,
+  datechooser navigator &.image-button image,
+  datechooser navigator &:not(.image-button) {
+    border-radius: 3px;
+    padding: 5px 8px;
+    min-height: 22px;
+    min-width: 20px;
+  }
+  datechooser grid > &,
+  datechooser navigator & {
+    border-radius: 3px;
+  }
+}
