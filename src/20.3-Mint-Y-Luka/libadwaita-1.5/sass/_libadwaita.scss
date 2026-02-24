@@ -1,0 +1,33 @@
+//
+// LibAdwaita-1.5 specific stuff
+//
+
+clamp > box {
+  margin: 24px 0;
+  border-spacing: 24px;
+}
+
+list.boxed-list,
+textview {
+  border: 1px solid $borders_color;
+  border-radius: 0px;
+  background: $base_color;
+}
+
+list.boxed-list {
+  > row.entry,
+  > row:not(.expander) {
+    padding: 5px 8px;
+    min-height: 30px;
+  }
+  > row.expander > box row > box > box {
+    padding: 5px;
+    min-height: 30px;
+  }
+  > row > box box > image {
+    padding-left: 10px;
+  }
+}
+
+preferencesgroup label.heading {font-size: 100%;}
+

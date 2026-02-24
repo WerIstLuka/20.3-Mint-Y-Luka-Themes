@@ -3214,7 +3214,7 @@ list.boxed-list > row.expander > box row > box > box {
   padding: 5px;
   min-height: 30px; }
 
-list.boxed-list > row image {
+list.boxed-list > row > box box > image {
   padding-left: 10px; }
 
 preferencesgroup label.heading {
