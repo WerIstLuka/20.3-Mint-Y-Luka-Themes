@@ -1,7 +1,7 @@
 //apps rely on some named colors to be exported
 
-// Sass thinks we're using the colors in the variables as strings and may shoot
-// warning, it's innocuous and can be defeated by using "" + $var
+// Sass thinks were using the colors in the variables as strings and may shoot
+// warning, its innocuous and can be defeated by using "" + $var
 @define-color theme_fg_color #{"" + $fg_color};
 @define-color theme_text_color #{"" + $text_color};
 @define-color theme_bg_color #{"" + $bg_color};
@@ -63,3 +63,9 @@ $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 @define-color wm_icon_hover_bg #{"" + $wm_icon_hover_bg};
 @define-color wm_icon_active_bg #{"" + $wm_icon_active_bg};
 
+
+/* LibAdwaita-1.5 */
+@define-color window_fg_color #dadada;
+@define-color light_5 #000000; /* calendar month separator */
+@define-color accent_bg_color #{"" + $selected_bg_color};
+@define-color accent_color #{"" + $selected_bg_color};

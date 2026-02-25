@@ -3229,7 +3229,7 @@ toast {
     font-size: 100%;
     font-weight: normal; }
 
-monthpopover {
+monthpopover > box {
   background: #383838;
   border: 1px solid #292929;
   margin: 4px; }
@@ -3238,7 +3238,7 @@ viewport > box list {
   border-style: solid;
   border-width: 1px; }
 
-toast button.circular, monthpopover button.circular, datechooser navigator button.circular.image-button image, datechooser navigator windowcontrols button.circular image, windowcontrols datechooser navigator button.circular image, datechooser navigator button.circular:not(.image-button) {
+toast button.circular, monthpopover button.circular, datechooser navigator button.circular.image-button image, datechooser navigator windowcontrols button.circular image, windowcontrols datechooser navigator button.circular image, datechooser navigator button.circular:not(.image-button), calendar-view.week-header button.circular {
   border-radius: 3px;
   padding: 5px 8px;
   min-height: 22px;
@@ -3291,3 +3291,9 @@ datechooser grid > button.circular, datechooser navigator button.circular {
 @define-color wm_icon_unfocused_bg #555555;
 @define-color wm_icon_hover_bg #C4C7CC;
 @define-color wm_icon_active_bg #ffffff;
+/* LibAdwaita-1.5 */
+@define-color window_fg_color #dadada;
+@define-color light_5 #000000;
+/* calendar month separator */
+@define-color accent_bg_color #8fa876;
+@define-color accent_color #8fa876;
