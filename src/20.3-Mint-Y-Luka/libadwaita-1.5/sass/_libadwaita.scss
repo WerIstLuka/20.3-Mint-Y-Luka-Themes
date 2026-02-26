@@ -24,16 +24,12 @@ viewswitcher > button image {
 
 sheet {
   border-radius: 8px 8px 0 0;
-  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
-  $_wm_border_backdrop: if($variant=='light', transparentize(black, 0.82), transparentize(black, 0.25));
-  box-shadow: 0 3px 9px 1px transparentize(black, 0.5),
-              0 0 0 1px $_wm_border; //doing borders with box-shadow
+
+  box-shadow: 0 0 0 4px $selected_bg_color; //doing borders with box-shadow
   &:backdrop {
         // the transparent shadow here is to enforce that the shadow extents dont
         // change when we go to backdrop, to prevent jumping windows
-        box-shadow: 0 3px 9px 1px transparent,
-                    0 2px 6px 2px transparentize(black, 0.8),
-                    0 0 0 1px $_wm_border_backdrop;
+        box-shadow: 0 0 0 4px $selected_bg_color_backdrop;
       }
 }
 

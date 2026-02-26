@@ -1735,8 +1735,8 @@ popover.background {
   > contents {
     background-color: $_popover_bg;
     background-clip: border-box;
-    border: 1px solid darken($borders_color, 5%);
-    box-shadow: 0 2px 6px 1px if($variant!='dark', transparentize(black, 0.93), transparentize(black, 0.65));
+    border: 2px solid $selected_bg_color;
+    box-shadow: none;
   }
 
   > contents {
@@ -3323,8 +3323,8 @@ tooltip {
     label { padding: 4px; }
   }
 
-  border-radius: 2px;
-  border: 1px solid $tooltip_border_color;
+  border-radius: 0px;
+  border: 2px solid $tooltip_border_color;
 }
 
 //
@@ -3464,12 +3464,8 @@ window {
   // border-radius: 8px 8px 0 0;
   border-width: 0px;
 
-  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
-  $_wm_border_backdrop: if($variant=='light', transparentize(black, 0.82), transparentize(black, 0.25));
-
   &.csd {
-    box-shadow: 0 3px 9px 1px transparentize(black, 0.5),
-                0 0 0 1px $_wm_border; //doing borders with box-shadow
+    box-shadow: 0 0 0 4px $selected_bg_color; //doing borders with box-shadow
 
     // this is used for the resize cursor area
     margin: 0;
@@ -3478,15 +3474,12 @@ window {
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents dont
       // change when we go to backdrop, to prevent jumping windows
-      box-shadow: 0 3px 9px 1px transparent,
-                  0 2px 6px 2px transparentize(black, 0.8),
-                  0 0 0 1px $_wm_border_backdrop;
+      box-shadow: 0 0 0 4px $selected_bg_color_backdrop;
     }
 
     &.popup {
-      border-radius: 8px;
-      box-shadow: 0 3px 9px 1px transparentize(black, 0.5),
-                  0 0 0 1px $_wm_border;
+      border-radius: 0px;
+      box-shadow: 0 0 0 2px $selected_bg_color;
     }
 
     &.dialog.message {
@@ -3506,21 +3499,19 @@ window {
   &.tiled-bottom,
   &.tiled-left {
     border-radius: 0;
-    box-shadow: 0 0 0 1px $_wm_border,
-                0 0 0 20px transparent; //transparent control workaround -- #3670
+    box-shadow: none;
 
-    &:backdrop { box-shadow: 0 0 0 1px $_wm_border_backdrop,
-                             0 0 0 20px transparent; // #3670
+    &:backdrop { box-shadow: none;
     }
   }
 
   &.popup {
-    box-shadow: none;
+    box-shadow: 0 0 0 2px $selected_bg_color;
     border-radius: 0;
   }
   // server-side decorations as used by mutter
-  &.ssd { box-shadow: 0 0 0 1px $_wm_border; }
-  &.ssd:backdrop { box-shadow: 0 0 0 1px $_wm_border_backdrop; }
+  &.ssd { box-shadow: 0 0 0 4px $selected_bg_color; }
+  &.ssd:backdrop { box-shadow: 0 0 0 4px $selected_bg_color_backdrop; }
   &.ssd.maximized,
   &.ssd.maximized:backdrop { box-shadow: none; }
 
@@ -3530,12 +3521,12 @@ window {
     background-color: $header_bg;
     box-shadow: none;
   }
+  tooltip.csd {
+    border-radius: 0px;
+    box-shadow: 0 0 0 2px $selected_bg_color;
+  }
 }
 
-tooltip.csd {
-    border-radius: 2px;
-    box-shadow: 0 1px 3px 1px if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
-  }
 
 // catch all extend
 %selected_items {

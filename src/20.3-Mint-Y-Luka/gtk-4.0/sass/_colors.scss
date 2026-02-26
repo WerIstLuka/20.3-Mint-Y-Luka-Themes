@@ -13,6 +13,7 @@ $bg_color: if($variant == 'light', $light_tint, $dark_tint);
 $fg_color: if($variant =='light', transparentize(black, 0.13), transparentize(white, 0.13));
 
 $selected_bg_color: if($variant == 'light', #92b372, #8fa876);
+$selected_bg_color_backdrop: if($variant=='light', #666666, #aaaaaa);
 $selected_fg_color: #ffffff;
 $selected_borders_color: darken($selected_bg_color, 15%);
 $borders_color: if($variant =='light', darken($bg_color, 18%), darken($bg_color,6%));
