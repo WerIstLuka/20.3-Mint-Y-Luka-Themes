@@ -2,12 +2,6 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: rgba(56, 56, 56, 0.999); }
 
-selection {
-  background-color: #8fa876;
-  color: white; }
-  selection:focus-within {
-    background-color: #8fa876; }
-
 dnd {
   color: rgba(255, 255, 255, 0.87); }
 
@@ -744,12 +738,6 @@ button.circular {
   menubutton.circular popover.background.touch-selection button label, popover.background.touch-selection menubutton.circular button label, menubutton.circular popover.background.magnifier button label, popover.background.magnifier menubutton.circular button label, popover.background.touch-selection button.circular label, popover.background.magnifier button.circular label, menubutton.circular button label,
   button.circular label {
     padding: 0; }
-
-viewswitcher > button image {
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 3px;
-  padding-bottom: 3px; }
 
 .linked:not(.vertical) > dropdown > box > button.combo:dir(ltr), .linked:not(.vertical) > dropdown > box > button.combo:dir(rtl), .linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), headerbar .linked:not(.vertical) entry + button:last-child, headerbar stackswitcher.linked:not(.vertical):not(.path-bar) > button,
 headerbar viewswitcher:not(.vertical):not(.path-bar) > button,
@@ -3022,12 +3010,6 @@ colorchooser .popover.osd {
   border-color: #292929;
   background-color: #525252; }
 
-sheet {
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.75); }
-  sheet:backdrop {
-    box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.75); }
-
 window {
   border-width: 0px; }
   window.csd {
@@ -3195,6 +3177,24 @@ menubutton arrow {
   menubutton arrow.right {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
 
+selection {
+  background-color: #8fa876;
+  color: white; }
+  selection:focus-within {
+    background-color: #8fa876; }
+
+viewswitcher > button image {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px; }
+
+sheet {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.75); }
+  sheet:backdrop {
+    box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.75); }
+
 clamp > box {
   margin: 24px 0;
   border-spacing: 24px; }
@@ -3233,7 +3233,6 @@ toast {
     font-weight: normal; }
 
 monthpopover > box {
-  background: #383838;
   border: 1px solid #292929;
   margin: 4px; }
 
@@ -3300,3 +3299,4 @@ datechooser grid > button.circular, datechooser navigator button.circular {
 /* calendar month separator */
 @define-color accent_bg_color #8fa876;
 @define-color accent_color #8fa876;
+@define-color popover_bg_color #383838;

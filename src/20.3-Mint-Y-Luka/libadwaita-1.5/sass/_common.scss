@@ -13,14 +13,6 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
   background-color: transparentize($bg_color, 0.001);
 }
 
-selection {
-  background-color: $selected_bg_color;
-  color: white;
-  &:focus-within {
-    background-color: $selected_bg_color;
-    }
-}
-
 dnd {
   color: $fg_color;
 }
@@ -704,13 +696,6 @@ button {
 
     label { padding: 0; }
   }
-}
-
-viewswitcher > button image {
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 3px;
-  padding-bottom: 3px;
 }
 
 %linked_middle {
@@ -3470,25 +3455,6 @@ colorchooser .popover.osd { border-radius: 3px; }
       @include button(hover);
     }
   }
-}
-
-//
-// Sheet decorations
-//
-
-sheet {
-  border-radius: 8px 8px 0 0;
-  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
-  $_wm_border_backdrop: if($variant=='light', transparentize(black, 0.82), transparentize(black, 0.25));
-  box-shadow: 0 3px 9px 1px transparentize(black, 0.5),
-              0 0 0 1px $_wm_border; //doing borders with box-shadow
-  &:backdrop {
-        // the transparent shadow here is to enforce that the shadow extents dont
-        // change when we go to backdrop, to prevent jumping windows
-        box-shadow: 0 3px 9px 1px transparent,
-                    0 2px 6px 2px transparentize(black, 0.8),
-                    0 0 0 1px $_wm_border_backdrop;
-      }
 }
 
 //
