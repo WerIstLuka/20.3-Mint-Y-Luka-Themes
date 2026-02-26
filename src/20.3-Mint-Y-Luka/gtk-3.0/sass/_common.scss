@@ -1175,6 +1175,7 @@ headerbar {
     @include button(header-normal);
 
     &:backdrop { opacity: 0.7; }
+    &:backdrop:hover { opacity: 1; }
 
     &:hover { @include button(header-hover); }
     &:active, &:checked {
@@ -3183,10 +3184,7 @@ headerbar,
       color: $selected_fg_color;
       @include draw_circle($selected_bg_color);
 
-      &:backdrop {
-        @include draw-circle($_wm_backdrop_icon_color);
-        &hover { opacity: 1; }
-      }
+      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
       &:hover { @include draw-circle(lighten($selected_bg_color, 5%)); }
       &:active { @include draw-circle(darken($selected_bg_color, 5%)); }
     }

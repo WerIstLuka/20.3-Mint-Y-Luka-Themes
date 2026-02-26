@@ -1080,8 +1080,6 @@ windowcontrols {
         color: #ffffff; }
       windowcontrols button.close:backdrop {
         background-image: radial-gradient(circle at 50%, #626262, #626262 65%, #2b2b2b 65%); }
-        windowcontrols button.close:backdrop:hover {
-          opacity: 1; }
       windowcontrols button.close:hover {
         background-image: radial-gradient(circle at 50%, #9cb286, #9cb286 65%, #2b2b2b 65%); }
       windowcontrols button.close:active {
@@ -1213,6 +1211,8 @@ headerbar button {
   border-color: rgba(43, 43, 43, 0); }
   headerbar button:backdrop {
     opacity: 0.7; }
+  headerbar button:backdrop:hover {
+    opacity: 1; }
   headerbar button:hover {
     color: rgba(255, 255, 255, 0.87);
     border-color: rgba(13, 13, 13, 0.4);

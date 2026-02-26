@@ -1012,6 +1012,9 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   .primary-toolbar button:backdrop, headerbar button:backdrop {
     opacity: 0.7; }
   
+  .primary-toolbar button:backdrop:hover, headerbar button:backdrop:hover {
+    opacity: 1; }
+  
   .primary-toolbar button:hover, headerbar button:hover {
     color: rgba(0, 0, 0, 0.87);
     outline-color: rgba(0, 0, 0, 0.17);
@@ -2931,9 +2934,6 @@ headerbar button.titlebutton,
     headerbar button.titlebutton.close:backdrop,
     .titlebar button.titlebutton.close:backdrop {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(darkgray), to(transparent)); }
-      headerbar button.titlebutton.close:backdrophover,
-      .titlebar button.titlebutton.close:backdrophover {
-        opacity: 1; }
     headerbar button.titlebutton.close:hover,
     .titlebar button.titlebutton.close:hover {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#9fbc83), to(transparent)); }

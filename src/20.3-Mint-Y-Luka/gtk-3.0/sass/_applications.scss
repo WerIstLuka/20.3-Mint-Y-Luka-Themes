@@ -59,7 +59,7 @@ SushiFontWidget {
 //
 #gnome-system-monitor headerbar {
   // we have to do this because the headerbar is moved into the toolbar
-  // position in DE's like Cinnamon
+  // position in DEs like Cinnamon
   box-shadow: none;
 }
 
@@ -357,7 +357,7 @@ NautilusListView .view { border-bottom: 1px solid $borders_color; }
 
 .open-document-selector-treeview.view {
   padding: 3px 6px 3px 6px;
-  border-color: $base_color;  // disable borders, making them transparent doesn't work for some reason
+  border-color: $base_color;  // disable borders, making them transparent doesnt work for some reason
 
   &:hover {
     background-color: transparentize(black, 0.95);
