@@ -62,6 +62,9 @@ list.boxed-list {
   > row > box box > image {
     padding-left: 10px;
   }
+  .about & {
+    margin: 4px 20px;
+  }
 }
 
 preferencesgroup label.heading {font-size: 100%;}

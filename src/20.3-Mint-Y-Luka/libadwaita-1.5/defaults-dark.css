@@ -3217,6 +3217,9 @@ list.boxed-list > row.expander > box row > box > box {
 list.boxed-list > row > box box > image {
   padding-left: 10px; }
 
+.about list.boxed-list {
+  margin: 4px 20px; }
+
 preferencesgroup label.heading {
   font-size: 100%; }
 
