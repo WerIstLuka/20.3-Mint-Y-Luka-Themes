@@ -3297,7 +3297,7 @@ datechooser grid > button.circular, datechooser navigator button.circular {
 @define-color wm_icon_hover_bg #C4C7CC;
 @define-color wm_icon_active_bg #ffffff;
 /* LibAdwaita-1.5 */
-@define-color window_fg_color #dadada;
+@define-color window_fg_color #DADADA;
 @define-color light_5 #000000;
 /* calendar month separator */
 @define-color accent_bg_color #8fa876;
