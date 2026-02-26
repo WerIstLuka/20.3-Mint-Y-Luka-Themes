@@ -432,8 +432,8 @@ button {
     // &.flat {
     //   @include button(undecorated);
     //   // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
-    //   // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
-    //   // it won't fade out when the pointer leave the button allocation area. To make the transition more evident
+    //   // to none, while its added back in the hover state, so the button decoration will fade in on hover, but
+    //   // it wont fade out when the pointer leave the button allocation area. To make the transition more evident
     //   // in this case the duration is increased.
     //   transition: none;
 
@@ -1006,7 +1006,7 @@ combobox {
   }
 
   .linked:not(.vertical) > & > box > button.combo {
-    // the combobox is a composite widget so the way we do button linking doesn't
+    // the combobox is a composite widget so the way we do button linking doesnt
     // work, special case needed.
     &:dir(ltr),
     &:dir(rtl) { @extend %linked_middle; }
@@ -1121,23 +1121,27 @@ windowcontrols {
       }
       @include draw_circle($selected_bg_color);
 
+      &:backdrop {
+        @include draw-circle($_wm_backdrop_icon_color);
+        &:hover { opacity: 1; }
+      }
       &:hover { @include draw-circle(lighten($selected_bg_color, 5%)); }
       &:active { @include draw-circle(darken($selected_bg_color, 5%)); }
-      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
     }
 
     &.maximize,
     &.minimize {
+      &:backdrop {
+        color: $_wm_backdrop_icon_color;
+      }
       &:hover,
       &:hover:backdrop {
+        color: fg_color;
         @include draw-circle($wm_button_hover_bg);
       }
       &:active,
       &:active:backdrop {
         @include draw-circle($wm_button_active_bg);
-      }
-      &:backdrop {
-        color: $_wm_backdrop_icon_color;
       }
     }
   }
@@ -1189,7 +1193,7 @@ headerbar,
   .maximized &,
   .fullscreen & {
     &:backdrop, & {
-      border-radius: 0; // squared corners when the window is max'd or tiled
+      border-radius: 0; // squared corners when the window is maxd or tiled
     }
   }
 
@@ -1587,7 +1591,7 @@ treeview.view {
     &, &:focus {
       border-radius: 0;
       border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
-      border-top-color: transparentize($fg_color, 0.9);   // doesn't work unfortunatelly
+      border-top-color: transparentize($fg_color, 0.9);   // doesnt work unfortunatelly
 
       @extend %selected_items;
     }
@@ -3402,7 +3406,7 @@ colorswatch {
   // make the add color button looks like, well, a button
   &#add-color-button {
     border-style: solid; // the borders are drawn by the overlay for standard colorswatches to have them semi
-    border-width: 1px;   // translucent on the colored background, here it's not necessary so they need to be set
+    border-width: 1px;   // translucent on the colored background, here its not necessary so they need to be set
     @include button(normal);
     &:hover { @include button(hover); }
     overlay { @include button(undecorated); } // reset the overlay to not cover the button style underneath
@@ -3472,7 +3476,7 @@ window {
     border-radius: 8px 8px 0 0;
 
     &:backdrop {
-      // the transparent shadow here is to enforce that the shadow extents don't
+      // the transparent shadow here is to enforce that the shadow extents dont
       // change when we go to backdrop, to prevent jumping windows
       box-shadow: 0 3px 9px 1px transparent,
                   0 2px 6px 2px transparentize(black, 0.8),

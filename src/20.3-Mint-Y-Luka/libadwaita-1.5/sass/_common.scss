@@ -440,8 +440,8 @@ button {
     // &.flat {
     //   @include button(undecorated);
     //   // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
-    //   // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
-    //   // it won't fade out when the pointer leave the button allocation area. To make the transition more evident
+    //   // to none, while its added back in the hover state, so the button decoration will fade in on hover, but
+    //   // it wont fade out when the pointer leave the button allocation area. To make the transition more evident
     //   // in this case the duration is increased.
     //   transition: none;
 
@@ -1136,23 +1136,27 @@ windowcontrols {
       }
       @include draw_circle($selected_bg_color);
 
+      &:backdrop {
+        @include draw-circle($_wm_backdrop_icon_color);
+        &:hover { opacity: 1; }
+      }
       &:hover { @include draw-circle(lighten($selected_bg_color, 5%)); }
       &:active { @include draw-circle(darken($selected_bg_color, 5%)); }
-      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
     }
 
     &.maximize,
     &.minimize {
+      &:backdrop {
+        color: $_wm_backdrop_icon_color;
+      }
       &:hover,
       &:hover:backdrop {
+        color: $fg_color;
         @include draw-circle($wm_button_hover_bg);
       }
       &:active,
       &:active:backdrop {
         @include draw-circle($wm_button_active_bg);
-      }
-      &:backdrop {
-        color: $_wm_backdrop_icon_color;
       }
     }
   }
