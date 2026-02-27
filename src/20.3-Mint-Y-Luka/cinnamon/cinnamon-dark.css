@@ -875,9 +875,9 @@ StScrollBar {
 
 .switcher-list {
   color: rgba(255, 255, 255, 0.87);
-  border: 1px solid #212221;
+  border: 4px solid #8fa876;
   background-color: #303130;
-  border-radius: 3px;
+  border-radius: 0px;
   padding: 20px; }
   .switcher-list > StBoxLayout {
     padding: 4px; }
@@ -2134,8 +2134,7 @@ StScrollBar {
 
 .monitor-label {
   border-radius: 0;
-  color: #D3D3D3;
-  background-color: #424241;
+  color: black;
   padding: 12px;
   text-align: center; }
 
