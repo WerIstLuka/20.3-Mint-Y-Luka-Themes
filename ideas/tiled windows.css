@@ -1,0 +1,38 @@
+/* gtk-3.0 does not use the margin defined so windows overlap */
+/* no idea how to get around this */
+
+/* below code is for libadwaita-1.5 */
+
+/* scss */
+&:not(.maximized) {
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left {
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px $selected_bg_color;
+    margin: 8px;
+
+    &:backdrop {
+      box-shadow: 0 0 0 4px $selected_bg_color_backdrop;
+    }
+  }  
+}
+
+
+/* css */
+window:not(.maximized).tiled,
+window:not(.maximized).tiled-top,
+window:not(.maximized).tiled-right,
+window:not(.maximized).tiled-bottom,
+window:not(.maximized).tiled-left {
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px #579c8e;
+  margin: 8px; }
+  window:not(.maximized).tiled:backdrop,
+  window:not(.maximized).tiled-top:backdrop,
+  window:not(.maximized).tiled-right:backdrop,
+  window:not(.maximized).tiled-bottom:backdrop,
+  window:not(.maximized).tiled-left:backdrop {
+    box-shadow: 0 0 0 4px #aaaaaa; }
