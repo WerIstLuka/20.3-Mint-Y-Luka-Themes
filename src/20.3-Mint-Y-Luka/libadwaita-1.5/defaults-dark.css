@@ -911,6 +911,10 @@ spinbutton {
     color: rgba(255, 255, 255, 0.42); }
   spinbutton:not(.vertical) text {
     min-width: 28px; }
+  spinbutton:not(.vertical):dir(ltr) {
+    margin-left: 50px; }
+  spinbutton:not(.vertical):dir(rtl) {
+    margin-right: 50px; }
   spinbutton:not(.vertical):dir(ltr) text, spinbutton:not(.vertical):dir(rtl) button.up {
     border-radius: 3px 0 0 3px; }
   spinbutton:not(.vertical) > button + button {
@@ -1082,7 +1086,7 @@ windowcontrols {
 
 headerbar,
 .titlebar:not(headerbar) {
-  min-height: 42px;
+  min-height: 46px;
   padding: 0 7px;
   border-width: 0 0 1px;
   border-style: solid;
