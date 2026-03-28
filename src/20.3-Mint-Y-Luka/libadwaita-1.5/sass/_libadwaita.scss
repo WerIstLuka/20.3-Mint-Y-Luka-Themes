@@ -108,3 +108,55 @@ button.circular {
     border-radius: 3px;
   }
 }
+
+
+
+
+.messagedialog {
+  min-width: 700px;
+  separator {
+    background: #383838;
+    min-width: 0;
+  }
+  > windowhandle > box {
+    background: linear-gradient(to bottom, #2b2b2b 28px, #383838 0);;
+    > box {
+      margin-top: 28px;
+      padding: 5px 50px 30px 50px;
+      label.title-2 {
+      	font-size: 100%;
+      	margin-bottom: 10px;
+      }
+    }
+    widget {
+      padding: 5px;
+    }
+    button {
+      @include button(normal);
+      &.destructive {
+        @include button(suggested_destructive, $destructive_color);
+        &:hover {
+          @include button(suggested_destructive, lighten($destructive_color, 10%));
+        }
+        &:active, &:checked {
+          @include button(suggested_destructive, darken($destructive_color, 10%));
+        }
+        &:disabled { @include button(insensitive); }
+      }
+      &:dir(ltr):first-child,
+      &:dir(rtl):last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &:dir(ltr):last-child,
+      &:dir(rtl):first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      &:dir(ltr):not(:first-child),
+      &:dir(rtl):not(:last-child) {
+      	border-left: none;
+      }
+    }
+  }
+}

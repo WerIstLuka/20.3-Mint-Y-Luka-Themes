@@ -3255,6 +3255,55 @@ toast button.circular, monthpopover button.circular, datechooser navigator butto
 datechooser grid > button.circular, datechooser navigator button.circular {
   border-radius: 3px; }
 
+.messagedialog {
+  min-width: 700px; }
+  .messagedialog separator {
+    background: #383838;
+    min-width: 0; }
+  .messagedialog > windowhandle > box {
+    background: linear-gradient(to bottom, #2b2b2b 28px, #383838 0); }
+    .messagedialog > windowhandle > box > box {
+      margin-top: 28px;
+      padding: 5px 50px 30px 50px; }
+      .messagedialog > windowhandle > box > box label.title-2 {
+        font-size: 100%;
+        margin-bottom: 10px; }
+    .messagedialog > windowhandle > box widget {
+      padding: 5px; }
+    .messagedialog > windowhandle > box button {
+      color: rgba(255, 255, 255, 0.87);
+      border-color: #292929;
+      background-color: #454545; }
+      .messagedialog > windowhandle > box button.destructive {
+        background-clip: border-box;
+        color: #ffffff;
+        background-color: #F04A50;
+        border-color: #F04A50; }
+        .messagedialog > windowhandle > box button.destructive:hover {
+          background-clip: border-box;
+          color: #ffffff;
+          background-color: #f4797e;
+          border-color: #f4797e; }
+        .messagedialog > windowhandle > box button.destructive:active, .messagedialog > windowhandle > box button.destructive:checked {
+          background-clip: border-box;
+          color: #ffffff;
+          background-color: #ec1b22;
+          border-color: #ec1b22; }
+        .messagedialog > windowhandle > box button.destructive:disabled {
+          color: rgba(255, 255, 255, 0.42);
+          border-color: rgba(41, 41, 41, 0.55);
+          background-color: rgba(69, 69, 69, 0.55); }
+          .messagedialog > windowhandle > box button.destructive:disabled label {
+            color: inherit; }
+      .messagedialog > windowhandle > box button:dir(ltr):first-child, .messagedialog > windowhandle > box button:dir(rtl):last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
+      .messagedialog > windowhandle > box button:dir(ltr):last-child, .messagedialog > windowhandle > box button:dir(rtl):first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; }
+      .messagedialog > windowhandle > box button:dir(ltr):not(:first-child), .messagedialog > windowhandle > box button:dir(rtl):not(:last-child) {
+        border-left: none; }
+
 @define-color theme_fg_color rgba(255, 255, 255, 0.87);
 @define-color theme_text_color #DADADA;
 @define-color theme_bg_color #383838;
