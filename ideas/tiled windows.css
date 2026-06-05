@@ -36,3 +36,22 @@ window:not(.maximized).tiled-left {
   window:not(.maximized).tiled-bottom:backdrop,
   window:not(.maximized).tiled-left:backdrop {
     box-shadow: 0 0 0 4px #aaaaaa; }
+
+
+
+
+
+/* experimental GTK-3.0 css */
+
+window > headerbar {margin: 8px 8px 0 8px;}
+window > :not(headerbar):not(decoration) {margin: 0 8px 8px 8px;}
+window {background: transparent;}
+
+decoration {box-shadow: none;}
+
+
+window > headerbar {border: 4px solid #ff0000; border-bottom: none;}
+window > :not(headerbar):not(decoration) {border: 4px solid #ff0000; border-top: none;}
+
+
+grid > widget {background: #383838;}
