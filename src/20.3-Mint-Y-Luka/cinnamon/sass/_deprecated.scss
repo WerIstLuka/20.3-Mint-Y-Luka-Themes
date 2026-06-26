@@ -1,0 +1,136 @@
+
+/*
+****** DEPRECATED
+
+On-Screen Keyboard (<= Cinnamon 6.4)
+*/
+
+#keyboard {
+  background-color: $osd_bg_color;
+  border-width: 0;
+  border-top-width: 1px;
+  border-color: transparentize(black, 0.6);
+}
+
+.keyboard-layout {
+  spacing: 10px;
+  padding: 10px;
+}
+
+.keyboard-row {
+  spacing: 15px;
+}
+
+.keyboard-key {
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: none;
+
+  @include button(osd);
+
+  &:hover { @include button(osd-hover); }
+  &:active, &:checked { @include button(osd-active); }
+
+  &:grayed { @include button(osd-insensitive); }
+}
+
+.keyboard-subkeys { //long press on a key popup
+  color: $osd_fg_color;
+  padding: 5px;
+  -arrow-border-radius: 2px;
+  -arrow-background-color: $osd_bg_color;
+  -arrow-border-width: 1px;
+  -arrow-border-color: transparentize(black, 0.6);;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
+}
+
+// luka backports
+
+// https://github.com/linuxmint/mint-themes/commit/0b320b989121e36d3961ed3cdf1fca8d9abeb277
+// Audio selection dialog
+
+.audio-device-selection-dialog {
+  min-width: 24em;
+
+  .audio-selection-box {
+    spacing: $base_padding *2;
+
+    .audio-selection-device {
+      @extend %flat_styled_button;
+      border-radius: $osd_radius;
+
+      .audio-selection-device-box {
+        padding: $base_padding * 2;
+        spacing: $base_padding * 2;
+      }
+
+      .audio-selection-device-icon { icon-size: 64px;}
+    }
+  }
+}
+
+// https://github.com/linuxmint/mint-themes/commit/a2edf92215ad2a621c4b89b6739170021281bf75
+/* This is for popup menus in Cinnamon versions < 3.2 */
+.popup-menu {
+  color: white;
+  color: $fg_color;
+
+  &-arrow { icon-size: 16px; }
+
+  .popup-sub-menu {
+    background-color: $base_color;
+    box-shadow: none;
+
+    .popup-menu-item:ltr { padding-right: 1.75em; }
+    .popup-menu-item:rtl { padding-left: 1.75em; }
+
+    StScrollBar {
+      padding: 4px;
+      StBin#trough, StBin#vhandle { border-width: 0; }
+    }
+  }
+
+  .popup-menu-content { padding: 1em 0em 1em 0em; }
+  .popup-menu-item {
+    padding: .4em 1.75em;
+    spacing: 1em;
+    border: 1px solid transparent;
+    border-left-width: 0;
+    border-right-width: 0;
+
+    &:active {
+      color: $fg_color;
+      border-color: transparentize($fg_color, 0.89);
+      background-color: transparentize($fg_color, 0.92);
+    }
+    &:insensitive {
+      color: transparentize($fg_color, 0.5);
+      background: none;
+    }
+  }
+
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $fg_color;
+
+    &:insensitive { color: $insensitive_fg_color; }
+  }
+
+  &-icon { icon-size: 16px; }
+}
+
+.popup-menu-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color:  $bg_color;
+  -arrow-border-width: 1px;
+  -arrow-border-color: $borders_color;
+  -arrow-base: 21px;
+  -arrow-rise: 9px;
+  -boxpointer-gap: 2px;
+}
+
+/* ****** DEPRECATED */
