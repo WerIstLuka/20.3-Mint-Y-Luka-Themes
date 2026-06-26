@@ -273,54 +273,6 @@ StScrollBar {
   .popup-inactive-menu-item:insensitive {
     color: rgba(0, 0, 0, 0.42); }
 
-/* This is for popup menus in Cinnamon versions < 3.2 */
-.popup-menu {
-  color: white;
-  color: rgba(0, 0, 0, 0.87); }
-  .popup-menu-arrow {
-    icon-size: 16px; }
-  .popup-menu .popup-sub-menu {
-    background-color: #fdfdfc;
-    box-shadow: none; }
-    .popup-menu .popup-sub-menu .popup-menu-item:ltr {
-      padding-right: 1.75em; }
-    .popup-menu .popup-sub-menu .popup-menu-item:rtl {
-      padding-left: 1.75em; }
-    .popup-menu .popup-sub-menu StScrollBar {
-      padding: 4px; }
-      .popup-menu .popup-sub-menu StScrollBar StBin#trough, .popup-menu .popup-sub-menu StScrollBar StBin#vhandle {
-        border-width: 0; }
-  .popup-menu .popup-menu-content {
-    padding: 1em 0em 1em 0em; }
-  .popup-menu .popup-menu-item {
-    padding: .4em 1.75em;
-    spacing: 1em;
-    border: 1px solid transparent;
-    border-left-width: 0;
-    border-right-width: 0; }
-    .popup-menu .popup-menu-item:active {
-      color: rgba(0, 0, 0, 0.87);
-      border-color: rgba(0, 0, 0, 0);
-      background-color: rgba(0, 0, 0, 0); }
-    .popup-menu .popup-menu-item:insensitive {
-      color: rgba(0, 0, 0, 0.37);
-      background: none; }
-  .popup-menu .popup-inactive-menu-item {
-    color: rgba(0, 0, 0, 0.87); }
-    .popup-menu .popup-inactive-menu-item:insensitive {
-      color: rgba(0, 0, 0, 0.42); }
-  .popup-menu-icon {
-    icon-size: 16px; }
-
-.popup-menu-boxpointer {
-  -arrow-border-radius: 3px;
-  -arrow-background-color: #f3f4f2;
-  -arrow-border-width: 1px;
-  -arrow-border-color: #c0c5bb;
-  -arrow-base: 21px;
-  -arrow-rise: 9px;
-  -boxpointer-gap: 2px; }
-
 /*Scale view context menu*/
 .popup-combo-menu {
   color: rgba(0, 0, 0, 0.87);
@@ -1066,53 +1018,6 @@ StScrollBar {
   .magnifier-zoom-region .full-screen {
     border-width: 0px; }
 
-#keyboard {
-  background-color: #353535;
-  border-width: 0;
-  border-top-width: 1px;
-  border-color: rgba(0, 0, 0, 0.4); }
-
-.keyboard-layout {
-  spacing: 10px;
-  padding: 10px; }
-
-.keyboard-row {
-  spacing: 15px; }
-
-.keyboard-key {
-  min-height: 2em;
-  min-width: 2em;
-  font-size: 1.4em;
-  font-weight: bold;
-  border-radius: 3px;
-  box-shadow: none;
-  color: #c3c3c3;
-  border: 1px solid #c0c5bb;
-  background-color: rgba(109, 109, 109, 0.4); }
-  .keyboard-key:hover {
-    color: #c3c3c3;
-    border: 1px solid rgba(2, 2, 2, 0.4);
-    background-color: rgba(127, 127, 127, 0.5); }
-  .keyboard-key:active, .keyboard-key:checked {
-    color: #ffffff;
-    border: 1px solid #92b372;
-    background-color: #92b372; }
-  .keyboard-key:grayed {
-    color: #606060;
-    border: 1px solid rgba(2, 2, 2, 0.4);
-    background-color: rgba(109, 109, 109, 0.25); }
-
-.keyboard-subkeys {
-  color: #c3c3c3;
-  padding: 5px;
-  -arrow-border-radius: 2px;
-  -arrow-background-color: #353535;
-  -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0, 0, 0, 0.4);
-  -arrow-base: 20px;
-  -arrow-rise: 10px;
-  -boxpointer-gap: 5px; }
-
 .menu-favorites-box {
   padding: 10px;
   transition-duration: 300;
@@ -1173,6 +1078,7 @@ StScrollBar {
     border: 1px solid rgba(0, 0, 0, 0); }
   .menu-category-button:hover {
     padding: 7px;
+    color: #202020;
     background-color: #dcdfd9;
     border: 1px solid #c0c5bb;
     border-radius: 2px; }

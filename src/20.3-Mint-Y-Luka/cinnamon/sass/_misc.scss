@@ -2,7 +2,7 @@
 $osd_destructive_color: $destructive_color;
 $bg_color3: if($variant == 'light', darken($bg_color, 22%), lighten($bg_color, 14%));
 $bg_color4: if($variant == 'light', darken($bg_color, 16%), lighten($bg_color, 9%));
-
+$noaccent_selected_fg_color: if($variant == 'light', $text_color, #ffffff);
 
 // https://github.com/linuxmint/mint-themes/commit/4e128b2f24f971df9ee53cf28ac350d8a0411ce0
 $selected_fg_color: #ffffff;
