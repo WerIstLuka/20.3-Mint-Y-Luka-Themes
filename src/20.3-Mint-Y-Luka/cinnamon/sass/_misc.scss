@@ -1,0 +1,26 @@
+// new colors
+$osd_destructive_color: $destructive_color;
+$bg_color3: if($variant == 'light', darken($bg_color, 22%), lighten($bg_color, 14%));
+$bg_color4: if($variant == 'light', darken($bg_color, 16%), lighten($bg_color, 9%));
+
+
+// https://github.com/linuxmint/mint-themes/commit/4e128b2f24f971df9ee53cf28ac350d8a0411ce0
+$selected_fg_color: #ffffff;
+$radius: 6px;
+
+// https://github.com/linuxmint/mint-themes/commit/7a8a1ea62edb5425a6f622e248200cdb4f8cc13e
+printdialog {
+  paper {
+    background-color: white;
+    color: $fg_color;
+    border: 1px solid $borders_color;
+    padding: 0;
+  }
+}
+
+// https://github.com/linuxmint/mint-themes/commit/dbacada3d9a64474a2f2068efda4c9b40b1c39bc
+// https://github.com/linuxmint/mint-themes/commit/1f786385bf01530426ebf7245a34ede3bd1f0e86
+
+// Popup dialog (non-modal, draggable).
+.popup-dialog {
+}
