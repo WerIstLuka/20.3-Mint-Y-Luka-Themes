@@ -1,8 +1,13 @@
 $variant: 'light';
 
 @import "_colors"; //use gtk colors
+@import "_misc"; //misc fixes/additions from upstream
 @import "_drawing";
 @import "_common";
+
 /* luka backports */
 @import "_dialogs";
 @import "_keyboard";
+@import "_menu";
+@import "_screensaver";
+
