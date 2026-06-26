@@ -345,27 +345,7 @@ $osd_radius: 3px;
   }
 }
 
-// Audio selection dialog
-
-.audio-device-selection-dialog {
-  min-width: 24em;
-
-  .audio-selection-box {
-    spacing: $base_padding *2;
-
-    .audio-selection-device {
-      @extend %flat_styled_button;
-      border-radius: $osd_radius;
-
-      .audio-selection-device-box {
-        padding: $base_padding * 2;
-        spacing: $base_padding * 2;
-      }
-
-      .audio-selection-device-icon { icon-size: 64px;}
-    }
-  }
-}
+// https://github.com/linuxmint/mint-themes/commit/0b320b989121e36d3961ed3cdf1fca8d9abeb277
 
 // various on screen popups
 
