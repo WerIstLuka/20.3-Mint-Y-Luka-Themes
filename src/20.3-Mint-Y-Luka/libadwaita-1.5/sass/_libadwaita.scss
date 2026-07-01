@@ -152,8 +152,31 @@ button.circular {
       }
       &:dir(ltr):not(:first-child),
       &:dir(rtl):not(:last-child) {
-      	border-left: none;
+      	border-left-width: 0;
       }
     }
   }
 }
+
+// make response-area buttons look better if they are vertical (compact)
+widget.response-area.compact {
+  margin: 0 20px 10px 20px;
+  button {
+    border-radius: 3px;
+    border-left-width: 1px;
+  }
+}
+
+// make the borders show up correctly
+viewswitcher, stackswitcher {
+  button {
+    background-clip: padding-box;
+  }
+}
+// gnome-clocks is ignoring everything i throw at it thats not in the inspector
+// i checked the source and there is nothing preventing it from working
+// todo
+
+
+// todo
+// run adwaita-1-demo and fix everything
