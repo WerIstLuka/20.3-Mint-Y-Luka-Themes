@@ -17,6 +17,54 @@ viewswitcher > button image {
   padding-bottom: 3px;
 }
 
+%draw_fake_header{
+  windowhandle {
+    background: linear-gradient(to bottom, $header_bg 28px, $bg_color 0);
+    box.has-body {
+      margin-top: 28px;
+      padding: 5px 50px 30px 50px;
+      label.title-2 {
+        font-size: 100%;
+        margin-bottom: 10px;
+      }
+    }
+    widget {
+      padding: 5px;
+    }
+  }
+}
+
+@mixin draw_suggested_destructive($b_color) {
+  @include button(suggested_destructive, $b_color);
+  @include focus-ring();
+  &:hover {@include button(suggested_destructive, lighten($b_color, 10%));}
+  &:active, &:checked {@include button(suggested_destructive, darken($b_color, 10%));}
+  &:disabled {@include button(insensitive);}
+}
+
+%draw_response-area_buttons {
+  widget.response-area button {
+    @include button(normal);
+    &:hover {@include button(hover);}
+    &:active, &:selected {@include button(active);}
+    &.suggested {@include draw_suggested_destructive($suggested_color);}
+    &.destructive {@include draw_suggested_destructive($destructive_color);}
+  }
+}
+
+%draw_mint-y_buttons {
+  button {
+    &:not(:first-child):not(:last-child){border-radius: 0;}
+    &:dir(ltr):last-child, &:dir(rtl):first-child {border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+    &:dir(ltr):first-child, &:dir(rtl):last-child {border-top-right-radius: 0px; border-bottom-right-radius: 0px;}
+    &:dir(ltr):not(:first-child), &:dir(rtl):not(:last-child) {border-left-width: 0;}
+  }
+  separator {
+    background-color: transparent;
+    min-width: 0;
+  }
+}
+
 //
 // Sheet decorations
 // based on _common.scss > Window Decorations
@@ -24,13 +72,17 @@ viewswitcher > button image {
 
 sheet {
   border-radius: 8px 8px 0 0;
-
   box-shadow: 0 0 0 4px $selected_bg_color; //doing borders with box-shadow
+  > widget > widget {
+    @extend %draw_fake_header;
+    @extend %draw_response-area_buttons;
+    @extend %draw_mint-y_buttons;
+  }
   &:backdrop {
-        // the transparent shadow here is to enforce that the shadow extents dont
-        // change when we go to backdrop, to prevent jumping windows
-        box-shadow: 0 0 0 4px $selected_bg_color_backdrop;
-      }
+    // the transparent shadow here is to enforce that the shadow extents dont
+    // change when we go to backdrop, to prevent jumping windows
+    box-shadow: 0 0 0 4px $selected_bg_color_backdrop;
+  }
 }
 
 clamp > box {
@@ -111,51 +163,9 @@ button.circular {
 
 .messagedialog {
   min-width: 700px;
-  separator {
-    background: #383838;
-    min-width: 0;
-  }
-  > windowhandle > box {
-    background: linear-gradient(to bottom, #2b2b2b 28px, #383838 0);;
-    > box {
-      margin-top: 28px;
-      padding: 5px 50px 30px 50px;
-      label.title-2 {
-      	font-size: 100%;
-      	margin-bottom: 10px;
-      }
-    }
-    widget {
-      padding: 5px;
-    }
-    button {
-      @include button(normal);
-      &.destructive {
-        @include button(suggested_destructive, $destructive_color);
-        &:hover {
-          @include button(suggested_destructive, lighten($destructive_color, 10%));
-        }
-        &:active, &:checked {
-          @include button(suggested_destructive, darken($destructive_color, 10%));
-        }
-        &:disabled { @include button(insensitive); }
-      }
-      &:dir(ltr):first-child,
-      &:dir(rtl):last-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-      &:dir(ltr):last-child,
-      &:dir(rtl):first-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-      &:dir(ltr):not(:first-child),
-      &:dir(rtl):not(:last-child) {
-      	border-left-width: 0;
-      }
-    }
-  }
+  @extend %draw_fake_header;
+  @extend %draw_response-area_buttons;
+  > windowhandle > box {@extend %draw_mint-y_buttons;}
 }
 
 // make response-area buttons look better if they are vertical (compact)
@@ -177,6 +187,66 @@ viewswitcher, stackswitcher {
 // i checked the source and there is nothing preventing it from working
 // todo
 
+// dont do double borders
+list row.expander {
+  list {
+    border-width: 0 0 1px 0;
+  }
+  &:last-child list {
+    border-width: 0;
+  }
+}
 
-// todo
-// run adwaita-1-demo and fix everything
+indicatorbin.needs-attention {
+  mask {
+    background-image: image($fg_color);
+  }
+  indicator {
+    background-image: radial-gradient(circle, $selected_bg_color, $selected_bg_color);
+    border-radius: 99px;
+    min-height: 17px;
+    min-width: 17px;
+    label {
+      font-size: 70%;
+    }
+  }
+  box.wide & + label {
+    padding-left: 10px;
+    &:dir(rtl){
+      padding-right: 10px;
+    }
+  }
+}
+
+tabbox > separator {background-color: transparent;}
+
+tabbox {border-bottom: 1px solid $header_border; background-color: inherit; padding: 5px 0 6px 0;}
+
+tab {
+  // use gnome-terminal as reference
+  border: 1px solid;
+  border-radius: 3px;
+  @include button(normal);
+  @include focus-ring();
+  &:hover {@include button(hover);}
+  &:active, &:selected {@include button(active);}
+}
+
+// didnt want to change anything with %needs_attention so i just copied it
+%adwaita_needs_attention {
+  animation: needs_attention 150ms ease-in;
+  background-image: radial-gradient(farthest-side, $_dot_color 96%, transparentize($_dot_color,1 ));
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  @if $variant == 'light' { background-position: right 3px, right 4px; }
+  @else { background-position: right 3px, right 2px; }
+  &:dir(rtl) {
+    @if $variant == 'light' { background-position: left 3px, left 4px; }
+    @else { background-position: left 3px, left 2px; }
+  }
+}
+
+// fix tabs that need attention
+tab.needs-attention {
+  @extend %adwaita_needs_attention;
+}
