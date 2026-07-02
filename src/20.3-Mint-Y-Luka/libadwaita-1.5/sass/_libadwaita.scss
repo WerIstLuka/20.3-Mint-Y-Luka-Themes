@@ -165,7 +165,8 @@ button.circular {
   min-width: 700px;
   @extend %draw_fake_header;
   @extend %draw_response-area_buttons;
-  > windowhandle > box {@extend %draw_mint-y_buttons;}
+  > windowhandle > box widget:not(.compact) {@extend %draw_mint-y_buttons;}
+  separator {color: transparent;}
 }
 
 // make response-area buttons look better if they are vertical (compact)

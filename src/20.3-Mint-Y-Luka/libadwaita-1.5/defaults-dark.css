@@ -3192,6 +3192,102 @@ viewswitcher > button image {
   padding-top: 3px;
   padding-bottom: 3px; }
 
+.messagedialog windowhandle, sheet > widget > widget windowhandle {
+  background: linear-gradient(to bottom, #2b2b2b 28px, #383838 0); }
+  .messagedialog windowhandle box.has-body, sheet > widget > widget windowhandle box.has-body {
+    margin-top: 28px;
+    padding: 5px 50px 30px 50px; }
+    .messagedialog windowhandle box.has-body label.title-2, sheet > widget > widget windowhandle box.has-body label.title-2 {
+      font-size: 100%;
+      margin-bottom: 10px; }
+  .messagedialog windowhandle widget, sheet > widget > widget windowhandle widget {
+    padding: 5px; }
+
+.messagedialog widget.response-area button, sheet > widget > widget widget.response-area button {
+  color: rgba(255, 255, 255, 0.87);
+  border-color: #292929;
+  background-color: #454545; }
+  .messagedialog widget.response-area button:hover, sheet > widget > widget widget.response-area button:hover {
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #292929;
+    background-color: #525252; }
+  .messagedialog widget.response-area button:active, sheet > widget > widget widget.response-area button:active, .messagedialog widget.response-area button:selected, sheet > widget > widget widget.response-area button:selected {
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #0f0f0f;
+    background-color: rgba(0, 0, 0, 0.15); }
+  .messagedialog widget.response-area button.suggested, sheet > widget > widget widget.response-area button.suggested {
+    background-clip: border-box;
+    color: #ffffff;
+    background-color: #6db442;
+    border-color: #6db442; }
+    .messagedialog widget.response-area button.suggested, sheet > widget > widget widget.response-area button.suggested {
+      outline-color: alpha(currentColor,0.3);
+      outline-style: dashed;
+      outline-offset: -3px; }
+    .messagedialog widget.response-area button.suggested:focus:focus-visible, sheet > widget > widget widget.response-area button.suggested:focus:focus-visible {
+      outline-width: 1px; }
+    .messagedialog widget.response-area button.suggested:hover, sheet > widget > widget widget.response-area button.suggested:hover {
+      background-clip: border-box;
+      color: #ffffff;
+      background-color: #88c663;
+      border-color: #88c663; }
+    .messagedialog widget.response-area button.suggested:active, sheet > widget > widget widget.response-area button.suggested:active, .messagedialog widget.response-area button.suggested:checked, sheet > widget > widget widget.response-area button.suggested:checked {
+      background-clip: border-box;
+      color: #ffffff;
+      background-color: #568f34;
+      border-color: #568f34; }
+    .messagedialog widget.response-area button.suggested:disabled, sheet > widget > widget widget.response-area button.suggested:disabled {
+      color: rgba(255, 255, 255, 0.42);
+      border-color: rgba(41, 41, 41, 0.55);
+      background-color: rgba(69, 69, 69, 0.55); }
+      .messagedialog widget.response-area button.suggested:disabled label, sheet > widget > widget widget.response-area button.suggested:disabled label {
+        color: inherit; }
+  .messagedialog widget.response-area button.destructive, sheet > widget > widget widget.response-area button.destructive {
+    background-clip: border-box;
+    color: #ffffff;
+    background-color: #F04A50;
+    border-color: #F04A50; }
+    .messagedialog widget.response-area button.destructive, sheet > widget > widget widget.response-area button.destructive {
+      outline-color: alpha(currentColor,0.3);
+      outline-style: dashed;
+      outline-offset: -3px; }
+    .messagedialog widget.response-area button.destructive:focus:focus-visible, sheet > widget > widget widget.response-area button.destructive:focus:focus-visible {
+      outline-width: 1px; }
+    .messagedialog widget.response-area button.destructive:hover, sheet > widget > widget widget.response-area button.destructive:hover {
+      background-clip: border-box;
+      color: #ffffff;
+      background-color: #f4797e;
+      border-color: #f4797e; }
+    .messagedialog widget.response-area button.destructive:active, sheet > widget > widget widget.response-area button.destructive:active, .messagedialog widget.response-area button.destructive:checked, sheet > widget > widget widget.response-area button.destructive:checked {
+      background-clip: border-box;
+      color: #ffffff;
+      background-color: #ec1b22;
+      border-color: #ec1b22; }
+    .messagedialog widget.response-area button.destructive:disabled, sheet > widget > widget widget.response-area button.destructive:disabled {
+      color: rgba(255, 255, 255, 0.42);
+      border-color: rgba(41, 41, 41, 0.55);
+      background-color: rgba(69, 69, 69, 0.55); }
+      .messagedialog widget.response-area button.destructive:disabled label, sheet > widget > widget widget.response-area button.destructive:disabled label {
+        color: inherit; }
+
+.messagedialog > windowhandle > box widget:not(.compact) button:not(:first-child):not(:last-child), sheet > widget > widget button:not(:first-child):not(:last-child) {
+  border-radius: 0; }
+
+.messagedialog > windowhandle > box widget:not(.compact) button:dir(ltr):last-child, sheet > widget > widget button:dir(ltr):last-child, .messagedialog > windowhandle > box widget:not(.compact) button:dir(rtl):first-child, sheet > widget > widget button:dir(rtl):first-child {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; }
+
+.messagedialog > windowhandle > box widget:not(.compact) button:dir(ltr):first-child, sheet > widget > widget button:dir(ltr):first-child, .messagedialog > windowhandle > box widget:not(.compact) button:dir(rtl):last-child, sheet > widget > widget button:dir(rtl):last-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
+
+.messagedialog > windowhandle > box widget:not(.compact) button:dir(ltr):not(:first-child), sheet > widget > widget button:dir(ltr):not(:first-child), .messagedialog > windowhandle > box widget:not(.compact) button:dir(rtl):not(:last-child), sheet > widget > widget button:dir(rtl):not(:last-child) {
+  border-left-width: 0; }
+
+.messagedialog > windowhandle > box widget:not(.compact) separator, sheet > widget > widget separator {
+  background-color: transparent;
+  min-width: 0; }
+
 sheet {
   border-radius: 8px 8px 0 0;
   box-shadow: 0 0 0 4px #8fa876; }
@@ -3258,51 +3354,76 @@ datechooser grid > button.circular, datechooser navigator button.circular {
 .messagedialog {
   min-width: 700px; }
   .messagedialog separator {
-    background: #383838;
-    min-width: 0; }
-  .messagedialog > windowhandle > box {
-    background: linear-gradient(to bottom, #2b2b2b 28px, #383838 0); }
-    .messagedialog > windowhandle > box > box {
-      margin-top: 28px;
-      padding: 5px 50px 30px 50px; }
-      .messagedialog > windowhandle > box > box label.title-2 {
-        font-size: 100%;
-        margin-bottom: 10px; }
-    .messagedialog > windowhandle > box widget {
-      padding: 5px; }
-    .messagedialog > windowhandle > box button {
-      color: rgba(255, 255, 255, 0.87);
-      border-color: #292929;
-      background-color: #454545; }
-      .messagedialog > windowhandle > box button.destructive {
-        background-clip: border-box;
-        color: #ffffff;
-        background-color: #F04A50;
-        border-color: #F04A50; }
-        .messagedialog > windowhandle > box button.destructive:hover {
-          background-clip: border-box;
-          color: #ffffff;
-          background-color: #f4797e;
-          border-color: #f4797e; }
-        .messagedialog > windowhandle > box button.destructive:active, .messagedialog > windowhandle > box button.destructive:checked {
-          background-clip: border-box;
-          color: #ffffff;
-          background-color: #ec1b22;
-          border-color: #ec1b22; }
-        .messagedialog > windowhandle > box button.destructive:disabled {
-          color: rgba(255, 255, 255, 0.42);
-          border-color: rgba(41, 41, 41, 0.55);
-          background-color: rgba(69, 69, 69, 0.55); }
-          .messagedialog > windowhandle > box button.destructive:disabled label {
-            color: inherit; }
-      .messagedialog > windowhandle > box button:dir(ltr):first-child, .messagedialog > windowhandle > box button:dir(rtl):last-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0; }
-      .messagedialog > windowhandle > box button:dir(ltr):last-child, .messagedialog > windowhandle > box button:dir(rtl):first-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0; }
-      .messagedialog > windowhandle > box button:dir(ltr):not(:first-child), .messagedialog > windowhandle > box button:dir(rtl):not(:last-child) {
-        border-left: none; }
+    color: transparent; }
+
+widget.response-area.compact {
+  margin: 0 20px 10px 20px; }
+  widget.response-area.compact button {
+    border-radius: 3px;
+    border-left-width: 1px; }
+
+viewswitcher button, stackswitcher button {
+  background-clip: padding-box; }
+
+list row.expander list {
+  border-width: 0 0 1px 0; }
+
+list row.expander:last-child list {
+  border-width: 0; }
+
+indicatorbin.needs-attention mask {
+  background-image: image(rgba(255, 255, 255, 0.87)); }
+
+indicatorbin.needs-attention indicator {
+  background-image: radial-gradient(circle, #8fa876, #8fa876);
+  border-radius: 99px;
+  min-height: 17px;
+  min-width: 17px; }
+  indicatorbin.needs-attention indicator label {
+    font-size: 70%; }
+
+box.wide indicatorbin.needs-attention + label {
+  padding-left: 10px; }
+  box.wide indicatorbin.needs-attention + label:dir(rtl) {
+    padding-right: 10px; }
+
+tabbox > separator {
+  background-color: transparent; }
+
+tabbox {
+  border-bottom: 1px solid #212121;
+  background-color: inherit;
+  padding: 5px 0 6px 0; }
+
+tab {
+  border: 1px solid;
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: #292929;
+  background-color: #454545; }
+  tab {
+    outline-color: alpha(currentColor,0.3);
+    outline-style: dashed;
+    outline-offset: -3px; }
+  tab:focus:focus-visible {
+    outline-width: 1px; }
+  tab:hover {
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #292929;
+    background-color: #525252; }
+  tab:active, tab:selected {
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #0f0f0f;
+    background-color: rgba(0, 0, 0, 0.15); }
+
+tab.needs-attention {
+  animation: needs_attention 150ms ease-in;
+  background-image: radial-gradient(farthest-side, #8fa876 96%, rgba(143, 168, 118, 0));
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  background-position: right 3px, right 2px; }
+  tab.needs-attention:dir(rtl) {
+    background-position: left 3px, left 2px; }
 
 @define-color theme_fg_color rgba(255, 255, 255, 0.87);
 @define-color theme_text_color #DADADA;
