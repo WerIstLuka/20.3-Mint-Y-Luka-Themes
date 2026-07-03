@@ -1,4 +1,4 @@
-Mint-Y from 20.3 updated for modern cinnamon with libatwaita support
+Mint-Y from 20.3 updated for modern cinnamon with libadwaita support
 
 also includes stuff i want like window borders
 
