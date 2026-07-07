@@ -224,7 +224,6 @@ tabbox > separator {background-color: transparent;}
 tabbox {border-bottom: 1px solid $header_border; background-color: inherit; padding: 5px 0 6px 0;}
 
 tab {
-  // use gnome-terminal as reference
   border: 1px solid;
   border-radius: 3px;
   @include button(normal);
@@ -250,4 +249,16 @@ tab {
 // fix tabs that need attention
 tab.needs-attention {
   @extend %adwaita_needs_attention;
+}
+
+dropdown popover listview.view > row {transition: none;}
+
+.data-table listview > row.activatable {
+  transition: none;
+  &:hover {
+    background: $base_color;
+    &:selected {
+      background: $selected_bg_color;
+    }
+  }
 }

@@ -3428,6 +3428,16 @@ tab.needs-attention {
   tab.needs-attention:dir(rtl) {
     background-position: left 3px, left 4px; }
 
+dropdown popover listview.view > row {
+  transition: none; }
+
+.data-table listview > row.activatable {
+  transition: none; }
+  .data-table listview > row.activatable:hover {
+    background: #ffffff; }
+    .data-table listview > row.activatable:hover:selected {
+      background: #92b372; }
+
 @define-color theme_fg_color rgba(0, 0, 0, 0.87);
 @define-color theme_text_color #303030;
 @define-color theme_bg_color #f5f5f5;
