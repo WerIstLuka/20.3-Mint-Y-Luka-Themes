@@ -262,3 +262,8 @@ dropdown popover listview.view > row {transition: none;}
     }
   }
 }
+
+#gnome-system-monitor.background {
+  color: $fg_color;
+  background-color: transparentize($bg_color, 0.001);
+}

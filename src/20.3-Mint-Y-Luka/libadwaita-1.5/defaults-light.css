@@ -3438,6 +3438,10 @@ dropdown popover listview.view > row {
     .data-table listview > row.activatable:hover:selected {
       background: #92b372; }
 
+#gnome-system-monitor.background {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(245, 245, 245, 0.999); }
+
 @define-color theme_fg_color rgba(0, 0, 0, 0.87);
 @define-color theme_text_color #303030;
 @define-color theme_bg_color #f5f5f5;
