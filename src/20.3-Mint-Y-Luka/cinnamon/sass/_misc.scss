@@ -95,3 +95,14 @@ printdialog {
   $rounded_size: round($adjusted_size / $base) / 1000;
   font-size: $rounded_size * 1em;
 }
+
+// https://github.com/linuxmint/mint-themes/commit/3e3629a33585c2a649b9a704d697fec141de0bf6
+%title_1 {
+  font-weight: 800;
+  @include fontsize(20pt);
+}
+
+%title_3 {
+  font-weight: 700;
+  @include fontsize(15pt);
+}
