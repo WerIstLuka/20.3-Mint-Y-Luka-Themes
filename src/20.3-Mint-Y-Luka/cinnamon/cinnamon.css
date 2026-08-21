@@ -29,10 +29,10 @@ printdialog paper {
       margin-left: 0;
       margin-top: 1px; }
   .grouped-window-list-scrollbox-button:hover {
-    background-color: #dcdfd9;
+    background-color: #bbc1b5;
     color: rgba(0, 0, 0, 0.87); }
   .grouped-window-list-scrollbox-button:active {
-    background-color: #bbc1b5;
+    background-color: #cacfc6;
     color: rgba(0, 0, 0, 0.87); }
 
 .screen-shield .clock-widget .clock-date-label {

@@ -76,12 +76,12 @@ printdialog {
       }
 
       &:hover {
-        background-color: $panel_active_bg;
+        background-color: $bg_color3;
         color: $panel_fg;
       }
 
       &:active {
-        background-color: $bg_color3;
+        background-color: $bg_color4;
         color: $panel_fg;
       }
     }
