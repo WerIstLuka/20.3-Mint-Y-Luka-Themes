@@ -4,6 +4,37 @@ printdialog paper {
   border: 1px solid #212221;
   padding: 0; }
 
+.grouped-window-list-scrollbox-scrollview.vfade {
+  -st-vfade-offset: 68px;
+  -st-hfade-offset: 0; }
+
+.grouped-window-list-scrollbox-scrollview.hfade {
+  -st-hfade-offset: 68px;
+  -st-vfade-offset: 0; }
+
+.grouped-window-list-scrollbox-button {
+  transition-duration: 100ms;
+  color: rgba(255, 255, 255, 0.67); }
+  .grouped-window-list-scrollbox-button-icon {
+    icon-size: 1.091em;
+    color: inherit; }
+  .grouped-window-list-scrollbox-button-start {
+    margin-right: 1px; }
+    .grouped-window-list-scrollbox-button-start.vertical {
+      margin-right: 0;
+      margin-bottom: 1px; }
+  .grouped-window-list-scrollbox-button-end {
+    margin-left: 1px; }
+    .grouped-window-list-scrollbox-button-end.vertical {
+      margin-left: 0;
+      margin-top: 1px; }
+  .grouped-window-list-scrollbox-button:hover {
+    background-color: #717f65;
+    color: rgba(255, 255, 255, 0.87); }
+  .grouped-window-list-scrollbox-button:active {
+    background-color: #535553;
+    color: rgba(255, 255, 255, 0.87); }
+
 stage {
   color: rgba(255, 255, 255, 0.87); }
 
