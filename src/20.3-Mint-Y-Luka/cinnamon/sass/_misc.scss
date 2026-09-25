@@ -11,6 +11,16 @@ $gtk_button_bg_hover: lighten($gtk_button_bg, 5%);
 $gtk_button_active_bg: transparentize(black, 0.85);
 $gtk_button_border: if($variant =='light', darken($bg_color, 18%), darken($bg_color,6%));
 $gtk_button_active_border: darken($gtk_button_border, 10%);
+$gtk_button_insensitive_bg: transparentize($gtk_button_bg, 0.45);
+$gtk_button_insensitive_fg: transparentize($fg_color, 0.45);
+$gtk_suggested_color: #6db442;
+$gtk_suggested_color_hover: lighten($gtk_suggested_color, 10%);
+$gtk_suggested_color_active: darken($gtk_suggested_color, 10%);
+$gtk_destructive_color: #F04A50;
+$gtk_destructive_color_hover: lighten($gtk_destructive_color, 10%);
+$gtk_destructive_color_active: darken($gtk_destructive_color, 10%);
+$gtk_text_color: #dadada;
+$gtk_button_radius: 3px;
 
 // https://github.com/linuxmint/mint-themes/commit/4e128b2f24f971df9ee53cf28ac350d8a0411ce0
 $selected_fg_color: #ffffff;

@@ -1741,83 +1741,101 @@ StScrollBar {
   padding: 12px;
   border-radius: 3px;
   border: 1px solid #474746;
-  color: rgba(255, 255, 255, 0.87);
+  border-color: #212221;
+  color: #dadada;
   background-color: #474746; }
   .dialog .dialog-button:focus {
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.87);
+    border-color: #212221;
+    color: #dadada;
     background-color: #474746;
-    border: 1px solid #949492; }
+    border: 1px solid #7b7b79; }
   .dialog .dialog-button:hover {
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #61615f; }
+    border-color: #212221;
+    color: #dadada;
+    background-color: #545453; }
   .dialog .dialog-button:active {
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #545453; }
+    border-color: #212221;
+    color: #dadada;
+    background-color: rgba(0, 0, 0, 0.15); }
   .dialog .dialog-button:checked {
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #545453; }
+    border-color: #212221;
+    color: #dadada;
+    background-color: rgba(0, 0, 0, 0.15); }
   .dialog .dialog-button:insensitive {
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.37);
-    background-color: #3f3f3e; }
+    border-color: #212221;
+    color: rgba(218, 218, 218, 0.5);
+    background-color: rgba(71, 71, 70, 0.55); }
 
 .dialog .dialog-button:default {
   border: 1px solid #8fa876;
+  border-color: #212221;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #8fa876; }
+  background-color: #6db442; }
   .dialog .dialog-button:focus:default {
     border: 1px solid #8fa876;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #8fa876;
+    background-color: #6db442;
     border: 1px solid #dce3d4; }
   .dialog .dialog-button:hover:default {
     border: 1px solid #8fa876;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #a9bc95; }
+    background-color: #88c663; }
   .dialog .dialog-button:active:default {
     border: 1px solid #8fa876;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #9cb286; }
+    background-color: #568f34; }
   .dialog .dialog-button:checked:default {
     border: 1px solid #8fa876;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #9cb286; }
+    background-color: #568f34; }
   .dialog .dialog-button:insensitive:default {
     border-color: #212221;
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.37);
-    background-color: #3f3f3e; }
+    border-color: #212221;
+    color: rgba(218, 218, 218, 0.5);
+    background-color: rgba(71, 71, 70, 0.55); }
 
 .dialog .dialog-button:destructive-action {
   border: 1px solid #F04A50;
+  border-color: #212221;
   color: rgba(255, 255, 255, 0.87);
   background-color: #F04A50; }
   .dialog .dialog-button:focus:destructive-action {
     border: 1px solid #F04A50;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
     background-color: #F04A50;
     border: 1px solid #fcd7d9; }
   .dialog .dialog-button:hover:destructive-action {
     border: 1px solid #F04A50;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
     background-color: #f4797e; }
   .dialog .dialog-button:active:destructive-action {
     border: 1px solid #F04A50;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #f26267; }
+    background-color: #ec1b22; }
   .dialog .dialog-button:checked:destructive-action {
     border: 1px solid #F04A50;
+    border-color: #212221;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #f26267; }
+    background-color: #ec1b22; }
   .dialog .dialog-button:insensitive:destructive-action {
     border-color: #212221;
     border: 1px solid #474746;
-    color: rgba(255, 255, 255, 0.37);
-    background-color: #3f3f3e; }
+    border-color: #212221;
+    color: rgba(218, 218, 218, 0.5);
+    background-color: rgba(71, 71, 70, 0.55); }
 
 .dialog {
   background-color: #303130;
@@ -1990,7 +2008,7 @@ On-Screen Keyboard (>= Cinnamon 6.6)
   box-shadow: inset 0 1px 0 0 #212221; }
 
 .vkeyboard-key-container {
-  padding: 10px;
+  padding: 5px;
   spacing: 10px; }
 
 .vkeyboard-key {
@@ -2001,8 +2019,8 @@ On-Screen Keyboard (>= Cinnamon 6.6)
   font-size: 1.364em;
   border-width: 1px;
   border-style: solid;
-  border-radius: 6px;
-  background-color: rgba(109, 109, 109, 0.4); }
+  border-radius: 3px;
+  background-color: #474746; }
   .vkeyboard-key:focus {
     color: rgba(255, 255, 255, 0.87);
     background-color: #474746;
@@ -2019,11 +2037,11 @@ On-Screen Keyboard (>= Cinnamon 6.6)
     border: 1px solid #8fa876;
     box-shadow: inset 0 2px 4px #8fa876; }
   .vkeyboard-key.shift-key-uppercase {
-    background-color: #6f716f; }
+    background-color: rgba(0, 0, 0, 0.15); }
   .vkeyboard-key.enter-key {
     background-color: #8fa876; }
   .vkeyboard-key.shift-key-lowercase, .vkeyboard-key.escape-key, .vkeyboard-key.hide-key, .vkeyboard-key.non-alpha-key {
-    background-color: rgba(109, 109, 109, 0.4); }
+    background-color: #474746; }
     .vkeyboard-key.shift-key-lowercase:focus, .vkeyboard-key.escape-key:focus, .vkeyboard-key.hide-key:focus, .vkeyboard-key.non-alpha-key:focus {
       color: rgba(255, 255, 255, 0.87);
       background-color: #474746;
@@ -2040,14 +2058,14 @@ On-Screen Keyboard (>= Cinnamon 6.6)
       border: 1px solid #8fa876;
       box-shadow: inset 0 2px 4px #8fa876; }
   .vkeyboard-key.modifier-key {
-    background-color: rgba(109, 109, 109, 0.4); }
+    background-color: #474746; }
     .vkeyboard-key.modifier-key:hover, .vkeyboard-key.modifier-key:checked {
       color: rgba(255, 255, 255, 0.87);
       background-color: #545453;
       border: 1px solid #212221;
       box-shadow: inset 0 2px 4px rgba(84, 84, 83, 0.05); }
     .vkeyboard-key.modifier-key:latched {
-      background-color: #6f716f; }
+      background-color: rgba(0, 0, 0, 0.15); }
   .vkeyboard-key StIcon {
     icon-size: 1.125em; }
 
@@ -2189,15 +2207,15 @@ On-Screen Keyboard (>= Cinnamon 6.6)
     padding: 1.091em;
     color: white;
     border: 1px solid #212221;
-    background-color: rgba(66, 66, 65, 0.95);
+    background-color: rgba(71, 71, 70, 0.9);
     margin-left: 7px;
     margin-right: 7px; }
     .screen-shield .icon-button StIcon {
       icon-size: 16px; }
     .screen-shield .icon-button:hover, .screen-shield .icon-button:focus {
-      background-color: rgba(255, 255, 255, 0.22); }
+      background-color: rgba(84, 84, 83, 0.9); }
     .screen-shield .icon-button:active {
-      background-color: rgba(255, 255, 255, 0.3); }
+      background-color: rgba(33, 33, 32, 0.9); }
   .screen-shield .prompt-dialog {
     width: 34em;
     background-color: transparent;

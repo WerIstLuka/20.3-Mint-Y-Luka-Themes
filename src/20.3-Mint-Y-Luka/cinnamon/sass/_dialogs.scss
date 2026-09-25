@@ -8,7 +8,7 @@ $osd_radius: 3px;
 // mixin fontsize has been moved to _misc.scss
 
 // Button drawing function
-@mixin styled_button($type, $tc:$fg_color, $c:$bg_color, $style: null) {
+@mixin styled_button($type, $tc:$fg_color, $c:$bg_color, $style: null, $suggested_destructive: null) {
   //
   // $type:         button type, possible values:
   //                  - normal, focus, hover, active, checked, insensitive, default, undecorated
@@ -33,6 +33,33 @@ $osd_radius: 3px;
   $focus_button_bg_border_color: if($variant =='light', darken($button_bg_color, 30%), lighten($button_bg_color, 30%));
 
   border: 1px solid $button_bg_color;
+
+  @if $style != 'flat' and $style != 'default' {
+    $tc:                           $gtk_text_color;
+    $button_bg_color:              $gtk_button_bg;
+    $hover_button_bg_color:        $gtk_button_bg_hover;
+    $active_button_bg_color:       $gtk_button_active_bg;
+    $checked_button_bg_color:      $gtk_button_active_bg;
+    $insensitive_button_bg_color:  $gtk_button_insensitive_bg;
+    $focus_button_bg_border_color: if($variant =='light', darken($button_bg_color, 20%), lighten($button_bg_color, 20%));
+    border-color: $gtk_button_border;
+  }
+
+  @if $suggested_destructive == 'destructive' {
+    $button_bg_color:         $gtk_destructive_color;
+    $hover_button_bg_color:   $gtk_destructive_color_hover;
+    $active_button_bg_color:  $gtk_destructive_color_active;
+    $checked_button_bg_color: $gtk_destructive_color_active;
+    border-color: $gtk_button_border;
+  }
+
+  @else if $suggested_destructive == 'suggested' {
+    $button_bg_color:         $gtk_suggested_color;
+    $hover_button_bg_color:   $gtk_suggested_color_hover;
+    $active_button_bg_color:  $gtk_suggested_color_active;
+    $checked_button_bg_color: $gtk_suggested_color_active;
+    border-color: $gtk_button_border;
+  }
 
   // flat style overrides
   @if $style == 'flat' {
@@ -139,11 +166,11 @@ $osd_radius: 3px;
 %dialog_button_default {
   @extend %dialog_button;
 
-  @include styled_button(normal, $c: $selected_bg_color, $style: default);
-  &:focus { @include styled_button(focus, $c: $selected_bg_color, $style: default); }
-  &:hover { @include styled_button(hover, $c: $selected_bg_color, $style: default); }
-  &:active { @include styled_button(active, $c: $selected_bg_color, $style: default); }
-  &:checked { @include styled_button(checked, $c: $selected_bg_color, $style: default); }
+  @include styled_button(normal, $c: $selected_bg_color, $style: default, $suggested_destructive: suggested);
+  &:focus { @include styled_button(focus, $c: $selected_bg_color, $style: default, $suggested_destructive: suggested); }
+  &:hover { @include styled_button(hover, $c: $selected_bg_color, $style: default, $suggested_destructive: suggested); }
+  &:active { @include styled_button(active, $c: $selected_bg_color, $style: default, $suggested_destructive: suggested); }
+  &:checked { @include styled_button(checked, $c: $selected_bg_color, $style: default, $suggested_destructive: suggested); }
   &:insensitive {
     border-color: $borders_color;
 
@@ -154,11 +181,11 @@ $osd_radius: 3px;
 %dialog_button_destructive {
   @extend %dialog_button;
 
-  @include styled_button(normal, $c: $destructive_color, $style: default);
-  &:focus { @include styled_button(focus, $c: $destructive_color, $style: default); }
-  &:hover { @include styled_button(hover, $c: $destructive_color, $style: default); }
-  &:active { @include styled_button(active, $c: $destructive_color, $style: default); }
-  &:checked { @include styled_button(checked, $c: $destructive_color, $style: default); }
+  @include styled_button(normal, $c: $destructive_color, $style: default, $suggested_destructive: destructive);
+  &:focus { @include styled_button(focus, $c: $destructive_color, $style: default, $suggested_destructive: destructive); }
+  &:hover { @include styled_button(hover, $c: $destructive_color, $style: default, $suggested_destructive: destructive); }
+  &:active { @include styled_button(active, $c: $destructive_color, $style: default, $suggested_destructive: destructive); }
+  &:checked { @include styled_button(checked, $c: $destructive_color, $style: default, $suggested_destructive: destructive); }
   &:insensitive {
     border-color: $borders_color;
 
