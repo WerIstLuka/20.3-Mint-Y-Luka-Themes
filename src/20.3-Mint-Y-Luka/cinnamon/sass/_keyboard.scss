@@ -2,10 +2,10 @@
 On-Screen Keyboard (>= Cinnamon 6.6)
 */
 
-$key_border_radius: $radius;
-$default_key_bg_color: $osd_button_bg;
-$non_alpha_key_color: $osd_button_bg;
-$shifted_key_color: if($variant == 'light', darken($bg_color, 30%), lighten($bg_color, 25%));
+$key_border_radius: $gtk_button_radius;
+$default_key_bg_color: $gtk_button_bg;
+$non_alpha_key_color: $gtk_button_bg;
+$shifted_key_color: $gtk_button_active_bg;
 
 #virtual-keyboard {
   background-color: $osd_bg_color;
@@ -16,7 +16,7 @@ $base_margin: 10px;
 
 // the container for individual keys
 .vkeyboard-key-container {
-  padding: $base_margin;
+  padding: $base_margin / 2;
   spacing: $base_margin;
 }
 
