@@ -6,6 +6,12 @@ $noaccent_selected_fg_color: if($variant == 'light', $text_color, #ffffff);
 $accent_color: $selected_bg_color;
 $panel_active_bg: if($variant == 'light', $bg_color2, mix($bg_color3, $accent_color, 50%));
 
+$gtk_button_bg: if($variant == 'light', lighten($bg_color, 2%), lighten($base_color, 2%));
+$gtk_button_bg_hover: lighten($gtk_button_bg, 5%);
+$gtk_button_active_bg: transparentize(black, 0.85);
+$gtk_button_border: if($variant =='light', darken($bg_color, 18%), darken($bg_color,6%));
+$gtk_button_active_border: darken($gtk_button_border, 10%);
+
 // https://github.com/linuxmint/mint-themes/commit/4e128b2f24f971df9ee53cf28ac350d8a0411ce0
 $selected_fg_color: #ffffff;
 $radius: 6px;
