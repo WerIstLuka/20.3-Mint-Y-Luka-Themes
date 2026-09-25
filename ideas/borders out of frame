@@ -1,0 +1,4 @@
+dragging a window to the edge of the screen makes the border go out of frame
+maybe adding a padding or something fixes it
+
+same thing thats blocking the tiled windows things in gtk3 is also bloking this from working

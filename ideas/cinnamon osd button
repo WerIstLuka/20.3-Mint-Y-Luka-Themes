@@ -1,3 +1,14 @@
 make buttons similiar to gtk-3.0
 
 also do :first-child and stuff like that
+
+not possible with cinnamon currently
+the spacing between buttons is set in js/ui/dialog.js
+
+this.buttonLayout = new St.Widget ({
+    style_class: "dialog-button-box",
+    layout_manager: new Clutter.BoxLayout({
+        homogeneous: true,
+        spacing: 12,     <- here is the problem
+    }),
+});
