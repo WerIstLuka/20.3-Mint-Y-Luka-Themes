@@ -2217,7 +2217,7 @@ On-Screen Keyboard (>= Cinnamon 6.6)
     .screen-shield .icon-button:hover, .screen-shield .icon-button:focus {
       background-color: rgba(255, 255, 255, 0.9); }
     .screen-shield .icon-button:active {
-      background-color: rgba(210, 214, 206, 0.9); }
+      background-color: rgba(48, 48, 48, 0.9); }
   .screen-shield .prompt-dialog {
     width: 34em;
     background-color: transparent;

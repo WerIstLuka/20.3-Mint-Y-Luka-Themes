@@ -15,16 +15,17 @@
     min-height: 16px;
     padding: to_em(16px);
     color: white;
-    border: 1px solid $borders_color;
-    background-color: transparentize($gtk_button_bg, 0.05);
+    border: 1px solid $gtk_button_border;
+    background-color: transparentize($gtk_button_bg, 0.1);
     margin-left: $base_padding;
     margin-right: $base_padding;
 
     StIcon { icon-size: 16px; }
 
     &:hover,
-    &:focus { background-color: transparentize($gtk_button_bg_hover, 0.05); }
-    &:active { background-color: transparentize(#252525, 0.05); }
+    &:focus { background-color: transparentize($gtk_button_bg_hover, 0.1); }
+    &:active { background-color: transparentize(#303030, 0.1); }
+    // #303030 is an approximation for a pressed button
   }
 
   .prompt-dialog {
