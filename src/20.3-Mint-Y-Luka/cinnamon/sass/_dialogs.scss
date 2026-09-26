@@ -194,7 +194,7 @@ $osd_radius: 3px;
 }
 
 .dialog {
-  background-color: $bg_color;
+  background-color: $gtk_dialog_bg;
   border-radius: 8px 8px 0 0;
   border: 4px solid $selected_bg_color;
   padding: $base_padding * 3;
@@ -354,6 +354,11 @@ $osd_radius: 3px;
   &-user-combo {
     @extend %flat_styled_button;
     @extend %heading;
+    &:hover { @include styled_button(hover); }
+    &:selected,
+    &:active { @include styled_button(active); }
+    background-color: transparent;
+    border-color: transparent;
 
     border-radius: $radius;
     padding: $base_padding $base_padding * 6;

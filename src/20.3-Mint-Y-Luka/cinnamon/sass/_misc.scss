@@ -6,6 +6,7 @@ $noaccent_selected_fg_color: if($variant == 'light', $text_color, #ffffff);
 $accent_color: $selected_bg_color;
 $panel_active_bg: if($variant == 'light', $bg_color2, mix($bg_color3, $accent_color, 50%));
 
+// add some gtk stuff
 $gtk_button_bg: if($variant == 'light', lighten($bg_color, 2%), lighten($base_color, 2%));
 $gtk_button_bg_hover: lighten($gtk_button_bg, 5%);
 $gtk_button_active_bg: transparentize(black, 0.85);
@@ -19,8 +20,9 @@ $gtk_suggested_color_active: darken($gtk_suggested_color, 10%);
 $gtk_destructive_color: #F04A50;
 $gtk_destructive_color_hover: lighten($gtk_destructive_color, 10%);
 $gtk_destructive_color_active: darken($gtk_destructive_color, 10%);
-$gtk_text_color: #dadada;
+$gtk_text_color: if($variant == 'light', #303030, #DADADA);
 $gtk_button_radius: 3px;
+$gtk_dialog_bg: if($variant == 'light', #f5f5f5, #383838);
 
 // https://github.com/linuxmint/mint-themes/commit/4e128b2f24f971df9ee53cf28ac350d8a0411ce0
 $selected_fg_color: #ffffff;
