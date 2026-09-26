@@ -1711,28 +1711,33 @@ StScrollBar {
   font-size: 1em; }
 
 .polkit-dialog-user-combo {
-  border: 1px solid #f3f4f2;
+  border: 1px solid;
+  border-color: #c5cac0;
   color: rgba(0, 0, 0, 0.87);
   background-color: #f3f4f2; }
   .polkit-dialog-user-combo:focus {
-    border: 1px solid #f3f4f2;
+    border: 1px solid;
+    border-color: #c5cac0;
     color: rgba(0, 0, 0, 0.87);
     background-color: #f3f4f2;
-    border: 1px solid #a7ae9f; }
+    border-color: #a7ae9f; }
   .polkit-dialog-user-combo:hover {
-    border: 1px solid #f3f4f2;
+    border: 1px solid;
+    border-color: #c5cac0;
     color: rgba(0, 0, 0, 0.87);
     background-color: #daddd6; }
   .polkit-dialog-user-combo:insensitive {
-    border: 1px solid #f3f4f2;
+    border: 1px solid;
     color: rgba(0, 0, 0, 0.37);
     background-color: #f3f4f2; }
   .polkit-dialog-user-combo:selected, .polkit-dialog-user-combo:active {
-    border: 1px solid #f3f4f2;
+    border: 1px solid;
+    border-color: #c5cac0;
     color: rgba(0, 0, 0, 0.87);
     background-color: #e6e8e4; }
   .polkit-dialog-user-combo:checked {
-    border: 1px solid #f3f4f2;
+    border: 1px solid;
+    border-color: #c5cac0;
     color: rgba(0, 0, 0, 0.87);
     background-color: #e6e8e4; }
 
@@ -1740,100 +1745,95 @@ StScrollBar {
   font-weight: bold;
   padding: 12px;
   border-radius: 3px;
-  border: 1px solid #f8f9f8;
+  border: 1px solid;
   border-color: #c5cac0;
   color: #303030;
   background-color: #f8f9f8; }
   .dialog .dialog-button:focus {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: #f8f9f8;
-    border: 1px solid #c5cac0; }
+    border-color: #c5cac0; }
   .dialog .dialog-button:hover {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: white; }
   .dialog .dialog-button:active {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: rgba(0, 0, 0, 0.15); }
   .dialog .dialog-button:checked {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: rgba(0, 0, 0, 0.15); }
   .dialog .dialog-button:insensitive {
-    border: 1px solid #f8f9f8;
-    border-color: #c5cac0;
+    border: 1px solid;
     color: rgba(48, 48, 48, 0.5);
     background-color: rgba(248, 249, 248, 0.55); }
 
 .dialog .dialog-button:default {
-  border: 1px solid #92b372;
-  border-color: #c5cac0;
+  border: 1px solid;
+  border-color: #6db442;
   color: rgba(0, 0, 0, 0.87);
   background-color: #6db442; }
   .dialog .dialog-button:focus:default {
-    border: 1px solid #92b372;
-    border-color: #c5cac0;
+    border: 1px solid;
     color: rgba(0, 0, 0, 0.87);
     background-color: #6db442;
-    border: 1px solid #465b31; }
+    border-color: #465b31; }
   .dialog .dialog-button:hover:default {
-    border: 1px solid #92b372;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #88c663;
     color: rgba(0, 0, 0, 0.87);
     background-color: #88c663; }
   .dialog .dialog-button:active:default {
-    border: 1px solid #92b372;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #568f34;
     color: rgba(0, 0, 0, 0.87);
     background-color: #568f34; }
   .dialog .dialog-button:checked:default {
-    border: 1px solid #92b372;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #568f34;
     color: rgba(0, 0, 0, 0.87);
     background-color: #568f34; }
   .dialog .dialog-button:insensitive:default {
-    border-color: #c0c5bb;
-    border: 1px solid #f8f9f8;
-    border-color: #c5cac0;
+    border-color: rgba(197, 202, 192, 0.55);
+    border: 1px solid;
     color: rgba(48, 48, 48, 0.5);
     background-color: rgba(248, 249, 248, 0.55); }
 
 .dialog .dialog-button:destructive-action {
-  border: 1px solid #F04A50;
-  border-color: #c5cac0;
+  border: 1px solid;
+  border-color: #F04A50;
   color: rgba(0, 0, 0, 0.87);
   background-color: #F04A50; }
   .dialog .dialog-button:focus:destructive-action {
-    border: 1px solid #F04A50;
-    border-color: #c5cac0;
+    border: 1px solid;
     color: rgba(0, 0, 0, 0.87);
     background-color: #F04A50;
-    border: 1px solid #950c11; }
+    border-color: #950c11; }
   .dialog .dialog-button:hover:destructive-action {
-    border: 1px solid #F04A50;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #f4797e;
     color: rgba(0, 0, 0, 0.87);
     background-color: #f4797e; }
   .dialog .dialog-button:active:destructive-action {
-    border: 1px solid #F04A50;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #ec1b22;
     color: rgba(0, 0, 0, 0.87);
     background-color: #ec1b22; }
   .dialog .dialog-button:checked:destructive-action {
-    border: 1px solid #F04A50;
-    border-color: #c5cac0;
+    border: 1px solid;
+    border-color: #ec1b22;
     color: rgba(0, 0, 0, 0.87);
     background-color: #ec1b22; }
   .dialog .dialog-button:insensitive:destructive-action {
-    border-color: #c0c5bb;
-    border: 1px solid #f8f9f8;
-    border-color: #c5cac0;
+    border-color: rgba(197, 202, 192, 0.55);
+    border: 1px solid;
     color: rgba(48, 48, 48, 0.5);
     background-color: rgba(248, 249, 248, 0.55); }
 
@@ -1928,12 +1928,12 @@ StScrollBar {
   border-radius: 6px;
   padding: 6px 36px; }
   .polkit-dialog-user-combo:hover {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: white; }
   .polkit-dialog-user-combo:selected, .polkit-dialog-user-combo:active {
-    border: 1px solid #f8f9f8;
+    border: 1px solid;
     border-color: #c5cac0;
     color: #303030;
     background-color: rgba(0, 0, 0, 0.15); }
