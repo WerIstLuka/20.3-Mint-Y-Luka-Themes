@@ -12,3 +12,7 @@ this.buttonLayout = new St.Widget ({
         spacing: 12,     <- here is the problem
     }),
 });
+
+
+dashed inset outline for focus is not possible
+St ignores the outline offset and style
