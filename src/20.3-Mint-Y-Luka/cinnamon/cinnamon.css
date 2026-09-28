@@ -1873,7 +1873,6 @@ StScrollBar {
     spacing: 0; }
     .end-session-dialog .dialog-list .dialog-list-title {
       color: #F27835;
-      background-color: tranparentize(#F27835, 0.9);
       padding: 9px;
       border-radius: 3px;
       margin: 4px 0; }
