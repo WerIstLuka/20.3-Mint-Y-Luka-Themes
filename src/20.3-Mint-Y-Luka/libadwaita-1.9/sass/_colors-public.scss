@@ -1,0 +1,118 @@
+//apps rely on some named colors to be exported
+
+// Sass thinks were using the colors in the variables as strings and may shoot
+// warning, its innocuous and can be defeated by using "" + $var
+@define-color theme_fg_color #{"" + $fg_color};
+@define-color theme_text_color #{"" + $text_color};
+@define-color theme_bg_color #{"" + $bg_color};
+@define-color theme_base_color #{"" + $base_color};
+@define-color theme_selected_bg_color #{"" + $selected_bg_color};
+@define-color theme_selected_fg_color #{"" + $selected_fg_color};
+@define-color fg_color #{"" + $fg_color};
+@define-color text_color #{"" + $text_color};
+@define-color bg_color #{"" + $bg_color};
+@define-color base_color #{"" + $base_color};
+@define-color selected_bg_color #{"" + $selected_bg_color};
+@define-color selected_fg_color #{"" + $selected_fg_color};
+@define-color insensitive_bg_color #{"" + $insensitive_bg_color};
+@define-color insensitive_fg_color alpha(#{"" + opacify($insensitive_fg_color, 1)}, 0.5);
+@define-color insensitive_base_color #{"" + $base_color};
+@define-color theme_unfocused_fg_color #{"" + $fg_color};
+@define-color theme_unfocused_text_color #{"" + $text_color};
+@define-color theme_unfocused_bg_color #{"" + $bg_color};
+@define-color theme_unfocused_base_color #{"" + $base_color};
+@define-color borders #{"" + $borders_color};
+@define-color unfocused_borders #{"" + $borders_color};
+
+@define-color warning_color #{"" + $warning_color};
+@define-color error_color #{"" + $error_color};
+@define-color success_color #{"" + $success_color};
+@define-color placeholder_text_color #{#A8A8A8};
+
+@define-color content_view_bg #{"" + $base_color};
+
+//WM
+$wm_bg_unfocused: opacify($header_bg_backdrop, 1);
+
+@define-color wm_title #{"" + $wm_title};
+@define-color wm_title_unfocused #{"" + $wm_title_unfocused};
+
+@define-color wm_bg #{"" + $wm_bg};
+@define-color wm_bg_unfocused #{"" + $wm_bg_unfocused};
+
+@define-color wm_highlight #{"" + $wm_highlight};
+@define-color wm_border #{"" + $wm_border};
+@define-color wm_border_unfocused #{"" + $wm_border_unfocused};
+@define-color wm_shadow alpha(#{"" + black}, 0.35);
+
+//WM Buttons
+
+// Close
+@define-color wm_button_close_bg #{"" + $wm_button_close_bg};
+@define-color wm_button_close_hover_bg #{"" + $wm_button_close_hover_bg};
+@define-color wm_button_close_active_bg #{"" + $wm_button_close_active_bg};
+
+@define-color wm_icon_close_bg #{"" + $wm_icon_close_bg};
+
+// Minimize, Maximize
+@define-color wm_button_hover_bg #{"" + $wm_button_hover_bg};
+@define-color wm_button_active_bg #{"" + $wm_button_active_bg};
+
+@define-color wm_icon_bg #{"" + $wm_icon_bg};
+@define-color wm_icon_unfocused_bg #{"" + $wm_icon_unfocused_bg};
+@define-color wm_icon_hover_bg #{"" + $wm_icon_hover_bg};
+@define-color wm_icon_active_bg #{"" + $wm_icon_active_bg};
+
+
+/* LibAdwaita-1.5 */
+
+@define-color window_fg_color #{"" + $text_color};
+@define-color accent_bg_color #{"" + $selected_bg_color};
+@define-color accent_color #{"" + $selected_bg_color};
+@define-color popover_bg_color #{"" + $bg_color};
+
+@define-color blue_1 #99c1f1;
+@define-color blue_2 #62a0ea;
+@define-color blue_3 #3584e4;
+@define-color blue_4 #1c71d8;
+@define-color blue_5 #1a5fb4;
+@define-color green_1 #8ff0a4;
+@define-color green_2 #57e389;
+@define-color green_3 #33d17a;
+@define-color green_4 #2ec27e;
+@define-color green_5 #26a269;
+@define-color yellow_1 #f9f06b;
+@define-color yellow_2 #f8e45c;
+@define-color yellow_3 #f6d32d;
+@define-color yellow_4 #f5c211;
+@define-color yellow_5 #e5a50a;
+@define-color orange_1 #ffbe6f;
+@define-color orange_2 #ffa348;
+@define-color orange_3 #ff7800;
+@define-color orange_4 #e66100;
+@define-color orange_5 #c64600;
+@define-color red_1 #f66151;
+@define-color red_2 #ed333b;
+@define-color red_3 #e01b24;
+@define-color red_4 #c01c28;
+@define-color red_5 #a51d2d;
+@define-color purple_1 #dc8add;
+@define-color purple_2 #c061cb;
+@define-color purple_3 #9141ac;
+@define-color purple_4 #813d9c;
+@define-color purple_5 #613583;
+@define-color brown_1 #cdab8f;
+@define-color brown_2 #b5835a;
+@define-color brown_3 #986a44;
+@define-color brown_4 #865e3c;
+@define-color brown_5 #63452c;
+@define-color light_1 #ffffff;
+@define-color light_2 #f6f5f4;
+@define-color light_3 #deddda;
+@define-color light_4 #c0bfbc;
+@define-color light_5 #000000; /* calendar month separator (default: #9a9996) */
+@define-color dark_1 #77767b;
+@define-color dark_2 #5e5c64;
+@define-color dark_3 #3d3846;
+@define-color dark_4 #241f31;
+@define-color dark_5 #000000;
