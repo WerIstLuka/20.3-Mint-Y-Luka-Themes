@@ -267,3 +267,8 @@ dropdown popover listview.view > row {transition: none;}
   color: $fg_color;
   background-color: transparentize($bg_color, 0.001);
 }
+
+.navigation-sidebar {
+  &:dir(ltr) { border-right: 1px solid }
+  &:dir(rtl) { border-left: 1px solid }
+}
