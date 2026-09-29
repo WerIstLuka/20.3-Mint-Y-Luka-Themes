@@ -252,7 +252,8 @@ dropdown popover listview.view > row {
 }
 
 .navigation-sidebar,
-.sidebar-pane {
+.sidebar-pane,
+.sidebar {
   &:dir(ltr) { border-right: 1px solid }
   &:dir(rtl) { border-left: 1px solid }
 }
@@ -261,6 +262,7 @@ bottom-sheet {
   sheet { border-radius: 0; }
   stack > button {
     border: none;
+    &:not(:hover) { background-color: $bg_color; }
     > box { background-color: transparent; }
   }
 }
