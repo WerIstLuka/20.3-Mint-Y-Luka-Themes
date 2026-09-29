@@ -3688,3 +3688,9 @@ menubutton {
     }
   }
 }
+
+selection {
+  background-color: $selected_bg_color;
+  color: white;
+  &:focus-within { background-color: $selected_bg_color; }
+}
