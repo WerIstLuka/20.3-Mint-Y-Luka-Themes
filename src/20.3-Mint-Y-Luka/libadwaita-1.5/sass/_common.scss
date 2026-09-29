@@ -2,7 +2,7 @@
   @return unquote("alpha(#{$c},#{$a})");
 }
 
-$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-quad: none; // looks weird
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 
 //
