@@ -257,5 +257,14 @@ dropdown popover listview.view > row {
   &:dir(rtl) { border-left: 1px solid }
 }
 
+bottom-sheet {
+  sheet { border-radius: 0; }
+  stack > button {
+    border: none;
+    > box { background-color: transparent; }
+  }
+}
+
 // todo
 // make scrollbar thinner when slow scrolling (mouse button held down for a while without moving)
+// fix buttons that sometimes look weird (many of them in the inspector)
