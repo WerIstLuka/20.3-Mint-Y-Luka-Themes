@@ -5,9 +5,7 @@
 selection {
   background-color: $selected_bg_color;
   color: white;
-  &:focus-within {
-    background-color: $selected_bg_color;
-    }
+  &:focus-within { background-color: $selected_bg_color; }
 }
 
 viewswitcher > button image {
@@ -28,36 +26,34 @@ viewswitcher > button image {
         margin-bottom: 10px;
       }
     }
-    widget {
-      padding: 5px;
-    }
+    widget { padding: 5px; }
   }
 }
 
 @mixin draw_suggested_destructive($b_color) {
   @include button(suggested_destructive, $b_color);
   @include focus-ring();
-  &:hover {@include button(suggested_destructive, lighten($b_color, 10%));}
-  &:active, &:checked {@include button(suggested_destructive, darken($b_color, 10%));}
-  &:disabled {@include button(insensitive);}
+  &:hover { @include button(suggested_destructive, lighten($b_color, 10%)); }
+  &:active, &:checked { @include button(suggested_destructive, darken($b_color, 10%)); }
+  &:disabled { @include button(insensitive); }
 }
 
 %draw_response-area_buttons {
   widget.response-area button {
     @include button(normal);
-    &:hover {@include button(hover);}
-    &:active, &:selected {@include button(active);}
-    &.suggested {@include draw_suggested_destructive($suggested_color);}
-    &.destructive {@include draw_suggested_destructive($destructive_color);}
+    &:hover { @include button(hover); }
+    &:active, &:selected { @include button(active); }
+    &.suggested { @include draw_suggested_destructive($suggested_color); }
+    &.destructive { @include draw_suggested_destructive($destructive_color); }
   }
 }
 
 %draw_mint-y_buttons {
   button {
-    &:not(:first-child):not(:last-child){border-radius: 0;}
-    &:dir(ltr):last-child, &:dir(rtl):first-child {border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
-    &:dir(ltr):first-child, &:dir(rtl):last-child {border-top-right-radius: 0px; border-bottom-right-radius: 0px;}
-    &:dir(ltr):not(:first-child), &:dir(rtl):not(:last-child) {border-left-width: 0;}
+    &:not(:first-child):not(:last-child){ border-radius: 0; }
+    &:dir(ltr):last-child, &:dir(rtl):first-child { border-top-left-radius: 0; border-bottom-left-radius: 0;}
+    &:dir(ltr):first-child, &:dir(rtl):last-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    &:dir(ltr):not(:first-child), &:dir(rtl):not(:last-child) { border-left-width: 0; }
   }
   separator {
     background-color: transparent;
@@ -107,15 +103,13 @@ list.boxed-list {
     padding: 5px;
     min-height: 30px;
   }
-  > row > box box > image {
-    padding-left: 10px;
-  }
-  .about & {
-    margin: 4px 20px;
-  }
+  > row > box box > image { padding-left: 10px; }
+  .about & { margin: 4px 20px; }
 }
 
-preferencesgroup label.heading {font-size: 100%;}
+preferencesgroup label.heading {
+  font-size: 100%;
+}
 
 toast {
   padding: 10px;
@@ -156,17 +150,15 @@ button.circular {
     min-width: 20px;
   }
   datechooser grid > &,
-  datechooser navigator & {
-    border-radius: 3px;
-  }
+  datechooser navigator & { border-radius: 3px; }
 }
 
 .messagedialog {
   min-width: 700px;
   @extend %draw_fake_header;
   @extend %draw_response-area_buttons;
-  > windowhandle > box widget:not(.compact) {@extend %draw_mint-y_buttons;}
-  separator {color: transparent;}
+  > windowhandle > box widget:not(.compact) { @extend %draw_mint-y_buttons; }
+  separator { color: transparent; }
 }
 
 // make response-area buttons look better if they are vertical (compact)
@@ -180,9 +172,7 @@ widget.response-area.compact {
 
 // make the borders show up correctly
 viewswitcher, stackswitcher {
-  button {
-    background-clip: padding-box;
-  }
+  button { background-clip: padding-box; }
 }
 // gnome-clocks is ignoring everything i throw at it thats not in the inspector
 // i checked the source and there is nothing preventing it from working
@@ -190,46 +180,39 @@ viewswitcher, stackswitcher {
 
 // dont do double borders
 list row.expander {
-  list {
-    border-width: 0 0 1px 0;
-  }
-  &:last-child list {
-    border-width: 0;
-  }
+  list { border-width: 0 0 1px 0; }
+  &:last-child list { border-width: 0; }
 }
 
 indicatorbin.needs-attention {
-  mask {
-    background-image: image($fg_color);
-  }
+  mask { background-image: image($fg_color); }
   indicator {
     background-image: radial-gradient(circle, $selected_bg_color, $selected_bg_color);
     border-radius: 99px;
     min-height: 17px;
     min-width: 17px;
-    label {
-      font-size: 70%;
-    }
+    label { font-size: 70%; }
   }
   box.wide & + label {
     padding-left: 10px;
-    &:dir(rtl){
-      padding-right: 10px;
-    }
+    &:dir(rtl){ padding-right: 10px; }
   }
 }
 
-tabbox > separator {background-color: transparent;}
-
-tabbox {border-bottom: 1px solid $header_border; background-color: inherit; padding: 5px 0 6px 0;}
+tabbox {
+  border-bottom: 1px solid $header_border;
+  background-color: inherit;
+  padding: 5px 0 6px 0;
+  > separator { background-color: transparent; }
+}
 
 tab {
   border: 1px solid;
   border-radius: 3px;
   @include button(normal);
   @include focus-ring();
-  &:hover {@include button(hover);}
-  &:active, &:selected {@include button(active);}
+  &:hover { @include button(hover); }
+  &:active, &:selected { @include button(active); }
 }
 
 // didnt want to change anything with %needs_attention so i just copied it
@@ -251,15 +234,15 @@ tab.needs-attention {
   @extend %adwaita_needs_attention;
 }
 
-dropdown popover listview.view > row {transition: none;}
+dropdown popover listview.view > row {
+  transition: none;
+}
 
 .data-table listview > row.activatable {
   transition: none;
   &:hover {
     background: $base_color;
-    &:selected {
-      background: $selected_bg_color;
-    }
+    &:selected { background: $selected_bg_color; }
   }
 }
 
@@ -268,7 +251,11 @@ dropdown popover listview.view > row {transition: none;}
   background-color: transparentize($bg_color, 0.001);
 }
 
-.navigation-sidebar {
+.navigation-sidebar,
+.sidebar-pane {
   &:dir(ltr) { border-right: 1px solid }
   &:dir(rtl) { border-left: 1px solid }
 }
+
+// todo
+// make scrollbar thinner when slow scrolling (mouse button held down for a while without moving)
