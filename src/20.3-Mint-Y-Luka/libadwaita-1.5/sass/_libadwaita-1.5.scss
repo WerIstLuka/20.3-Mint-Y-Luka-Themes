@@ -251,13 +251,6 @@ dropdown popover listview.view > row {
   background-color: transparentize($bg_color, 0.001);
 }
 
-.navigation-sidebar,
-.sidebar-pane,
-.sidebar {
-  &:dir(ltr) { border-right: 1px solid }
-  &:dir(rtl) { border-left: 1px solid }
-}
-
 bottom-sheet {
   sheet { border-radius: 0; }
   stack > button {
@@ -270,3 +263,5 @@ bottom-sheet {
 // todo
 // make scrollbar thinner when slow scrolling (mouse button held down for a while without moving)
 // fix buttons that sometimes look weird (many of them in the inspector)
+
+// .sidebar in adwaita-demo is broken because libadwaita is stupid
