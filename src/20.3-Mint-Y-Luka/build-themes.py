@@ -9,13 +9,19 @@ DEST = '../../usr/share/themes'
 
 curdir = os.getcwd()
 
-print("Updating LibAdwaita-1.5 assets")
-os.chdir("libadwaita-1.5/")
-os.system("pysassc ./sass/gtk.scss defaults-light.css")
-os.system("pysassc ./sass/gtk-dark.scss defaults-dark.css")
-os.system("./render-assets.sh")
-print("LibAdwaita-1.5 assets updated")
+def updateLibadwaita(version:str) -> None:
+    print(f"Updating LibAdwaita-{version} assets")
+    os.chdir(f"libadwaita-{version}/")
+    os.system("pysassc ./sass/gtk.scss defaults-light.css")
+    os.system("pysassc ./sass/gtk-dark.scss defaults-dark.css")
+    os.system("./render-assets.sh")
+    print(f"LibAdwaita-{version} assets updated")
 
+updateLibadwaita("1.5")
+os.chdir(curdir)
+updateLibadwaita("1.7")
+os.chdir(curdir)
+updateLibadwaita("1.9")
 os.chdir(curdir)
 
 print("Updating Gtk4 assets")
@@ -64,6 +70,20 @@ os.system("./render-assets.sh")
 
 os.chdir(curdir)
 
+def buildLibadwaita(version:str) -> None:
+    version_folder = os.path.join(dest_folder, f"libadwaita-{version}")
+    os.system(f"mkdir -p {version_folder}")
+    os.system(f"cp -R libadwaita-{version}/assets %s" % version_folder)
+    os.system(f"cp libadwaita-{version}/defaults-light.css %s/base.css" % version_folder)
+    os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
+
+def somethingLibadwaita(version:str) -> None:
+    version_folder = os.path.join(dest_folder, f"libadwaita-{version}")
+    os.system("mkdir -p %s" % version_folder)
+    os.system(f"cp -R libadwaita-{version}/assets %s" % version_folder)
+    os.system(f"cp libadwaita-{version}/defaults-dark.css %s" % os.path.join(version_folder, "base.css"))
+    os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
+
 if __name__ == '__main__':
     print("Building themes")
     for variation in VARIATIONS:
@@ -91,14 +111,10 @@ if __name__ == '__main__':
             os.system("cp -R gtk-4.0/assets %s" % version_folder)
             os.system("cp gtk-4.0/gtk.css %s" % version_folder)
             os.system("cp gtk-4.0/gtk-dark.css %s" % version_folder)
-            # LibAdwaita-1.5
-            version_folder = os.path.join(dest_folder, "libadwaita-1.5")
-            os.system("mkdir -p %s" % version_folder)
-            os.system("cp -R libadwaita-1.5/assets %s" % version_folder)
-            os.system("cp libadwaita-1.5/defaults-light.css %s/base.css" % version_folder)
-            os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
-            # LibAdwaita-1.7
-            os.system("cp -R libadwaita-1.7 %s/" % dest_folder)
+            # LibAdwaita
+            buildLibadwaita("1.5")
+            buildLibadwaita("1.7")
+            buildLibadwaita("1.9")
             # Metacity
             os.system("cp -R metacity-1 %s" % dest_folder)
             # Cinnamon
@@ -142,14 +158,10 @@ if __name__ == '__main__':
             os.system("cp -R gtk-4.0/assets %s" % version_folder)
             os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk.css"))
             os.system("cp gtk-4.0/gtk-dark.css %s" % os.path.join(version_folder, "gtk-dark.css"))
-            # LibAdwaita-1.5
-            version_folder = os.path.join(dest_folder, "libadwaita-1.5")
-            os.system("mkdir -p %s" % version_folder)
-            os.system("cp -R libadwaita-1.5/assets %s" % version_folder)
-            os.system("cp libadwaita-1.5/defaults-dark.css %s" % os.path.join(version_folder, "base.css"))
-            os.system(f"touch {version_folder}/defaults-light.css {version_folder}/defaults-dark.css")
-            # LibAdwaita-1.7
-            os.system("cp -R libadwaita-1.7 %s/" % dest_folder)
+            # LibAdwaita
+            somethingLibadwaita("1.5")
+            somethingLibadwaita("1.7")
+            somethingLibadwaita("1.9")
             # Cinnamon
             version_folder = os.path.join(dest_folder, "cinnamon")
             os.system("mkdir -p %s" % version_folder)
