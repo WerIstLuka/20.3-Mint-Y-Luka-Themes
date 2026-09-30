@@ -2,7 +2,7 @@
   @return unquote("alpha(#{$c},#{$a})");
 }
 
-$ease-out-quad: none; // looks weird
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 
 //
@@ -261,7 +261,7 @@ entry {
 
     caret-color: currentColor;
     border-radius: 3px;
-    transition: all 200ms $ease-out-quad;
+    transition: all 200ms;
 
     &.search { border-radius: 4px; }
 
@@ -410,7 +410,7 @@ $_dot_color: $selected_bg_color;
   to { background-image: radial-gradient(farthest-side, $_dot_color 95%, transparentize($_dot_color, 1)); }
 }
 
-$button_transition: all 200ms $ease-out-quad;
+$button_transition: all 200ms;
 
 %button,
 button {
@@ -2042,7 +2042,7 @@ scrollbar {
   $_slider_min_length: 40px;
 
   background-color: $_scrollbar_bg_color;
-  transition: 300ms $ease-out-quad;
+  transition: 300ms;
 
   &.top { border-bottom: 1px solid $borders_color; }
   &.bottom { border-top: 1px solid $borders_color; }
@@ -2673,8 +2673,6 @@ list {
 row {
   @include focus-ring();
 
-  &:not(:hover) { transition: all 150ms $ease-out-quad; }
-
   &:selected {
     @extend %selected_items;
 
@@ -2682,8 +2680,6 @@ row {
   }
 
   &.activatable {
-    &.has-open-popup,
-    &:hover { background-color: if($variant == 'light', transparentize(black, 0.97), transparentize(white, 0.95)); }
 
     &:active { color: $fg_color; }
     &:disabled {
@@ -2693,9 +2689,6 @@ row {
 
     &:selected {
       &:active { color: $selected_fg_color; }
-
-      &.has-open-popup,
-      &:hover { background-color: mix(black, $selected_bg_color, 10%); }
     }
   }
 }
@@ -3019,16 +3012,10 @@ stacksidebar {
       @extend %needs_attention;
        background-size: 6px 6px, 0 0;
     }
-    &:hover {
-      background-color: if($variant != 'dark', transparentize(black, 0.95), transparentize(white, 0.97));
-    }
     &:selected {
       background-color: $selected_bg_color;
       border-radius: 0;
       color: $selected_fg_color;
-    }
-    &:selected:hover:dir(ltr), &:selected:hover:dir(rtl) {
-      background-color: mix(black, $selected_bg_color, 10%);
     }
   }
 }
@@ -3060,17 +3047,9 @@ separator.sidebar {
     margin: 0 0 2px;
 
     @include focus-ring($focus-state: 'focus-visible:focus-within');
-    &:hover {
-      background-color: if($variant != 'dark', transparentize(black, 0.95), transparentize(white, 0.97));
-    }
-
     &:selected {
       background-color: $selected_bg_color;
       color: $selected_fg_color;
-
-      &:hover {
-        background-color: mix(black, $selected_bg_color, 10%);
-      }
     }
 
     &:disabled { color: $insensitive_fg_color; }
@@ -3144,12 +3123,12 @@ placessidebar {
 
 placesview {
   .server-list-button > image {
-    transition: 200ms $ease-out-quad;
+    transition: 200ms;
     -gtk-icon-transform: rotate(0turn);
   }
 
   .server-list-button:checked > image {
-    transition: 200ms $ease-out-quad;
+    transition: 200ms;
     -gtk-icon-transform: rotate(-0.5turn);
   }
 
