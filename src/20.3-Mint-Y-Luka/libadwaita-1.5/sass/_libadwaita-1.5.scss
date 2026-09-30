@@ -309,9 +309,13 @@ headerbar {
   }
 }
 
+.large image,
+.medium image {
+  -gtk-icon-size: 128px;
+}
+
 // todo
-// make scrollbar thinner when slow scrolling (mouse button held down for a while without moving)
 // fix buttons that sometimes look weird (many of them in the inspector)
-// make icons bigger in adwaita-demo to match the native adwaita look
 
 // .sidebar in adwaita-demo is broken because libadwaita is stupid
+// scrollbar .fine-tune ignores width, check with nested muffin
