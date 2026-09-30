@@ -314,8 +314,28 @@ headerbar {
   -gtk-icon-size: 128px;
 }
 
+list.navigation-sidebar separator {
+  background-color: transparent;
+}
+
+.filechooser filechooser {
+  placessidebar.sidebar list { background-color: #353535; }
+  actionbar revealer > box { background: transparent; }
+}
+
+toolbarview > box > scrolledwindow {
+  border: 1px solid #ff0000;
+}
+
+.shortcuts shortcuts-section stackswitcher.circular button.circular {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 5px;
+}
+
 // todo
 // fix buttons that sometimes look weird (many of them in the inspector)
+//   GHex > menu > edit button is weird
 
 // .sidebar in adwaita-demo is broken because libadwaita is stupid
 // scrollbar .fine-tune ignores width, check with nested muffin
