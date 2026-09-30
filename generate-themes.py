@@ -76,10 +76,8 @@ for color in y_hex_colors1.keys():
             genLibadwaita("1.5")
             genLibadwaita("1.7")
             genLibadwaita("1.9")
-            if variant == "-Dark":
-                os.system(f"rm -rf usr/share/themes/*Dark-{color}/libadwaita*/{{sass,.sass-cache}}")
-            else:
-                os.system(f"rm -rf usr/share/themes/*-{color}/libadwaita*/{{sass,.sass-cache}}")
+            os.system(f"rm -rf usr/share/themes/*{variant}-{color}/libadwaita*/sass")
+            os.system(f"rm -rf usr/share/themes/*{variant}-{color}/libadwaita*/.sass-cache")
 
             # Regenerate GTK4 sass
             y_colorize_directory("%s/gtk-4.0/sass" % theme, color)
@@ -172,7 +170,7 @@ for color in y_hex_colors1.keys():
             os.system("cp -R %s/libadwaita-1.5/assets %s/libadwaita-1.5/assets" % (path, theme))
             os.system("cp -R %s/libadwaita-1.7/assets %s/libadwaita-1.7/assets" % (path, theme))
             os.system("cp -R %s/libadwaita-1.9/assets %s/libadwaita-1.9/assets" % (path, theme))
-    break
+#     break
 
 
 # Files
