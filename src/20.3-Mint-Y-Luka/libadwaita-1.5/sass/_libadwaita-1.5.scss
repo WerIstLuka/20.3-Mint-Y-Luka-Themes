@@ -309,8 +309,8 @@ headerbar {
   }
 }
 
-.large image,
-.medium image {
+.large > image,
+.medium > image {
   -gtk-icon-size: 128px;
 }
 
