@@ -2,12 +2,6 @@
 // LibAdwaita-1.5 specific stuff
 //
 
-selection {
-  background-color: $selected_bg_color;
-  color: white;
-  &:focus-within { background-color: $selected_bg_color; }
-}
-
 viewswitcher > button image {
   padding-left: 6px;
   padding-right: 6px;
@@ -260,8 +254,64 @@ bottom-sheet {
   }
 }
 
+spinbutton {
+  &:dir(ltr) { margin-left: 50px; }
+  &:dir(rtl) { margin-right: 50px; }
+}
+
+headerbar,
+%titlebar {
+  min-height: 46px; // gnome-builder has a weird inconsistent headerbar otherwise
+                    // other applications already have a headerbar height of 46px
+}
+
+viewswitcher:not(.vertical):not(.path-bar) {
+  > button {
+    @include button(header-hover);
+
+    &:hover { background-color: lighten($header_button_bg, 15%); }
+    &:active, &:checked { @include button(header-active); }
+    &:disabled { color: transparentize($header_fg, 0.4); }
+
+    &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+  }
+}
+
+headerbar {
+  .linked:not(.vertical).path-bar {
+
+    > button {
+      @include button(header-hover);
+
+      &:hover { background-color: lighten($header_button_bg, 15%); }
+      &:active, &:checked { @include button(header-active); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
+
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+    }
+  }
+}
+
+@each $w,$a in ('check', 'checkbox'),
+               ('radio','radio') {
+
+  //standard checks and radios
+  @each $s,$as in ('','-unchecked'),
+          (':disabled','-unchecked-insensitive'),
+          (':indeterminate', '-mixed'),
+          (':indeterminate:disabled', '-mixed-insensitive'),
+          (':checked', '-checked'),
+          (':checked:disabled','-checked-insensitive') {
+    #{$w}#{$s}:selected {
+      -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-selected.png"),
+      url("assets/#{$a}#{$as}-selected@2.png"));
+    }
+  }
+}
+
 // todo
 // make scrollbar thinner when slow scrolling (mouse button held down for a while without moving)
 // fix buttons that sometimes look weird (many of them in the inspector)
+// make icons bigger in adwaita-demo to match the native adwaita look
 
 // .sidebar in adwaita-demo is broken because libadwaita is stupid
