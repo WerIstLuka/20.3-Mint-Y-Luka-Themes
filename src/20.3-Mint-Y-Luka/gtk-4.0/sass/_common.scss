@@ -1857,7 +1857,7 @@ popover.menu {
 // Menus
 //
 menubar {
-  padding: 0px;
+  padding: 0;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
 
@@ -2657,7 +2657,7 @@ list {
   border-color: $borders_color;
 
   > row { padding: 2px; }
-  > row.expander { padding: 0px; }
+  > row.expander { padding: 0; }
   > row.expander .row-header { padding: 2px; }
 
   &.horizontal row.separator,
@@ -3300,7 +3300,7 @@ tooltip {
     label { padding: 4px; }
   }
 
-  border-radius: 0px;
+  border-radius: 0;
   border: 2px solid $tooltip_border_color;
 }
 
@@ -3439,10 +3439,10 @@ colorchooser .popover.osd { border-radius: 3px; }
 //
 window {
   // border-radius: 8px 8px 0 0;
-  border-width: 0px;
+  border-width: 0;
 
   &.csd {
-    box-shadow: 0 0 0 4px $selected_bg_color;; //doing borders with box-shadow
+    box-shadow: 0 0 0 4px $selected_bg_color; //doing borders with box-shadow
 
     // this is used for the resize cursor area
     margin: 0;
@@ -3455,7 +3455,7 @@ window {
     }
 
     &.popup {
-      border-radius: 0px;
+      border-radius: 0;
       box-shadow: 0 0 0 2px $selected_bg_color;
     }
 
@@ -3488,7 +3488,7 @@ window {
   }
   // server-side decorations as used by mutter
   &.ssd { box-shadow: 0 0 0 4px $selected_bg_color; }
-  &.ssd:backdrop {  box-shadow: 0 0 0 4px $selected_bg_color_backdrop; }
+  &.ssd:backdrop { box-shadow: 0 0 0 4px $selected_bg_color_backdrop; }
   &.ssd.maximized,
   &.ssd.maximized:backdrop { box-shadow: none; }
 
@@ -3499,7 +3499,7 @@ window {
     box-shadow: none;
   }
   tooltip.csd {
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0 0 0 2px $selected_bg_color;
   }
 }
