@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import threading
 
 from constants import Y_HEX_ACCENT1, Y_HEX_ACCENT2, Y_HEX_ACCENT3, Y_HEX_ACCENT4
 from constants import y_hex_colors1, y_hex_colors2, y_hex_colors3, y_hex_colors4
@@ -36,142 +37,150 @@ os.chdir("src/20.3-Mint-Y-Luka")
 os.system("./build-themes.py")
 os.chdir(curdir)
 
-def genLibadwaita(version:str) -> None:
-    os.system(f"cp -R src/20.3-Mint-Y-Luka/libadwaita-{version}/sass {theme}/libadwaita-{version}/")
-    y_colorize_directory(f"{theme}/libadwaita-{version}/sass", color)
-    os.chdir(f"{theme}/libadwaita-{version}")
-
-    # os.system("touch defaults-light.css defaults-dark.css")
-    if (variant == "-Dark"):
-        os.system("sassc ./sass/gtk-dark.scss base.css")
-    else:
-        os.system("sassc ./sass/gtk.scss base.css")
-
-    os.chdir(curdir)
-
 # 20.3-Mint-Y-Luka color variations
-for color in y_hex_colors1.keys():
+def yDerivateGtk(color:str, lightDark:str, theme:str, gtk:str) -> None:
+    # gtk3 and 4 have the same generation process unlike in build-themes so we can use 1 function for both
+    os.system(f"cp -R src/20.3-Mint-Y-Luka/{gtk}/sass {theme}/{gtk}")
+    y_colorize_directory(f"{theme}/{gtk}/sass", color)
+    os.system(f"""
+        cd {theme}/{gtk}
+        pysassc ./sass/gtk-dark.scss gtk-dark.css
+        pysassc ./sass/gtk{lightDark}.scss gtk.css
+    """)
+
+def yDerivateLibadwaita(color:str, lightDark:str, theme:str, gtk:str) -> None:
+    # libadwaita also uses the same build process but has different output file names
+    yDerivateGtk(color, lightDark, theme, gtk)
+    os.system(f"""
+        cd {theme}/{gtk}
+        cp gtk{lightDark}.css base.css
+        rm gtk.css gtk-dark.css
+    """)
+
+def yCleanupGtkSass(theme:str) -> None:
+    for gtk in ["gtk-3.0", "gtk-4.0", "libadwaita-1.5", "libadwaita-1.7", "libadwaita-1.9"]:
+        os.system(f"""
+            cd {theme}
+            rm -rf {gtk}/sass {gtk}.sass-cache
+        """)
+
+def yDerivateCinnamon(color:str, lightDark:str, theme:str) -> None:
+    os.system(f"cp -R src/20.3-Mint-Y-Luka/cinnamon/sass {theme}/cinnamon/")
+    y_colorize_directory(f"{theme}/cinnamon/sass", color)
+    if lightDark == "-dark":
+        os.system(f"cd {theme}/cinnamon; cp sass/cinnamon-dark.scss sass/cinnamon.scss")
+    os.system(f"""
+        cd {theme}/cinnamon; pysassc ./sass/cinnamon.scss cinnamon.css
+        rm -rf sass .sass-cache
+""")
+
+def yDerivateOpenbox(curdir:str, theme:str, color:str) -> None:
+    os.chdir(curdir)
+    # for accent in Y_HEX_ACCENT1: is redundant because the command used file, that just generated the last file
+    # in files (e.g. theme/libadwaita-1.7/default-dark.css) again. The output is unchanged with the line removed
+    for accent in Y_HEX_ACCENT2:
+        os.system(f"sed -i s'/{accent}/{y_hex_colors2[color]}/gI' {os.path.join(theme, "openbox-3", "themerc")}")
+
+def yAccentRecolorFile(theme:str, color:str) -> None:
+    files = []
+    files.append(os.path.join(theme, "gtk-2.0", "gtkrc"))
+    files.append(os.path.join(theme, "gtk-2.0", "main.rc"))
+    files.append(os.path.join(theme, "gtk-2.0", "panel.rc"))
+    files.append(os.path.join(theme, "gtk-2.0", "apps.rc"))
+    files.append(os.path.join(theme, "gtk-2.0", "menubar-toolbar.rc"))
+    for file in files:
+        if not os.path.exists(file):
+            continue
+
+        for accent in Y_HEX_ACCENT1:
+            os.system(f"sed -i s'/{accent}/{y_hex_colors1[color]}/gI' {file}")
+        for accent in Y_HEX_ACCENT2:
+            os.system(f"sed -i s'/{accent}/{y_hex_colors2[color]}/gI' {file}")
+
+def accentRecolorDirectory(theme:str, color:str) -> None:
+    directories = []
+    directories.append(os.path.join(theme, "cinnamon/common-assets"))
+    directories.append(os.path.join(theme, "cinnamon/light-assets"))
+    directories.append(os.path.join(theme, "cinnamon/dark-assets"))
+    for directory in directories:
+        if os.path.exists(directory):
+            y_colorize_directory(directory, color)
+
+def copyAssets(lightDark:str, theme:str, path:str) -> None:
+    os.system(f"rm -rf {theme}/libadwaita-1.9/assets")
+    os.system(f"rm -rf {theme}/libadwaita-1.7/assets")
+    os.system(f"rm -rf {theme}/libadwaita-1.5/assets")
+    os.system(f"rm -rf {theme}/gtk-4.0/assets")
+    os.system(f"rm -rf {theme}/gtk-3.0/assets")
+    os.system(f"rm -rf {theme}/gtk-2.0/assets")
+    os.system(f"cp -R {path}/gtk-2.0/assets{lightDark} {theme}/gtk-2.0/assets")
+    os.system(f"cp -R {path}/xfwm4{lightDark}/*.png {theme}/xfwm4/")
+    os.system(f"cp -R {path}/gtk-3.0/assets {theme}/gtk-3.0/assets")
+    os.system(f"cp -R {path}/gtk-4.0/assets {theme}/gtk-4.0/assets")
+    os.system(f"cp -R {path}/libadwaita-1.5/assets {theme}/libadwaita-1.5/assets")
+    os.system(f"cp -R {path}/libadwaita-1.7/assets {theme}/libadwaita-1.7/assets")
+    os.system(f"cp -R {path}/libadwaita-1.9/assets {theme}/libadwaita-1.9/assets")
+
+def yGenTheme(color:str):
     for variant in ["", "-Dark"]:
-        original_name = "20.3-Mint-Y-Luka%s" % variant
-        path = os.path.join("src/20.3-Mint-Y-Luka/variations/%s" % color)
-        if os.path.isdir(path):
-            print("Derivating %s-%s" % (original_name, color))
+        original_name = f"20.3-Mint-Y-Luka{variant}"
+        path = os.path.join(f"src/20.3-Mint-Y-Luka/variations/{color}")
+        lightDark = variant.lower()
+        if not os.path.isdir(path):
+            exit()
 
-            # Copy theme
-            theme = "usr/share/themes/%s-%s" % (original_name, color)
-            theme_index = os.path.join(theme, "index.theme")
-            os.system("cp -R usr/share/themes/%s %s" % (original_name, theme))
+        print(f"Derivating {original_name}-{color}")
 
-            # Theme name
-            for key in ["Name", "GtkTheme"]:
-                change_value(key, "%s-%s" % (original_name, color), theme_index)
+        # Copy theme
+        theme = f"usr/share/themes/{original_name}-{color}"
+        theme_index = os.path.join(theme, "index.theme")
+        os.system(f"cp -R usr/share/themes/{original_name} {theme}")
 
-            for key in ["IconTheme"]:
-                change_value(key, "%s-%s" % (original_name, color), theme_index)
+        # Theme name
+        for key in ["Name", "GtkTheme"]:
+            change_value(key, "%s-%s" % (original_name, color), theme_index)
 
-            # Regenerate libadwaita sass
-            # first get gtk4 stuff so libadwaita generates correctly
-            os.system("cp -R src/20.3-Mint-Y-Luka/gtk-4.0/sass %s/gtk-4.0/" % theme)
+        for key in ["IconTheme"]:
+            change_value(key, "%s-%s" % (original_name, color), theme_index)
 
-            genLibadwaita("1.5")
-            genLibadwaita("1.7")
-            genLibadwaita("1.9")
-            os.system(f"rm -rf usr/share/themes/*{variant}-{color}/libadwaita*/sass")
-            os.system(f"rm -rf usr/share/themes/*{variant}-{color}/libadwaita*/.sass-cache")
+        yDerivateGtk(color, lightDark, theme, "gtk-3.0")
+        yDerivateGtk(color, lightDark, theme, "gtk-4.0")
+        # gtk4 has to build before libadwaita because _common.scss is symlinked between them
+        # libadwaita is built in order because the version specific files are symlinked across the directories
+        yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.5")
+        yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.7")
+        yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.9")
 
-            # Regenerate GTK4 sass
-            y_colorize_directory("%s/gtk-4.0/sass" % theme, color)
-            os.chdir("%s/gtk-4.0" % theme)
+        # remove sass files after gtk4 and libadwaita have been derived so symlinks stay intact until its finished
+        yCleanupGtkSass(theme)
 
-            if (variant == "-Dark"):
-                os.system("cp sass/gtk-dark.scss sass/gtk.scss")
-                os.system("sassc ./sass/gtk.scss gtk.css")
-                # Add a gtk-dark.css (this is needed by libhandy/libadwaita apps when prefer-dark is on)
-                os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-            else:
-                os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
-                os.system("sassc ./sass/gtk.scss gtk.css")
+        yDerivateCinnamon(color, lightDark, theme)
 
-            os.system("rm -rf sass .sass-cache")
-            os.chdir(curdir)
+        # Accent color
+        yAccentRecolorFile(theme, color)
 
-            # Regenerate GTK3 sass
-            os.system("cp -R src/20.3-Mint-Y-Luka/gtk-3.0/sass %s/gtk-3.0/" % theme)
-            y_colorize_directory("%s/gtk-3.0/sass" % theme, color)
-            os.chdir("%s/gtk-3.0" % theme)
-            # os.system("sed -i 's/no-tint/tint/gI' ./sass/gtk.scss")
-            # os.system("sed -i 's/no-tint/tint/gI' ./sass/gtk-dark.scss")
-            if (variant == "-Dark"):
-                os.system("cp sass/gtk-dark.scss sass/gtk.scss")
-                os.system("sassc ./sass/gtk.scss gtk.css")
-                # Add a gtk-dark.css (this is needed by libhandy/libadwaita apps when prefer-dark is on)
-                os.system("pysassc ./sass/gtk-dark.scss gtk-dark.css")
-            else:
-                os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
-                os.system("sassc ./sass/gtk.scss gtk.css")
+        # Remove metacity-theme-3.xml (it doesn't need to be derived since it's using GTK colors,
+        # and Cinnamon doesn't want to list it)
+        os.system(f"rm -f {os.path.join(theme, 'metacity-1', 'metacity-theme-3.xml')}")
 
-            os.system("rm -rf sass .sass-cache")
-            os.chdir(curdir)
+        accentRecolorDirectory(theme, color)
 
-            # Regenerate Cinnamon sass
-            os.system("cp -R src/20.3-Mint-Y-Luka/cinnamon/sass %s/cinnamon/" % theme)
-            y_colorize_directory("%s/cinnamon/sass" % theme, color)
-            os.chdir("%s/cinnamon" % theme)
-            if (variant == "-Dark"):
-                os.system("cp sass/cinnamon-dark.scss sass/cinnamon.scss")
-            os.system("sassc ./sass/cinnamon.scss cinnamon.css")
-            os.system("rm -rf sass .sass-cache")
-            os.chdir(curdir)
+        # Assets
+        copyAssets(lightDark,theme, path)
 
-            # Accent color
-            files = []
-            files.append(os.path.join(theme, "gtk-2.0", "gtkrc"))
-            files.append(os.path.join(theme, "gtk-2.0", "main.rc"))
-            files.append(os.path.join(theme, "gtk-2.0", "panel.rc"))
-            files.append(os.path.join(theme, "gtk-2.0", "apps.rc"))
-            files.append(os.path.join(theme, "gtk-2.0", "menubar-toolbar.rc"))
-            for file in files:
-                if os.path.exists(file):
-                    for accent in Y_HEX_ACCENT1:
-                        os.system("sed -i s'/%(accent)s/%(color_accent)s/gI' %(file)s" % {'accent': accent, 'color_accent': y_hex_colors1[color], 'file': file})
-                    for accent in Y_HEX_ACCENT2:
-                        os.system("sed -i s'/%(accent)s/%(color_accent)s/gI' %(file)s" % {'accent': accent, 'color_accent': y_hex_colors2[color], 'file': file})
-                    for accent in Y_HEX_ACCENT3:
-                        os.system("sed -i s'/%(accent)s/%(color_accent)s/gI' %(file)s" % {'accent': accent, 'color_accent': y_hex_colors3[color], 'file': file})
-                    for accent in Y_HEX_ACCENT4:
-                        os.system("sed -i s'/%(accent)s/%(color_accent)s/gI' %(file)s" % {'accent': accent, 'color_accent': y_hex_colors4[color], 'file': file})
+        # Openbox theme
+        yDerivateOpenbox(curdir, theme, color)
 
-            # Remove metacity-theme-3.xml (it doesn't need to be derived since it's using GTK colors, and Cinnamon doesn't want to list it)
-            os.system("rm -f %s" % os.path.join(theme, "metacity-1", "metacity-theme-3.xml"))
+threads = []
+for color in y_hex_colors1.keys():
+    t = threading.Thread(target=yGenTheme, args=(color,))
+    threads.append(t)
 
-            directories = []
-            directories.append(os.path.join(theme, "cinnamon/common-assets"))
-            directories.append(os.path.join(theme, "cinnamon/light-assets"))
-            directories.append(os.path.join(theme, "cinnamon/dark-assets"))
-            for directory in directories:
-                if os.path.exists(directory):
-                    y_colorize_directory(directory, color)
+for t in threads:
+    t.start()
 
-            # Assets
-            os.system("rm -rf %s/libadwaita-1.5/assets" % theme)
-            os.system("rm -rf %s/libadwaita-1.7/assets" % theme)
-            os.system("rm -rf %s/libadwaita-1.9/assets" % theme)
-            os.system("rm -rf %s/gtk-4.0/assets" % theme)
-            os.system("rm -rf %s/gtk-3.0/assets" % theme)
-            os.system("rm -rf %s/gtk-2.0/assets" % theme)
-            if variant == "-Dark":
-                os.system("cp -R %s/gtk-2.0/assets-dark %s/gtk-2.0/assets" % (path, theme))
-                os.system("cp -R %s/xfwm4-dark/*.png %s/xfwm4/" % (path, theme))
-            else:
-                os.system("cp -R %s/gtk-2.0/assets %s/gtk-2.0/assets" % (path, theme))
-                os.system("cp -R %s/xfwm4/*.png %s/xfwm4/" % (path, theme))
-            os.system("cp -R %s/gtk-3.0/assets %s/gtk-3.0/assets" % (path, theme))
-            os.system("cp -R %s/gtk-4.0/assets %s/gtk-4.0/assets" % (path, theme))
-            os.system("cp -R %s/libadwaita-1.5/assets %s/libadwaita-1.5/assets" % (path, theme))
-            os.system("cp -R %s/libadwaita-1.7/assets %s/libadwaita-1.7/assets" % (path, theme))
-            os.system("cp -R %s/libadwaita-1.9/assets %s/libadwaita-1.9/assets" % (path, theme))
-#     break
-
+for t in threads:
+    t.join()
 
 # Files
 os.system("cp -R files/* ./")
