@@ -64,6 +64,12 @@ def buildLibadwaita(lightDark:str, version:str) -> None:
     else:
         os.system(f"cp libadwaita-{version}/defaults-light.css {os.path.join(version_folder, "base.css")}")
 
+def buildLibadwaitaGtkCssOnly(lightDark:str, version:str) -> None:
+    version_folder = os.path.join(dest_folder, f"libadwaita-{version}")
+    os.system(f"mkdir -p {version_folder}")
+    os.system(f"cp -R libadwaita-{version}/assets {version_folder}")
+    os.system(f"cp libadwaita-{version}/gtk{lightDark}.css {os.path.join(version_folder, "gtk.css")}")
+
 def buildCinnamon(lightDark:str) -> None:
     version_folder = os.path.join(dest_folder, "cinnamon")
     os.system(f"mkdir -p {version_folder}")
@@ -97,7 +103,7 @@ for variation in VARIATIONS:
     buildGtk4(lightDark)
     buildLibadwaita(lightDark, "1.5")
     buildLibadwaita(lightDark, "1.7")
-    buildLibadwaita(lightDark, "1.9")
+    buildLibadwaitaGtkCssOnly(lightDark, "1.9")
     buildCinnamon(lightDark)
     buildXfwm4(lightDark)
     buildOpenbox(lightDark)

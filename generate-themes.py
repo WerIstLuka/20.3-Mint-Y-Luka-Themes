@@ -57,11 +57,21 @@ def yDerivateLibadwaita(color:str, lightDark:str, theme:str, gtk:str) -> None:
         rm gtk.css gtk-dark.css
     """)
 
-def yCleanupGtkSass(theme:str) -> None:
-    for gtk in ["gtk-3.0", "gtk-4.0", "libadwaita-1.5", "libadwaita-1.7", "libadwaita-1.9"]:
+def yDerivateLibadwaitaGtkCssOnly(color:str, lightDark:str, theme:str, gtk:str) -> None:
+    yDerivateGtk(color, lightDark, theme, gtk)
+    os.system(f"""
+        cd {theme}/{gtk}
+        cp gtk{lightDark}.css gtk.css 2> /dev/null
+        rm gtk-dark.css
+    """)
+
+def yCleanupSass(theme:str) -> None:
+    for directory in ["gtk-3.0", "gtk-4.0",
+                      "libadwaita-1.5", "libadwaita-1.7", "libadwaita-1.9",
+                      "cinnamon"]:
         os.system(f"""
             cd {theme}
-            rm -rf {gtk}/sass {gtk}.sass-cache
+            rm -rf {directory}/sass {directory}.sass-cache
         """)
 
 def yDerivateCinnamon(color:str, lightDark:str, theme:str) -> None:
@@ -71,7 +81,6 @@ def yDerivateCinnamon(color:str, lightDark:str, theme:str) -> None:
         os.system(f"cd {theme}/cinnamon; cp sass/cinnamon-dark.scss sass/cinnamon.scss")
     os.system(f"""
         cd {theme}/cinnamon; pysassc ./sass/cinnamon.scss cinnamon.css
-        rm -rf sass .sass-cache
 """)
 
 def yDerivateOpenbox(curdir:str, theme:str, color:str) -> None:
@@ -149,10 +158,12 @@ def yGenTheme(color:str):
         # libadwaita is built in order because the version specific files are symlinked across the directories
         yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.5")
         yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.7")
-        yDerivateLibadwaita(color, lightDark, theme, "libadwaita-1.9")
+        # libadwaita-1.9 is weird and goes back to gtk.css and drops all other .css files
+        yDerivateLibadwaitaGtkCssOnly(color, lightDark, theme, "libadwaita-1.9")
+
 
         # remove sass files after gtk4 and libadwaita have been derived so symlinks stay intact until its finished
-        yCleanupGtkSass(theme)
+        yCleanupSass(theme)
 
         yDerivateCinnamon(color, lightDark, theme)
 
@@ -172,9 +183,14 @@ def yGenTheme(color:str):
         yDerivateOpenbox(curdir, theme, color)
 
 threads = []
-for color in y_hex_colors1.keys():
-    t = threading.Thread(target=yGenTheme, args=(color,))
+
+if os.environ.get("DEBUG") == "TRUE":
+    t = threading.Thread(target=yGenTheme, args=("Teal",))
     threads.append(t)
+else:
+    for color in y_hex_colors1.keys():
+        t = threading.Thread(target=yGenTheme, args=(color,))
+        threads.append(t)
 
 for t in threads:
     t.start()
